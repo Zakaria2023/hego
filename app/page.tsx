@@ -1,4 +1,5 @@
 import HeroSection from "@/app/components/HeroSection";
+import HomeSections from "@/app/components/HomeSections";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -31,6 +32,7 @@ const Home = () => {
   return (
     <main>
       <HeroSection />
+      <HomeSections />
     </main>
   );
 };

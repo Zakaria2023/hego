@@ -88,7 +88,7 @@ const FaqAccordion = ({ items }: { items: { q: string; a: string }[] }) => {
             aria-controls={`faq-${i}`}
           >
             <motion.div
-              className="flex-shrink-0 w-6 h-6 mt-0.5 rounded-full bg-[#EFF6FF] border border-[#BFDBFE] flex items-center justify-center"
+              className="flex-shrink-0 w-6 h-6 mt-0.5 rounded-full bg-[#FFF7ED] border border-[#FCD34D] flex items-center justify-center"
               animate={{ rotate: openIndex === i ? 45 : 0 }}
               transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
             >
@@ -96,13 +96,13 @@ const FaqAccordion = ({ items }: { items: { q: string; a: string }[] }) => {
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 20 20"
                 fill="currentColor"
-                className="w-3 h-3 text-[#1D4ED8]"
+                className="w-3 h-3 text-[#005CA3]"
                 aria-hidden="true"
               >
                 <path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z" />
               </svg>
             </motion.div>
-            <span className="font-semibold text-[#0F172A] text-sm leading-relaxed group-hover:text-[#0369A1] transition-colors duration-200">
+            <span className="font-semibold text-[#0F172A] text-sm leading-relaxed group-hover:text-[#005CA3] transition-colors duration-200">
               {item.q}
             </span>
           </button>
@@ -136,7 +136,7 @@ const renderBlock = (block: Block, i: number) => {
     case "h2":
       return (
         <Reveal key={i} className="mt-12 mb-4" delay={0}>
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0F172A] leading-tight tracking-tight relative pl-4 border-l-4 border-[#0369A1]">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0F172A] leading-tight tracking-tight relative pl-4 border-l-4 border-[#005CA3]">
             {block.v}
           </h2>
         </Reveal>
@@ -158,7 +158,7 @@ const renderBlock = (block: Block, i: number) => {
               className="flex items-start gap-3 text-[#374151] text-base leading-relaxed"
             >
               <span
-                className="mt-2 w-2 h-2 rounded-full bg-[#0369A1] flex-shrink-0"
+                className="mt-2 w-2 h-2 rounded-full bg-[#005CA3] flex-shrink-0"
                 aria-hidden="true"
               />
               {item}
@@ -176,7 +176,7 @@ const renderBlock = (block: Block, i: number) => {
               className="flex items-start gap-3 text-[#374151] text-base leading-relaxed"
             >
               <span
-                className="mt-2 w-2 h-2 rounded-full bg-[#0369A1] flex-shrink-0"
+                className="mt-2 w-2 h-2 rounded-full bg-[#005CA3] flex-shrink-0"
                 aria-hidden="true"
               />
               <span>
@@ -206,7 +206,7 @@ const renderBlock = (block: Block, i: number) => {
               }}
               className="flex gap-4 items-start p-4 rounded-xl bg-white border border-slate-100 shadow-[0_2px_10px_rgba(15,23,42,0.04)]"
             >
-              <span className="flex-shrink-0 w-8 h-8 rounded-full bg-[#0369A1] text-white text-sm font-bold flex items-center justify-center">
+              <span className="flex-shrink-0 w-8 h-8 rounded-full bg-[#005CA3] text-white text-sm font-bold flex items-center justify-center">
                 {j + 1}
               </span>
               <div>
@@ -241,7 +241,7 @@ const SidebarPost = ({ post }: { post: Post }) => (
       {thumbnails[post.slug]}
     </div>
     <div className="flex-1 min-w-0">
-      <span className="block text-[#0F172A] text-xs font-semibold leading-snug group-hover:text-[#0369A1] transition-colors duration-200 line-clamp-2">
+      <span className="block text-[#0F172A] text-xs font-semibold leading-snug group-hover:text-[#005CA3] transition-colors duration-200 line-clamp-2">
         {post.title}
       </span>
       <time
@@ -268,7 +268,7 @@ const ShareButton = ({
     href={href}
     target="_blank"
     rel="noopener noreferrer"
-    className="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-200 bg-white hover:border-[#0369A1] hover:text-[#0369A1] text-[#475569] text-xs font-semibold transition-all duration-200 shadow-sm hover:shadow-md cursor-pointer"
+    className="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-200 bg-white hover:border-[#005CA3] hover:text-[#005CA3] text-[#475569] text-xs font-semibold transition-all duration-200 shadow-sm hover:shadow-md cursor-pointer"
     aria-label={label}
   >
     {children}
@@ -329,7 +329,7 @@ const EventDetailClient = ({ slug }: { slug: string }) => {
         className="fixed top-0 left-0 right-0 h-[3px] z-[100] origin-left"
         style={{
           scaleX: scrollYProgress,
-          background: "linear-gradient(90deg, #0369A1, #38BDF8, #0369A1)",
+          background: "linear-gradient(90deg, #005CA3, #00AADD, #005CA3)",
         }}
         aria-hidden="true"
       />
@@ -367,7 +367,7 @@ const EventDetailClient = ({ slug }: { slug: string }) => {
               <li>
                 <Link
                   href="/"
-                  className="hover:text-[#0369A1] transition-colors duration-150"
+                  className="hover:text-[#005CA3] transition-colors duration-150"
                 >
                   Home
                 </Link>
@@ -389,7 +389,7 @@ const EventDetailClient = ({ slug }: { slug: string }) => {
               <li>
                 <Link
                   href="/events"
-                  className="hover:text-[#0369A1] transition-colors duration-150"
+                  className="hover:text-[#005CA3] transition-colors duration-150"
                 >
                   News &amp; Events
                 </Link>
@@ -573,7 +573,7 @@ const EventDetailClient = ({ slug }: { slug: string }) => {
               <div className="mt-12">
                 <Link
                   href="/events"
-                  className="inline-flex items-center gap-2 text-[#0369A1] text-sm font-semibold hover:gap-3 transition-all duration-200 cursor-pointer"
+                  className="inline-flex items-center gap-2 text-[#005CA3] text-sm font-semibold hover:gap-3 transition-all duration-200 cursor-pointer"
                   aria-label="Back to all posts"
                 >
                   <svg
@@ -642,12 +642,12 @@ const EventDetailClient = ({ slug }: { slug: string }) => {
                 </div>
 
                 {/* CTA card */}
-                <div className="bg-[#EFF6FF] rounded-2xl p-5 relative overflow-hidden border border-[#BFDBFE]">
+                <div className="bg-[#FFF7ED] rounded-2xl p-5 relative overflow-hidden border border-[#FCD34D]">
                   <div
                     aria-hidden="true"
                     className="absolute -top-8 -right-8 w-32 h-32 rounded-full opacity-30 blur-2xl bg-[#93C5FD]"
                   />
-                  <span className="text-[#0369A1] text-[10px] font-bold tracking-widest uppercase">
+                  <span className="text-[#005CA3] text-[10px] font-bold tracking-widest uppercase">
                     Need Help?
                   </span>
                   <h3 className="mt-2 text-[#0F172A] text-sm font-extrabold leading-snug mb-3">
@@ -658,7 +658,7 @@ const EventDetailClient = ({ slug }: { slug: string }) => {
                   </p>
                   <Link
                     href="/contact-us-1"
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-white bg-[#0369A1] hover:bg-[#0284C7] px-4 py-2.5 rounded-lg transition-colors duration-200 cursor-pointer"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-white bg-[#005CA3] hover:bg-[#0077BB] px-4 py-2.5 rounded-lg transition-colors duration-200 cursor-pointer"
                     aria-label="Contact SWEDINOX AB"
                   >
                     Request a Quote

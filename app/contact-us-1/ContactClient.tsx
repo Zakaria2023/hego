@@ -72,7 +72,7 @@ const FloatingField = ({
   const sharedClasses = `
     peer w-full pt-6 pb-3 px-4 rounded-xl bg-white border-2 text-[#0F172A] text-sm outline-none
     transition-all duration-200 resize-none
-    ${error ? "border-red-400 focus:border-red-500" : focused ? "border-[#0369A1] shadow-[0_0_0_3px_rgba(3,105,161,0.1)]" : "border-slate-200 hover:border-slate-300"}
+    ${error ? "border-red-400 focus:border-red-500" : focused ? "border-[#005CA3] shadow-[0_0_0_3px_rgba(3,105,161,0.1)]" : "border-slate-200 hover:border-slate-300"}
   `;
 
   return (
@@ -118,7 +118,7 @@ const FloatingField = ({
                 (error
                   ? "text-red-500"
                   : focused
-                    ? "text-[#0369A1]"
+                    ? "text-[#005CA3]"
                     : "text-slate-400")
               : "top-1/2 " +
                 (multiline ? "top-5" : "-translate-y-1/2") +
@@ -128,7 +128,7 @@ const FloatingField = ({
       >
         {label}
         {required && (
-          <span className="text-[#0369A1] ml-0.5" aria-hidden="true">
+          <span className="text-[#005CA3] ml-0.5" aria-hidden="true">
             *
           </span>
         )}
@@ -179,8 +179,8 @@ const InfoRow = ({
 }) => (
   <div className="flex items-start gap-4 group">
     <div
-      className="flex-shrink-0 w-10 h-10 rounded-xl bg-[#0369A1]/10 border border-[#0369A1]/20 flex items-center justify-center
-      group-hover:bg-[#0369A1]/20 group-hover:border-[#0369A1]/40 transition-all duration-200"
+      className="flex-shrink-0 w-10 h-10 rounded-xl bg-[#005CA3]/10 border border-[#005CA3]/20 flex items-center justify-center
+      group-hover:bg-[#005CA3]/20 group-hover:border-[#005CA3]/40 transition-all duration-200"
     >
       {icon}
     </div>
@@ -225,7 +225,7 @@ const HoursDropdown = () => {
     <div>
       <button
         onClick={() => setOpen((o) => !o)}
-        className="flex items-center gap-2 text-sm font-semibold text-[#0369A1] hover:text-[#0284C7] transition-colors duration-150 cursor-pointer"
+        className="flex items-center gap-2 text-sm font-semibold text-[#005CA3] hover:text-[#0077BB] transition-colors duration-150 cursor-pointer"
         aria-expanded={open}
         aria-label="Toggle business hours"
       >
@@ -261,12 +261,12 @@ const HoursDropdown = () => {
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
             className="overflow-hidden"
           >
-            <div className="mt-3 pl-4 border-l-2 border-[#0369A1]/20 space-y-1.5">
+            <div className="mt-3 pl-4 border-l-2 border-[#005CA3]/20 space-y-1.5">
               {hours.map((h) => (
                 <div
                   key={h.day}
                   className={`flex items-center justify-between text-xs gap-8
-                    ${h.day === today ? "font-bold text-[#0369A1]" : "text-[#64748B]"}
+                    ${h.day === today ? "font-bold text-[#005CA3]" : "text-[#64748B]"}
                   `}
                 >
                   <span>{h.day}</span>
@@ -332,7 +332,7 @@ const SuccessState = ({ onReset }: { onReset: () => void }) => (
 
     <button
       onClick={onReset}
-      className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-slate-200 text-[#0369A1] text-sm font-semibold hover:border-[#0369A1] transition-all duration-200 cursor-pointer"
+      className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-slate-200 text-[#005CA3] text-sm font-semibold hover:border-[#005CA3] transition-all duration-200 cursor-pointer"
     >
       Send another message
     </button>
@@ -446,7 +446,7 @@ const ContactClient = () => {
               <li>
                 <Link
                   href="/"
-                  className="hover:text-[#0369A1] transition-colors duration-150"
+                  className="hover:text-[#005CA3] transition-colors duration-150"
                 >
                   Home
                 </Link>
@@ -475,7 +475,7 @@ const ContactClient = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
           >
-            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#BFDBFE] bg-[#EFF6FF] text-[#1D4ED8] text-xs font-semibold tracking-widest uppercase mb-5">
+            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#FCD34D] bg-[#FFF7ED] text-[#005CA3] text-xs font-semibold tracking-widest uppercase mb-5">
               <span
                 className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"
                 aria-hidden="true"
@@ -504,7 +504,7 @@ const ContactClient = () => {
                 <div className="bg-white rounded-3xl border border-slate-200 shadow-[0_8px_40px_rgba(15,23,42,0.08)] overflow-hidden">
                   {/* Card header accent */}
                   <div
-                    className="h-1 bg-gradient-to-r from-[#0369A1] via-[#38BDF8] to-[#0369A1]"
+                    className="h-1 bg-gradient-to-r from-[#005CA3] via-[#00AADD] to-[#005CA3]"
                     aria-hidden="true"
                   />
 
@@ -585,7 +585,7 @@ const ContactClient = () => {
                             <motion.button
                               type="submit"
                               disabled={submitting}
-                              className="cta-glow relative w-full flex items-center justify-center gap-3 px-8 py-4 bg-[#0369A1] hover:bg-[#0284C7] disabled:opacity-60 text-white text-sm font-bold tracking-widest uppercase rounded-xl transition-colors duration-200 overflow-hidden group cursor-pointer"
+                              className="cta-glow relative w-full flex items-center justify-center gap-3 px-8 py-4 bg-[#005CA3] hover:bg-[#0077BB] disabled:opacity-60 text-white text-sm font-bold tracking-widest uppercase rounded-xl transition-colors duration-200 overflow-hidden group cursor-pointer"
                               whileHover={!submitting ? { scale: 1.01 } : {}}
                               whileTap={!submitting ? { scale: 0.98 } : {}}
                               aria-label="Send message"
@@ -682,7 +682,7 @@ const ContactClient = () => {
                       <h2 className="text-lg font-extrabold text-[#0F172A] tracking-tight leading-snug mb-1">
                         SWEDINOX AB
                       </h2>
-                      <p className="text-[#0369A1] text-sm font-medium italic">
+                      <p className="text-[#005CA3] text-sm font-medium italic">
                         Keeping your business stainless
                       </p>
                     </div>
@@ -694,7 +694,7 @@ const ContactClient = () => {
                       href="https://wa.me/46732488880"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-3 w-full px-5 py-4 rounded-2xl bg-[#EFF6FF] hover:bg-[#DBEAFE] border border-[#BFDBFE] text-[#0F172A] font-bold text-sm transition-all duration-200 group cursor-pointer overflow-hidden relative"
+                      className="flex items-center gap-3 w-full px-5 py-4 rounded-2xl bg-[#FFF7ED] hover:bg-[#DBEAFE] border border-[#FCD34D] text-[#0F172A] font-bold text-sm transition-all duration-200 group cursor-pointer overflow-hidden relative"
                       whileHover={{
                         scale: 1.02,
                         boxShadow: "0 8px 30px rgba(15,23,42,0.25)",
@@ -729,7 +729,7 @@ const ContactClient = () => {
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 20 20"
                           fill="currentColor"
-                          className="w-5 h-5 text-[#0369A1]"
+                          className="w-5 h-5 text-[#005CA3]"
                           aria-hidden="true"
                         >
                           <path
@@ -745,7 +745,7 @@ const ContactClient = () => {
                         href="https://maps.google.com/?q=Pilevallen+77,+Arlöv,+232+35,+Sweden"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="hover:text-[#0369A1] transition-colors duration-150 cursor-pointer"
+                        className="hover:text-[#005CA3] transition-colors duration-150 cursor-pointer"
                         aria-label="Open SWEDINOX AB address in Google Maps"
                       >
                         Pilevallen 77, Arlöv
@@ -760,7 +760,7 @@ const ContactClient = () => {
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 20 20"
                           fill="currentColor"
-                          className="w-5 h-5 text-[#0369A1]"
+                          className="w-5 h-5 text-[#005CA3]"
                           aria-hidden="true"
                         >
                           <path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z" />
@@ -771,13 +771,13 @@ const ContactClient = () => {
                     >
                       <a
                         href="mailto:sales@swedinox.se"
-                        className="block hover:text-[#0369A1] transition-colors duration-150 cursor-pointer"
+                        className="block hover:text-[#005CA3] transition-colors duration-150 cursor-pointer"
                       >
                         sales@swedinox.se
                       </a>
                       <a
                         href="mailto:sales@swedinox.eu"
-                        className="block hover:text-[#0369A1] transition-colors duration-150 cursor-pointer"
+                        className="block hover:text-[#005CA3] transition-colors duration-150 cursor-pointer"
                       >
                         sales@swedinox.eu
                       </a>
@@ -789,7 +789,7 @@ const ContactClient = () => {
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 20 20"
                           fill="currentColor"
-                          className="w-5 h-5 text-[#0369A1]"
+                          className="w-5 h-5 text-[#005CA3]"
                           aria-hidden="true"
                         >
                           <path
@@ -803,13 +803,13 @@ const ContactClient = () => {
                     >
                       <a
                         href="tel:+46732488880"
-                        className="block hover:text-[#0369A1] transition-colors duration-150 cursor-pointer"
+                        className="block hover:text-[#005CA3] transition-colors duration-150 cursor-pointer"
                       >
                         +46 732 488 880
                       </a>
                       <a
                         href="tel:+46406860186"
-                        className="block hover:text-[#0369A1] transition-colors duration-150 cursor-pointer"
+                        className="block hover:text-[#005CA3] transition-colors duration-150 cursor-pointer"
                       >
                         +46 406 860 186
                       </a>
@@ -857,7 +857,7 @@ const ContactClient = () => {
               {/* Map overlay label */}
               <div className="absolute top-6 left-6 z-20">
                 <div className="bg-white rounded-2xl border border-slate-200 shadow-[0_8px_30px_rgba(15,23,42,0.12)] px-5 py-4 flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-xl bg-[#0369A1] flex items-center justify-center flex-shrink-0">
+                  <div className="w-9 h-9 rounded-xl bg-[#005CA3] flex items-center justify-center flex-shrink-0">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 20 20"
@@ -889,7 +889,7 @@ const ContactClient = () => {
                   href="https://maps.google.com/?q=Pilevallen+77,+Arlöv,+232+35,+Sweden"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2.5 bg-white rounded-xl border border-slate-200 shadow-[0_4px_16px_rgba(15,23,42,0.1)] text-[#0369A1] text-xs font-bold hover:bg-[#0369A1] hover:text-white hover:border-[#0369A1] transition-all duration-200 cursor-pointer"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 bg-white rounded-xl border border-slate-200 shadow-[0_4px_16px_rgba(15,23,42,0.1)] text-[#005CA3] text-xs font-bold hover:bg-[#005CA3] hover:text-white hover:border-[#005CA3] transition-all duration-200 cursor-pointer"
                   aria-label="Get directions to SWEDINOX AB in Google Maps"
                 >
                   <svg
@@ -1017,19 +1017,19 @@ const ContactClient = () => {
                         ? "noopener noreferrer"
                         : undefined
                     }
-                    className="flex items-center gap-4 p-5 rounded-2xl bg-white border border-[#E2E8F0] hover:border-[#BFDBFE] hover:shadow-[0_8px_30px_rgba(3,105,161,0.08)] transition-all duration-200 group cursor-pointer"
+                    className="flex items-center gap-4 p-5 rounded-2xl bg-white border border-[#E2E8F0] hover:border-[#FCD34D] hover:shadow-[0_8px_30px_rgba(3,105,161,0.08)] transition-all duration-200 group cursor-pointer"
                     whileHover={{ y: -4 }}
                     transition={{ type: "spring", stiffness: 300, damping: 22 }}
                     aria-label={item.ariaLabel}
                   >
-                    <div className="w-12 h-12 rounded-xl bg-[#EFF6FF] border border-[#BFDBFE] flex items-center justify-center text-[#0369A1] flex-shrink-0 group-hover:bg-[#0369A1] group-hover:text-white transition-colors duration-200">
+                    <div className="w-12 h-12 rounded-xl bg-[#FFF7ED] border border-[#FCD34D] flex items-center justify-center text-[#005CA3] flex-shrink-0 group-hover:bg-[#005CA3] group-hover:text-white transition-colors duration-200">
                       {item.icon}
                     </div>
                     <div>
                       <span className="block text-[10px] font-bold text-[#94A3B8] tracking-widest uppercase mb-0.5">
                         {item.label}
                       </span>
-                      <span className="block text-[#0F172A] text-sm font-semibold group-hover:text-[#0369A1] transition-colors duration-200">
+                      <span className="block text-[#0F172A] text-sm font-semibold group-hover:text-[#005CA3] transition-colors duration-200">
                         {item.value}
                       </span>
                     </div>

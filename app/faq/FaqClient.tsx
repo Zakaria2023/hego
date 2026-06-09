@@ -72,7 +72,7 @@ const AccordionItem = ({
       part.toLowerCase() === query.toLowerCase() ? (
         <mark
           key={i}
-          className="bg-[#0369A1]/15 text-[#0369A1] rounded px-0.5 not-italic font-semibold"
+          className="bg-[#005CA3]/15 text-[#005CA3] rounded px-0.5 not-italic font-semibold"
         >
           {part}
         </mark>
@@ -95,7 +95,7 @@ const AccordionItem = ({
       className={`rounded-2xl border transition-all duration-300 overflow-hidden
         ${
           isOpen
-            ? "border-[#0369A1]/40 shadow-[0_4px_24px_rgba(3,105,161,0.1)] bg-white"
+            ? "border-[#005CA3]/40 shadow-[0_4px_24px_rgba(3,105,161,0.1)] bg-white"
             : "border-slate-200 bg-white hover:border-slate-300 hover:shadow-sm"
         }`}
     >
@@ -107,7 +107,7 @@ const AccordionItem = ({
         {/* Number */}
         <span
           className={`flex-shrink-0 w-7 h-7 rounded-full text-[11px] font-black flex items-center justify-center mt-0.5 transition-colors duration-200
-            ${isOpen ? "bg-[#0369A1] text-white" : "bg-slate-100 text-slate-500 group-hover:bg-slate-200"}`}
+            ${isOpen ? "bg-[#005CA3] text-white" : "bg-slate-100 text-slate-500 group-hover:bg-slate-200"}`}
           aria-hidden="true"
         >
           {String(index + 1).padStart(2, "0")}
@@ -116,7 +116,7 @@ const AccordionItem = ({
         {/* Question */}
         <span
           className={`flex-1 text-sm font-bold leading-snug transition-colors duration-200
-            ${isOpen ? "text-[#0369A1]" : "text-[#0F172A] group-hover:text-[#0369A1]"}`}
+            ${isOpen ? "text-[#005CA3]" : "text-[#0F172A] group-hover:text-[#005CA3]"}`}
         >
           {highlight ? highlightText(item.q, highlight) : item.q}
         </span>
@@ -134,7 +134,7 @@ const AccordionItem = ({
           viewBox="0 0 20 20"
           fill="currentColor"
           className={`flex-shrink-0 w-5 h-5 mt-0.5 transition-colors duration-200
-            ${isOpen ? "text-[#0369A1]" : "text-slate-400 group-hover:text-slate-600"}`}
+            ${isOpen ? "text-[#005CA3]" : "text-slate-400 group-hover:text-slate-600"}`}
           animate={{ rotate: isOpen ? 180 : 0 }}
           transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
           aria-hidden="true"
@@ -160,7 +160,7 @@ const AccordionItem = ({
             <div className="pb-6 px-6 pl-[4.25rem]">
               {/* Top divider */}
               <div
-                className="h-px bg-gradient-to-r from-[#0369A1]/20 to-transparent mb-4"
+                className="h-px bg-gradient-to-r from-[#005CA3]/20 to-transparent mb-4"
                 aria-hidden="true"
               />
               <p className="text-[#475569] text-sm leading-relaxed">
@@ -185,7 +185,7 @@ const StatCard = ({
   delay: number;
 }) => (
   <Reveal delay={delay}>
-    <div className="text-center p-6 rounded-2xl bg-[#EFF6FF] border border-[#BFDBFE]">
+    <div className="text-center p-6 rounded-2xl bg-[#FFF7ED] border border-[#FCD34D]">
       <div className="text-3xl font-black text-[#0F172A] tracking-tight mb-1">
         {value}
       </div>
@@ -287,7 +287,7 @@ const FaqClient = () => {
               <li>
                 <Link
                   href="/"
-                  className="hover:text-[#0369A1] transition-colors duration-150"
+                  className="hover:text-[#005CA3] transition-colors duration-150"
                 >
                   Home
                 </Link>
@@ -316,9 +316,9 @@ const FaqClient = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
           >
-            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#BFDBFE] bg-[#EFF6FF] text-[#1D4ED8] text-xs font-semibold tracking-widest uppercase mb-5">
+            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#FCD34D] bg-[#FFF7ED] text-[#005CA3] text-xs font-semibold tracking-widest uppercase mb-5">
               <span
-                className="w-1.5 h-1.5 rounded-full bg-[#3B82F6] animate-pulse"
+                className="w-1.5 h-1.5 rounded-full bg-[#F5A623] animate-pulse"
                 aria-hidden="true"
               />
               Knowledge Base
@@ -331,7 +331,7 @@ const FaqClient = () => {
               ordering, delivery, and more. Can&apos;t find your answer?{" "}
               <Link
                 href="/contact-us-1"
-                className="text-[#0369A1] hover:text-[#0284C7] underline underline-offset-4 transition-colors duration-150"
+                className="text-[#005CA3] hover:text-[#0077BB] underline underline-offset-4 transition-colors duration-150"
               >
                 Reach out to us directly.
               </Link>
@@ -374,9 +374,9 @@ const FaqClient = () => {
                 className={`flex items-center gap-3 rounded-2xl border-2 bg-white px-5 py-4 transition-all duration-200
                   ${
                     searchFocused
-                      ? "border-[#0369A1] shadow-[0_0_0_3px_rgba(3,105,161,0.1)]"
+                      ? "border-[#005CA3] shadow-[0_0_0_3px_rgba(3,105,161,0.1)]"
                       : searchQuery
-                        ? "border-[#0369A1]/50"
+                        ? "border-[#005CA3]/50"
                         : "border-slate-200 hover:border-slate-300"
                   }`}
               >
@@ -385,7 +385,7 @@ const FaqClient = () => {
                   viewBox="0 0 20 20"
                   fill="currentColor"
                   className={`w-5 h-5 flex-shrink-0 transition-colors duration-200
-                    ${searchFocused || searchQuery ? "text-[#0369A1]" : "text-slate-400"}`}
+                    ${searchFocused || searchQuery ? "text-[#005CA3]" : "text-slate-400"}`}
                   aria-hidden="true"
                 >
                   <path
@@ -456,7 +456,7 @@ const FaqClient = () => {
                     className={`inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 cursor-pointer
                       ${
                         activeCategory === "all"
-                          ? "bg-[#0369A1] text-white shadow-[0_4px_16px_rgba(3,105,161,0.3)]"
+                          ? "bg-[#005CA3] text-white shadow-[0_4px_16px_rgba(3,105,161,0.3)]"
                           : "bg-white text-[#475569] border border-slate-200 hover:border-slate-300 hover:text-[#0F172A]"
                       }`}
                   >
@@ -478,8 +478,8 @@ const FaqClient = () => {
                       className={`inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 cursor-pointer
                         ${
                           activeCategory === cat.id
-                            ? "bg-[#0369A1] text-white shadow-[0_4px_16px_rgba(3,105,161,0.25)]"
-                            : "bg-white text-[#475569] border border-slate-200 hover:border-[#0369A1]/40 hover:text-[#0369A1]"
+                            ? "bg-[#005CA3] text-white shadow-[0_4px_16px_rgba(3,105,161,0.25)]"
+                            : "bg-white text-[#475569] border border-slate-200 hover:border-[#005CA3]/40 hover:text-[#005CA3]"
                         }`}
                     >
                       <span aria-hidden="true">{cat.icon}</span>
@@ -514,7 +514,7 @@ const FaqClient = () => {
                       : `${searchResults.length} result${searchResults.length !== 1 ? "s" : ""} for`}
                   </span>
                   {searchResults.length > 0 && (
-                    <span className="px-2.5 py-0.5 rounded-lg bg-[#0369A1]/10 text-[#0369A1] text-sm font-semibold">
+                    <span className="px-2.5 py-0.5 rounded-lg bg-[#005CA3]/10 text-[#005CA3] text-sm font-semibold">
                       &ldquo;{searchQuery}&rdquo;
                     </span>
                   )}
@@ -547,7 +547,7 @@ const FaqClient = () => {
                     </p>
                     <Link
                       href="/contact-us-1"
-                      className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-[#0369A1] text-white text-sm font-bold hover:bg-[#0284C7] transition-colors duration-200"
+                      className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-[#005CA3] text-white text-sm font-bold hover:bg-[#0077BB] transition-colors duration-200"
                     >
                       Ask our team
                       <svg
@@ -601,7 +601,7 @@ const FaqClient = () => {
                     <Reveal className="mb-6">
                       <div className="flex items-center gap-4">
                         <div
-                          className="w-10 h-10 rounded-xl bg-[#0369A1]/10 border border-[#0369A1]/20 flex items-center justify-center text-lg flex-shrink-0"
+                          className="w-10 h-10 rounded-xl bg-[#005CA3]/10 border border-[#005CA3]/20 flex items-center justify-center text-lg flex-shrink-0"
                           aria-hidden="true"
                         >
                           {cat.icon}
@@ -624,7 +624,7 @@ const FaqClient = () => {
                         </div>
                       </div>
                       <div
-                        className="mt-4 h-px bg-gradient-to-r from-[#0369A1]/30 via-slate-200 to-transparent"
+                        className="mt-4 h-px bg-gradient-to-r from-[#005CA3]/30 via-slate-200 to-transparent"
                         aria-hidden="true"
                       />
                     </Reveal>
@@ -671,7 +671,7 @@ const FaqClient = () => {
 
           <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
             <Reveal>
-              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#BFDBFE] bg-[#EFF6FF] text-[#1D4ED8] text-xs font-semibold tracking-widest uppercase mb-5">
+              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#FCD34D] bg-[#FFF7ED] text-[#005CA3] text-xs font-semibold tracking-widest uppercase mb-5">
                 <span
                   className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"
                   aria-hidden="true"
@@ -692,7 +692,7 @@ const FaqClient = () => {
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link
                   href="/contact-us-1"
-                  className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#0369A1] hover:bg-[#0284C7] text-white text-sm font-bold tracking-wide transition-all duration-200 shadow-[0_4px_20px_rgba(3,105,161,0.3)] hover:shadow-[0_8px_32px_rgba(3,105,161,0.4)] hover:-translate-y-0.5 group"
+                  className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#005CA3] hover:bg-[#0077BB] text-white text-sm font-bold tracking-wide transition-all duration-200 shadow-[0_4px_20px_rgba(3,105,161,0.3)] hover:shadow-[0_8px_32px_rgba(3,105,161,0.4)] hover:-translate-y-0.5 group"
                 >
                   Contact Us
                   <svg

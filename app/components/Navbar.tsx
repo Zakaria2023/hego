@@ -1,6 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
@@ -19,7 +20,7 @@ const mobileMenuVariants = {
     x: "100%",
     transition: {
       duration: 0.38,
-      ease: [0.4, 0, 0.2, 1],
+      ease: [0.4, 0, 0.2, 1] as const,
       staggerChildren: 0,
       staggerDirection: -1,
     },
@@ -28,7 +29,7 @@ const mobileMenuVariants = {
     x: "0%",
     transition: {
       duration: 0.42,
-      ease: [0.22, 1, 0.36, 1],
+      ease: [0.22, 1, 0.36, 1] as const,
       staggerChildren: 0.06,
       delayChildren: 0.1,
     },
@@ -41,7 +42,7 @@ const mobileLinkVariants = {
     opacity: 1,
     x: 0,
     filter: "blur(0px)",
-    transition: { duration: 0.32, ease: [0.22, 1, 0.36, 1] },
+    transition: { duration: 0.32, ease: [0.22, 1, 0.36, 1] as const },
   },
 };
 
@@ -59,12 +60,10 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [handleScroll]);
 
-  // Close on route change
   useEffect(() => {
     setMobileOpen(false);
   }, [pathname]);
 
-  // Lock body scroll when drawer is open
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
     return () => {
@@ -78,82 +77,36 @@ const Navbar = () => {
         role="banner"
         initial={{ y: -80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] as const }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
-            ? "bg-white/95 backdrop-blur-xl shadow-sm border-b border-slate-100"
+            ? "bg-white/97 backdrop-blur-xl shadow-sm border-b border-slate-100"
             : "bg-transparent"
         }`}
       >
-        {/* Top accent line */}
-        <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-[#0369A1]/60 to-transparent" />
+        {/* Top accent line — yellow → blue (logo colors) */}
+        <div className="h-[2.5px] w-full bg-linear-to-r from-[#F5A623] via-[#00AADD] to-[#005CA3]" />
 
         <nav
           aria-label="Main navigation"
           className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
         >
-          <div className="flex items-center justify-between h-16">
-            {/* Logo */}
+          <div className="flex items-center justify-between h-20">
+            {/* Logo — actual logo.png */}
             <Link
               href="/"
               aria-label="SWEDINOX AB – Home"
-              className="flex items-center gap-3 group cursor-pointer"
+              className="flex items-center cursor-pointer group"
             >
-              <div className="relative w-9 h-9 flex-shrink-0">
-                <svg
-                  viewBox="0 0 36 36"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="w-full h-full"
-                  aria-hidden="true"
-                >
-                  <polygon
-                    points="18,2 33,10 33,26 18,34 3,26 3,10"
-                    fill="url(#hexGrad)"
-                    stroke="rgba(56,189,248,0.5)"
-                    strokeWidth="1"
-                  />
-                  <polygon
-                    points="18,7 28,13 28,23 18,29 8,23 8,13"
-                    fill="none"
-                    stroke="rgba(255,255,255,0.15)"
-                    strokeWidth="0.75"
-                  />
-                  <text
-                    x="18"
-                    y="22"
-                    textAnchor="middle"
-                    fontSize="9"
-                    fontWeight="700"
-                    fill="white"
-                    fontFamily="Plus Jakarta Sans, sans-serif"
-                    letterSpacing="0.5"
-                  >
-                    SX
-                  </text>
-                  <defs>
-                    <linearGradient
-                      id="hexGrad"
-                      x1="0"
-                      y1="0"
-                      x2="36"
-                      y2="36"
-                      gradientUnits="userSpaceOnUse"
-                    >
-                      <stop offset="0%" stopColor="#1E40AF" />
-                      <stop offset="100%" stopColor="#0369A1" />
-                    </linearGradient>
-                  </defs>
-                </svg>
-              </div>
-              <div className="flex flex-col leading-none">
-                <span className="text-[#0F172A] font-bold text-base tracking-widest uppercase">
-                  SWEDINOX
-                </span>
-                <span className="text-[#0369A1] text-[10px] tracking-[0.3em] uppercase font-medium">
-                  AB
-                </span>
-              </div>
+              <Image
+                src="/logo.png"
+                alt="SWEDINOX AB – Keeping your business stainless"
+                width={240}
+                height={60}
+                priority
+                quality={100}
+                className="h-14 w-auto object-contain group-hover:opacity-90 transition-opacity duration-200"
+              />
             </Link>
 
             {/* Desktop nav links */}
@@ -171,20 +124,27 @@ const Navbar = () => {
                     <span
                       className={`transition-colors duration-200 ${
                         isActive
-                          ? "text-[#0369A1]"
+                          ? "text-[#005CA3]"
                           : "text-[#334155] group-hover:text-[#0F172A]"
                       }`}
                     >
                       {label}
                     </span>
-                    {/* Framer Motion animated underline */}
+                    {/* Animated underline — yellow → blue */}
                     <motion.span
                       aria-hidden="true"
-                      className="absolute bottom-0 left-0 h-[2px] rounded-full bg-gradient-to-r from-[#0369A1] to-[#38BDF8]"
+                      className="absolute bottom-0 left-0 h-[2px] rounded-full"
+                      style={{
+                        background:
+                          "linear-gradient(90deg, #F5A623, #00AADD)",
+                      }}
                       initial={false}
                       animate={{ width: isActive ? "100%" : "0%" }}
                       whileHover={{ width: "100%" }}
-                      transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+                      transition={{
+                        duration: 0.28,
+                        ease: [0.22, 1, 0.36, 1] as const,
+                      }}
                     />
                   </Link>
                 );
@@ -196,7 +156,7 @@ const Navbar = () => {
               <Link
                 href="/contact-us-1"
                 aria-label="Get a quote from SWEDINOX AB"
-                className="cta-glow relative inline-flex items-center gap-2 px-5 py-2.5 rounded-sm bg-[#0369A1] text-white text-sm font-semibold tracking-wide uppercase cursor-pointer overflow-hidden group"
+                className="cta-glow relative inline-flex items-center gap-2 px-5 py-2.5 rounded-sm bg-[#005CA3] hover:bg-[#0077BB] text-white text-sm font-semibold tracking-wide uppercase cursor-pointer overflow-hidden group transition-colors duration-200"
               >
                 <span className="relative z-10">Get Quote</span>
                 <motion.svg
@@ -214,7 +174,7 @@ const Navbar = () => {
                     clipRule="evenodd"
                   />
                 </motion.svg>
-                <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+                <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-linear-to-r from-transparent via-white/20 to-transparent" />
               </Link>
             </div>
 
@@ -236,7 +196,7 @@ const Navbar = () => {
                 animate={
                   mobileOpen ? { rotate: 45, y: 0 } : { rotate: 0, y: -6 }
                 }
-                transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] as const }}
               />
               <motion.span
                 aria-hidden="true"
@@ -254,7 +214,7 @@ const Navbar = () => {
                 animate={
                   mobileOpen ? { rotate: -45, y: 0 } : { rotate: 0, y: 6 }
                 }
-                transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] as const }}
               />
             </motion.button>
           </div>
@@ -290,19 +250,24 @@ const Navbar = () => {
               exit="closed"
               className="fixed top-0 right-0 bottom-0 z-50 w-4/5 max-w-xs bg-[#0D1526] border-l border-white/5 flex flex-col md:hidden shadow-[0_0_60px_rgba(0,0,0,0.8)]"
             >
+              {/* Yellow-to-blue accent at top of drawer */}
+              <div className="h-[2.5px] w-full bg-linear-to-r from-[#F5A623] via-[#00AADD] to-[#005CA3]" />
+
               {/* Drawer header */}
-              <div className="flex items-center justify-between px-6 py-5 border-b border-white/5">
+              <div className="flex items-center justify-between px-6 py-4 border-b border-white/5">
                 <Link
                   href="/"
-                  className="flex items-center gap-2 cursor-pointer"
+                  className="flex items-center cursor-pointer"
                   onClick={() => setMobileOpen(false)}
                 >
-                  <span className="text-white font-bold text-sm tracking-widest uppercase">
-                    SWEDINOX
-                  </span>
-                  <span className="text-[#38BDF8] text-[10px] tracking-[0.3em] uppercase font-medium">
-                    AB
-                  </span>
+                  <Image
+                    src="/logo.png"
+                    alt="SWEDINOX AB"
+                    width={160}
+                    height={40}
+                    quality={100}
+                    className="h-10 w-auto object-contain brightness-0 invert"
+                  />
                 </Link>
                 <motion.button
                   onClick={() => setMobileOpen(false)}
@@ -334,7 +299,7 @@ const Navbar = () => {
                         onClick={() => setMobileOpen(false)}
                         className={`flex items-center justify-between px-4 py-3.5 rounded-lg text-sm font-medium transition-colors duration-200 cursor-pointer group ${
                           isActive
-                            ? "bg-[#0369A1]/15 text-white border border-[#0369A1]/30"
+                            ? "bg-[#005CA3]/20 text-white border border-[#F5A623]/40"
                             : "text-slate-300 hover:text-white hover:bg-white/5 border border-transparent"
                         }`}
                       >
@@ -343,9 +308,9 @@ const Navbar = () => {
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 20 20"
                           fill="currentColor"
-                          className={`w-4 h-4 flex-shrink-0 ${
+                          className={`w-4 h-4 shrink-0 ${
                             isActive
-                              ? "text-[#38BDF8]"
+                              ? "text-[#F5A623]"
                               : "text-slate-600 group-hover:text-slate-400"
                           }`}
                           aria-hidden="true"
@@ -376,7 +341,7 @@ const Navbar = () => {
                 <Link
                   href="/contact-us-1"
                   onClick={() => setMobileOpen(false)}
-                  className="cta-glow flex items-center justify-center gap-2 w-full px-5 py-3.5 rounded-lg bg-[#0369A1] hover:bg-[#0284C7] text-white text-sm font-bold tracking-widest uppercase transition-colors duration-200 cursor-pointer overflow-hidden group relative"
+                  className="cta-glow flex items-center justify-center gap-2 w-full px-5 py-3.5 rounded-lg bg-[#005CA3] hover:bg-[#0077BB] text-white text-sm font-bold tracking-widest uppercase transition-colors duration-200 cursor-pointer overflow-hidden group relative"
                 >
                   <span className="relative z-10">Get a Quote</span>
                   <svg
@@ -392,7 +357,7 @@ const Navbar = () => {
                       clipRule="evenodd"
                     />
                   </svg>
-                  <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+                  <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-linear-to-r from-transparent via-white/20 to-transparent" />
                 </Link>
               </motion.div>
             </motion.aside>

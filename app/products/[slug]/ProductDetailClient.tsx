@@ -36,7 +36,7 @@ const Check = () => (
   <svg
     viewBox="0 0 20 20"
     fill="currentColor"
-    className="w-4 h-4 text-[#0369A1] flex-shrink-0 mt-0.5"
+    className="w-4 h-4 text-[#005CA3] flex-shrink-0 mt-0.5"
     aria-hidden="true"
   >
     <path
@@ -50,11 +50,11 @@ const Check = () => (
 /* ─── Industry icon block ─── */
 const AppBlock = ({ label }: { label: string }) => (
   <div className="flex items-center gap-3 p-4 rounded-2xl bg-[#F8FAFC] border border-[#E2E8F0]">
-    <div className="w-8 h-8 rounded-full bg-[#EFF6FF] flex items-center justify-center flex-shrink-0">
+    <div className="w-8 h-8 rounded-full bg-[#FFF7ED] flex items-center justify-center flex-shrink-0">
       <svg
         viewBox="0 0 20 20"
         fill="currentColor"
-        className="w-4 h-4 text-[#0369A1]"
+        className="w-4 h-4 text-[#005CA3]"
         aria-hidden="true"
       >
         <path
@@ -123,7 +123,7 @@ const ProductDetailClient = ({ slug }: { slug: string }) => {
                 <li>
                   <Link
                     href="/"
-                    className="hover:text-[#0369A1] transition-colors"
+                    className="hover:text-[#005CA3] transition-colors"
                   >
                     Home
                   </Link>
@@ -132,7 +132,7 @@ const ProductDetailClient = ({ slug }: { slug: string }) => {
                 <li>
                   <Link
                     href="/products"
-                    className="hover:text-[#0369A1] transition-colors"
+                    className="hover:text-[#005CA3] transition-colors"
                   >
                     Products
                   </Link>
@@ -245,7 +245,7 @@ const ProductDetailClient = ({ slug }: { slug: string }) => {
               </Link>
               <Link
                 href="/products"
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border-2 border-[#E2E8F0] hover:border-[#0369A1] text-[#334155] hover:text-[#0369A1] text-sm font-bold tracking-wide transition-all duration-200 cursor-pointer"
+                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border-2 border-[#E2E8F0] hover:border-[#005CA3] text-[#334155] hover:text-[#005CA3] text-sm font-bold tracking-wide transition-all duration-200 cursor-pointer"
               >
                 ← All Products
               </Link>
@@ -399,7 +399,7 @@ const ProductDetailClient = ({ slug }: { slug: string }) => {
 
         {/* ── CTA STRIP ── */}
         <Reveal>
-          <div className="mx-4 sm:mx-6 lg:mx-8 mb-20 rounded-3xl bg-gradient-to-r from-[#0369A1] to-[#0284C7] p-10 lg:p-14 text-center overflow-hidden relative">
+          <div className="mx-4 sm:mx-6 lg:mx-8 mb-20 rounded-3xl bg-gradient-to-r from-[#005CA3] to-[#0077BB] p-10 lg:p-14 text-center overflow-hidden relative">
             <div
               aria-hidden="true"
               className="absolute top-0 right-0 w-80 h-80 rounded-full opacity-10"
@@ -428,7 +428,7 @@ const ProductDetailClient = ({ slug }: { slug: string }) => {
             </p>
             <Link
               href="/contact-us-1"
-              className="relative inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white text-[#0369A1] text-sm font-extrabold tracking-wide shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 cursor-pointer group"
+              className="relative inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white text-[#005CA3] text-sm font-extrabold tracking-wide shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 cursor-pointer group"
             >
               Contact Our Sales Team
               <svg

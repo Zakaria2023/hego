@@ -259,7 +259,7 @@ const AboutUsClient = () => {
               <li>
                 <Link
                   href="/"
-                  className="hover:text-[#0369A1] transition-colors duration-150 cursor-pointer"
+                  className="hover:text-[#005CA3] transition-colors duration-150 cursor-pointer"
                 >
                   Home
                 </Link>
@@ -290,9 +290,9 @@ const AboutUsClient = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           >
-            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#BFDBFE] bg-[#EFF6FF] text-[#1D4ED8] text-xs font-semibold tracking-widest uppercase mb-5">
+            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#FCD34D] bg-[#FFF7ED] text-[#005CA3] text-xs font-semibold tracking-widest uppercase mb-5">
               <span
-                className="w-1.5 h-1.5 rounded-full bg-[#3B82F6] animate-pulse"
+                className="w-1.5 h-1.5 rounded-full bg-[#F5A623] animate-pulse"
                 aria-hidden="true"
               />
               Family-Owned Since 1999
@@ -305,7 +305,7 @@ const AboutUsClient = () => {
                 Excellence
                 <span
                   aria-hidden="true"
-                  className="absolute -bottom-1 left-0 h-1 w-full rounded-full bg-gradient-to-r from-[#0369A1] to-[#38BDF8]"
+                  className="absolute -bottom-1 left-0 h-1 w-full rounded-full bg-gradient-to-r from-[#005CA3] to-[#00AADD]"
                 />
               </span>
             </h1>
@@ -329,7 +329,7 @@ const AboutUsClient = () => {
             {/* Text */}
             <div>
               <Reveal>
-                <span className="text-[#0369A1] text-xs font-bold tracking-widest uppercase">
+                <span className="text-[#005CA3] text-xs font-bold tracking-widest uppercase">
                   Who We Are
                 </span>
               </Reveal>
@@ -342,7 +342,7 @@ const AboutUsClient = () => {
                 </h2>
                 <div
                   aria-hidden="true"
-                  className="mt-4 w-12 h-1 rounded-full bg-gradient-to-r from-[#0369A1] to-[#38BDF8]"
+                  className="mt-4 w-12 h-1 rounded-full bg-gradient-to-r from-[#005CA3] to-[#00AADD]"
                 />
               </Reveal>
               <Reveal delay={0.1}>
@@ -367,7 +367,7 @@ const AboutUsClient = () => {
                 <div className="mt-8 flex flex-wrap gap-3">
                   <Link
                     href="/products"
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-[#0369A1] hover:bg-[#0284C7] text-white text-sm font-bold tracking-wide rounded-sm transition-colors duration-200 cursor-pointer group"
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-[#005CA3] hover:bg-[#0077BB] text-white text-sm font-bold tracking-wide rounded-sm transition-colors duration-200 cursor-pointer group"
                     aria-label="View our stainless steel products"
                   >
                     <span>View Products</span>
@@ -387,7 +387,7 @@ const AboutUsClient = () => {
                   </Link>
                   <Link
                     href="/contact"
-                    className="inline-flex items-center gap-2 px-6 py-3 border border-[#CBD5E1] hover:border-[#0369A1] text-[#334155] hover:text-[#0369A1] text-sm font-bold tracking-wide rounded-sm transition-all duration-200 cursor-pointer"
+                    className="inline-flex items-center gap-2 px-6 py-3 border border-[#CBD5E1] hover:border-[#005CA3] text-[#334155] hover:text-[#005CA3] text-sm font-bold tracking-wide rounded-sm transition-all duration-200 cursor-pointer"
                     aria-label="Contact SWEDINOX AB"
                   >
                     Contact Us
@@ -587,12 +587,12 @@ const AboutUsClient = () => {
                   }}
                   className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-[0_20px_40px_rgba(15,23,42,0.12)] border border-slate-100 px-5 py-4 flex items-center gap-4"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-[#0369A1]/10 flex items-center justify-center flex-shrink-0">
+                  <div className="w-10 h-10 rounded-xl bg-[#005CA3]/10 flex items-center justify-center flex-shrink-0">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
                       fill="currentColor"
-                      className="w-5 h-5 text-[#0369A1]"
+                      className="w-5 h-5 text-[#005CA3]"
                       aria-hidden="true"
                     >
                       <path
@@ -695,7 +695,7 @@ const AboutUsClient = () => {
                     {/* Bottom accent bar */}
                     <div
                       aria-hidden="true"
-                      className="absolute bottom-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#0369A1] via-[#38BDF8] to-[#0369A1] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-full"
+                      className="absolute bottom-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#005CA3] via-[#00AADD] to-[#005CA3] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-full"
                     />
                   </motion.div>
                 </GlowCard>
@@ -711,7 +711,7 @@ const AboutUsClient = () => {
         >
           <div className="text-center mb-16">
             <Reveal>
-              <span className="text-[#0369A1] text-xs font-bold tracking-widest uppercase">
+              <span className="text-[#005CA3] text-xs font-bold tracking-widest uppercase">
                 How We Operate
               </span>
             </Reveal>
@@ -761,10 +761,10 @@ const AboutUsClient = () => {
                     }}
                   />
 
-                  <div className="w-12 h-12 rounded-xl bg-[#0369A1]/10 border border-[#0369A1]/20 flex items-center justify-center text-[#0369A1] mb-6 group-hover:bg-[#0369A1] group-hover:text-white transition-all duration-300">
+                  <div className="w-12 h-12 rounded-xl bg-[#005CA3]/10 border border-[#005CA3]/20 flex items-center justify-center text-[#005CA3] mb-6 group-hover:bg-[#005CA3] group-hover:text-white transition-all duration-300">
                     {icon}
                   </div>
-                  <span className="text-[#0369A1] text-xs font-bold tracking-widest uppercase">
+                  <span className="text-[#005CA3] text-xs font-bold tracking-widest uppercase">
                     {label}
                   </span>
                   <h3 className="mt-2 text-xl font-bold text-[#0F172A] leading-snug">
@@ -772,7 +772,7 @@ const AboutUsClient = () => {
                   </h3>
                   <div
                     aria-hidden="true"
-                    className="mt-3 w-8 h-0.5 rounded-full bg-[#0369A1]/40 group-hover:w-16 transition-all duration-300"
+                    className="mt-3 w-8 h-0.5 rounded-full bg-[#005CA3]/40 group-hover:w-16 transition-all duration-300"
                   />
                   <p className="mt-4 text-[#334155] text-sm leading-relaxed">
                     {body}
@@ -800,7 +800,7 @@ const AboutUsClient = () => {
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
             <div className="text-center mb-16">
               <Reveal>
-                <span className="text-[#0369A1] text-xs font-bold tracking-widest uppercase">
+                <span className="text-[#005CA3] text-xs font-bold tracking-widest uppercase">
                   Our Commitments
                 </span>
               </Reveal>
@@ -834,9 +834,9 @@ const AboutUsClient = () => {
                     transition={{ type: "spring", stiffness: 300, damping: 25 }}
                   >
                     <div className="flex-shrink-0 mt-1">
-                      <div className="w-5 h-5 rounded-full bg-[#EFF6FF] border border-[#BFDBFE] flex items-center justify-center">
+                      <div className="w-5 h-5 rounded-full bg-[#FFF7ED] border border-[#FCD34D] flex items-center justify-center">
                         <div
-                          className="w-2 h-2 rounded-full bg-[#0369A1]"
+                          className="w-2 h-2 rounded-full bg-[#005CA3]"
                           aria-hidden="true"
                         />
                       </div>
@@ -874,19 +874,19 @@ const AboutUsClient = () => {
               />
               <div
                 aria-hidden="true"
-                className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#0369A1] via-[#38BDF8] to-[#0369A1]"
+                className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#005CA3] via-[#00AADD] to-[#005CA3]"
               />
 
               <div className="relative text-center px-8 sm:px-16 py-16">
                 <div
                   aria-hidden="true"
-                  className="w-12 h-12 rounded-full bg-[#0369A1]/10 border border-[#0369A1]/20 flex items-center justify-center mx-auto mb-6"
+                  className="w-12 h-12 rounded-full bg-[#005CA3]/10 border border-[#005CA3]/20 flex items-center justify-center mx-auto mb-6"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
                     fill="currentColor"
-                    className="w-6 h-6 text-[#0369A1]"
+                    className="w-6 h-6 text-[#005CA3]"
                     aria-hidden="true"
                   >
                     <path
@@ -903,7 +903,7 @@ const AboutUsClient = () => {
                     divergent demands of our clients. Along with this, several
                     factors have enabled us to meet client expectations,
                     including{" "}
-                    <strong className="text-[#0369A1]">
+                    <strong className="text-[#005CA3]">
                       prompt delivery, high-quality products, transparent
                       business policies, and cost-effective solutions
                     </strong>
@@ -914,7 +914,7 @@ const AboutUsClient = () => {
                 <div className="mt-6 flex items-center justify-center gap-3">
                   <div
                     aria-hidden="true"
-                    className="w-10 h-10 rounded-full bg-[#0369A1] flex items-center justify-center"
+                    className="w-10 h-10 rounded-full bg-[#005CA3] flex items-center justify-center"
                   >
                     <span className="text-white font-bold text-sm">SX</span>
                   </div>
@@ -950,9 +950,9 @@ const AboutUsClient = () => {
 
           <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
             <Reveal>
-              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#BFDBFE] bg-[#EFF6FF] text-[#1D4ED8] text-xs font-semibold tracking-widest uppercase mb-6">
+              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#FCD34D] bg-[#FFF7ED] text-[#005CA3] text-xs font-semibold tracking-widest uppercase mb-6">
                 <span
-                  className="w-1.5 h-1.5 rounded-full bg-[#3B82F6] animate-pulse"
+                  className="w-1.5 h-1.5 rounded-full bg-[#F5A623] animate-pulse"
                   aria-hidden="true"
                 />
                 Ready to Partner With Us?
@@ -972,7 +972,7 @@ const AboutUsClient = () => {
               <div className="mt-8 flex flex-wrap gap-4 justify-center">
                 <Link
                   href="/contact-us-1"
-                  className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#0369A1] hover:bg-[#0284C7] text-white text-sm font-bold tracking-wide transition-all duration-200 shadow-[0_4px_20px_rgba(3,105,161,0.3)] hover:shadow-[0_8px_32px_rgba(3,105,161,0.4)] hover:-translate-y-0.5 cursor-pointer group"
+                  className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#005CA3] hover:bg-[#0077BB] text-white text-sm font-bold tracking-wide transition-all duration-200 shadow-[0_4px_20px_rgba(3,105,161,0.3)] hover:shadow-[0_8px_32px_rgba(3,105,161,0.4)] hover:-translate-y-0.5 cursor-pointer group"
                   aria-label="Contact SWEDINOX AB"
                 >
                   <span>Contact Us Now</span>
@@ -992,7 +992,7 @@ const AboutUsClient = () => {
                 </Link>
                 <Link
                   href="/products"
-                  className="inline-flex items-center gap-2 px-8 py-4 rounded-full border-2 border-[#E2E8F0] hover:border-[#0369A1] text-[#334155] hover:text-[#0369A1] text-sm font-bold tracking-wide transition-all duration-200 cursor-pointer"
+                  className="inline-flex items-center gap-2 px-8 py-4 rounded-full border-2 border-[#E2E8F0] hover:border-[#005CA3] text-[#334155] hover:text-[#005CA3] text-sm font-bold tracking-wide transition-all duration-200 cursor-pointer"
                   aria-label="Browse our product catalog"
                 >
                   Browse Products

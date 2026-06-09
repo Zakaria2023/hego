@@ -62,7 +62,7 @@ const products = [
       "Cold & Hot Rolled",
       "BA, 2B, No.1 Finish",
     ],
-    accent: "#0369A1",
+    accent: "#005CA3",
     svg: (
       <svg
         viewBox="0 0 400 260"
@@ -164,7 +164,7 @@ const products = [
       "Multiple Widths",
       "Custom Slitting Available",
     ],
-    accent: "#0284C7",
+    accent: "#0077BB",
     svg: (
       <svg
         viewBox="0 0 400 260"
@@ -263,7 +263,7 @@ const products = [
       "BA, 2B, No.1, SB Finish",
       "Grades: 304 / 316L / 430",
     ],
-    accent: "#0369A1",
+    accent: "#005CA3",
     svg: (
       <svg
         viewBox="0 0 400 260"
@@ -510,7 +510,7 @@ const products = [
       "Laser Cut Precision",
       "Grades: 430 / 304",
     ],
-    accent: "#0369A1",
+    accent: "#005CA3",
     svg: (
       <svg
         viewBox="0 0 400 260"
@@ -755,28 +755,29 @@ const ProductCard = ({
   const inView = useInView(ref, { once: true, margin: "-60px" });
 
   return (
-    <GlowCard
-      customSize
-      className="overflow-hidden shadow-[0_4px_20px_rgba(15,23,42,0.06)] cursor-default"
-    >
-      <motion.article
-        ref={ref}
-        initial={{ opacity: 0, y: 50, filter: "blur(8px)" }}
-        animate={inView ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
-        transition={{
-          duration: 0.7,
-          delay: (index % 3) * 0.12,
-          ease: [0.22, 1, 0.36, 1],
-        }}
-        onHoverStart={() => setHovered(true)}
-        onHoverEnd={() => setHovered(false)}
-        className="group relative rounded-2xl overflow-hidden cursor-default h-full"
-        whileHover={{
-          y: -8,
-          transition: { duration: 0.35, ease: [0.22, 1, 0.36, 1] },
-        }}
-        aria-label={`${product.name} – ${product.tagline}`}
+    <Link href={`/products/${product.id}`} className="block h-full">
+      <GlowCard
+        customSize
+        className="overflow-hidden shadow-[0_4px_20px_rgba(15,23,42,0.06)] cursor-pointer h-full"
       >
+        <motion.article
+          ref={ref}
+          initial={{ opacity: 0, y: 50, filter: "blur(8px)" }}
+          animate={inView ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
+          transition={{
+            duration: 0.7,
+            delay: (index % 3) * 0.12,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+          onHoverStart={() => setHovered(true)}
+          onHoverEnd={() => setHovered(false)}
+          className="group relative rounded-2xl overflow-hidden cursor-pointer h-full"
+          whileHover={{
+            y: -8,
+            transition: { duration: 0.35, ease: [0.22, 1, 0.36, 1] },
+          }}
+          aria-label={`${product.name} – ${product.tagline}`}
+        >
         {/* ── IMAGE AREA ── */}
         <div className="relative overflow-hidden h-52 bg-[#0F172A]">
           {/* Product image */}
@@ -922,13 +923,11 @@ const ProductCard = ({
             {product.description}
           </p>
 
-          {/* Request quote link */}
+          {/* Request quote label */}
           <motion.div className="mt-5">
-            <Link
-              href={`/products/${product.id}`}
-              className="inline-flex items-center gap-1.5 text-sm font-semibold cursor-pointer group/link"
+            <span
+              className="inline-flex items-center gap-1.5 text-sm font-semibold"
               style={{ color: product.accent }}
-              aria-label={`View details for ${product.name}`}
             >
               <span>Request Quote</span>
               <motion.svg
@@ -946,11 +945,12 @@ const ProductCard = ({
                   clipRule="evenodd"
                 />
               </motion.svg>
-            </Link>
+            </span>
           </motion.div>
         </div>
       </motion.article>
     </GlowCard>
+    </Link>
   );
 };
 
@@ -1020,7 +1020,7 @@ const ProductsClient = () => {
               <li>
                 <Link
                   href="/"
-                  className="hover:text-[#0369A1] transition-colors duration-150 cursor-pointer"
+                  className="hover:text-[#005CA3] transition-colors duration-150 cursor-pointer"
                 >
                   Home
                 </Link>
@@ -1049,9 +1049,9 @@ const ProductsClient = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           >
-            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#BFDBFE] bg-[#EFF6FF] text-[#1D4ED8] text-xs font-semibold tracking-widest uppercase mb-5">
+            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#FCD34D] bg-[#FFF7ED] text-[#005CA3] text-xs font-semibold tracking-widest uppercase mb-5">
               <span
-                className="w-1.5 h-1.5 rounded-full bg-[#3B82F6] animate-pulse"
+                className="w-1.5 h-1.5 rounded-full bg-[#F5A623] animate-pulse"
                 aria-hidden="true"
               />
               6 Product Categories
@@ -1078,7 +1078,7 @@ const ProductsClient = () => {
         >
           <div className="text-center mb-16">
             <Reveal>
-              <span className="text-[#0369A1] text-xs font-bold tracking-widest uppercase">
+              <span className="text-[#005CA3] text-xs font-bold tracking-widest uppercase">
                 What We Offer
               </span>
             </Reveal>
@@ -1091,7 +1091,7 @@ const ProductsClient = () => {
               </h2>
               <div
                 aria-hidden="true"
-                className="mt-4 w-12 h-1 rounded-full bg-gradient-to-r from-[#0369A1] to-[#38BDF8] mx-auto"
+                className="mt-4 w-12 h-1 rounded-full bg-gradient-to-r from-[#005CA3] to-[#00AADD] mx-auto"
               />
             </Reveal>
             <Reveal delay={0.1}>
@@ -1126,7 +1126,7 @@ const ProductsClient = () => {
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
             <div className="text-center mb-10">
               <Reveal>
-                <span className="text-[#0369A1] text-xs font-bold tracking-widest uppercase">
+                <span className="text-[#005CA3] text-xs font-bold tracking-widest uppercase">
                   Specifications
                 </span>
               </Reveal>
@@ -1155,16 +1155,16 @@ const ProductsClient = () => {
                 <motion.div
                   key={grade}
                   variants={fadeUp}
-                  className="group flex flex-col items-center gap-2 p-4 rounded-2xl bg-white border border-[#E2E8F0] hover:border-[#BFDBFE] hover:shadow-[0_8px_30px_rgba(3,105,161,0.08)] transition-all duration-250 cursor-default"
+                  className="group flex flex-col items-center gap-2 p-4 rounded-2xl bg-white border border-[#E2E8F0] hover:border-[#FCD34D] hover:shadow-[0_8px_30px_rgba(3,105,161,0.08)] transition-all duration-250 cursor-default"
                   whileHover={{ y: -4 }}
                   transition={{ type: "spring", stiffness: 300, damping: 22 }}
                 >
-                  <div className="w-8 h-8 rounded-lg bg-[#EFF6FF] border border-[#BFDBFE] flex items-center justify-center">
+                  <div className="w-8 h-8 rounded-lg bg-[#FFF7ED] border border-[#FCD34D] flex items-center justify-center">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 20 20"
                       fill="currentColor"
-                      className="w-4 h-4 text-[#0369A1]"
+                      className="w-4 h-4 text-[#005CA3]"
                       aria-hidden="true"
                     >
                       <path
@@ -1200,20 +1200,20 @@ const ProductsClient = () => {
               />
               <div
                 aria-hidden="true"
-                className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#0369A1] via-[#38BDF8] to-[#0369A1]"
+                className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#005CA3] via-[#00AADD] to-[#005CA3]"
               />
               <div
                 aria-hidden="true"
                 className="absolute -top-20 -right-20 w-64 h-64 rounded-full opacity-20 blur-[60px]"
                 style={{
-                  background: "radial-gradient(circle,#0369A1,transparent)",
+                  background: "radial-gradient(circle,#005CA3,transparent)",
                 }}
               />
 
               <div className="relative text-center px-8 sm:px-16 py-16">
-                <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#0369A1]/30 bg-[#0369A1]/8 text-[#0369A1] text-xs font-semibold tracking-widest uppercase mb-5">
+                <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#005CA3]/30 bg-[#005CA3]/8 text-[#005CA3] text-xs font-semibold tracking-widest uppercase mb-5">
                   <span
-                    className="w-1.5 h-1.5 rounded-full bg-[#0369A1] animate-pulse"
+                    className="w-1.5 h-1.5 rounded-full bg-[#005CA3] animate-pulse"
                     aria-hidden="true"
                   />
                   Need a Custom Specification?
@@ -1229,7 +1229,7 @@ const ProductsClient = () => {
                 <div className="mt-8 flex flex-wrap gap-4 justify-center">
                   <Link
                     href="/contact-us-1"
-                    className="cta-glow relative inline-flex items-center gap-2 px-8 py-4 bg-[#0369A1] hover:bg-[#0284C7] text-white text-sm font-bold tracking-widest uppercase rounded-sm transition-colors duration-200 cursor-pointer overflow-hidden group"
+                    className="cta-glow relative inline-flex items-center gap-2 px-8 py-4 bg-[#005CA3] hover:bg-[#0077BB] text-white text-sm font-bold tracking-widest uppercase rounded-sm transition-colors duration-200 cursor-pointer overflow-hidden group"
                     aria-label="Contact us for custom stainless steel specifications"
                   >
                     <span className="relative z-10">
@@ -1252,7 +1252,7 @@ const ProductsClient = () => {
                   </Link>
                   <Link
                     href="/about-us"
-                    className="inline-flex items-center gap-2 px-8 py-4 border border-[#CBD5E1] hover:border-[#0369A1] text-[#334155] hover:text-[#0369A1] text-sm font-bold tracking-widest uppercase rounded-sm transition-all duration-200 cursor-pointer"
+                    className="inline-flex items-center gap-2 px-8 py-4 border border-[#CBD5E1] hover:border-[#005CA3] text-[#334155] hover:text-[#005CA3] text-sm font-bold tracking-widest uppercase rounded-sm transition-all duration-200 cursor-pointer"
                     aria-label="Learn more about SWEDINOX AB"
                   >
                     About Us

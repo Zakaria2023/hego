@@ -70,9 +70,9 @@ const HeroSection = () => {
           <div className="relative z-10 max-w-[540px]">
             {/* Badge */}
             <div className="animate-slide-up mb-7">
-              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#EFF6FF] border border-[#BFDBFE] text-[#1D4ED8] text-xs font-bold tracking-widest uppercase">
+              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FFF7ED] border border-[#FCD34D] text-[#005CA3] text-xs font-bold tracking-widest uppercase">
                 <span
-                  className="w-1.5 h-1.5 rounded-full bg-[#3B82F6] animate-pulse"
+                  className="w-1.5 h-1.5 rounded-full bg-[#F5A623] animate-pulse"
                   aria-hidden="true"
                 />
                 ISO 9001:2015 Certified Global Supplier
@@ -103,7 +103,7 @@ const HeroSection = () => {
             <div className="mt-8 flex flex-wrap gap-4 animate-slide-up delay-300">
               <Link
                 href="/contact-us-1"
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#0369A1] hover:bg-[#0284C7] text-white text-sm font-bold tracking-wide transition-all duration-200 shadow-[0_4px_20px_rgba(3,105,161,0.3)] hover:shadow-[0_6px_28px_rgba(3,105,161,0.45)] hover:-translate-y-0.5 cursor-pointer group"
+                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#005CA3] hover:bg-[#0077BB] text-white text-sm font-bold tracking-wide transition-all duration-200 shadow-[0_4px_20px_rgba(0,92,163,0.3)] hover:shadow-[0_6px_28px_rgba(0,170,221,0.45)] hover:-translate-y-0.5 cursor-pointer group"
                 aria-label="Contact SWEDINOX AB for a quote"
               >
                 <span>Contact Us</span>
@@ -124,7 +124,7 @@ const HeroSection = () => {
 
               <Link
                 href="/products"
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border-2 border-[#7dd3fc] hover:border-[#0369A1] text-[#0369A1] hover:text-[#0369A1] text-sm font-bold tracking-wide transition-all duration-200 cursor-pointer group bg-white/40 hover:bg-white/60 backdrop-blur-sm"
+                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border-2 border-[#F5A623]/70 hover:border-[#F5A623] text-[#005CA3] hover:text-[#005CA3] text-sm font-bold tracking-wide transition-all duration-200 cursor-pointer group bg-white/40 hover:bg-white/60 backdrop-blur-sm"
                 aria-label="Browse our steel product catalog"
               >
                 <span>View Products</span>
@@ -176,7 +176,7 @@ const HeroSection = () => {
                 className="inline-flex items-center gap-2 px-8 text-white/70 text-xs font-semibold tracking-widest uppercase"
               >
                 <span
-                  className="w-1 h-1 rounded-full bg-[#0369A1]"
+                  className="w-1 h-1 rounded-full bg-[#F5A623]"
                   aria-hidden="true"
                 />
                 <span>{badge}</span>

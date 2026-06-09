@@ -100,7 +100,7 @@ const FeaturedCard = ({ post }: { post: Post }) => {
         {/* Overlay gradient on hover */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         {/* Featured badge */}
-        <div className="absolute top-4 left-4 px-3 py-1.5 rounded-full bg-[#0369A1] text-white text-[10px] font-bold tracking-widest uppercase shadow-lg">
+        <div className="absolute top-4 left-4 px-3 py-1.5 rounded-full bg-[#005CA3] text-white text-[10px] font-bold tracking-widest uppercase shadow-lg">
           Featured
         </div>
       </Link>
@@ -120,7 +120,7 @@ const FeaturedCard = ({ post }: { post: Post }) => {
         </time>
 
         <Link href={`/events/${post.slug}`} aria-label={post.title}>
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0F172A] leading-tight tracking-tight mb-4 group-hover:text-[#0369A1] transition-colors duration-250 cursor-pointer">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0F172A] leading-tight tracking-tight mb-4 group-hover:text-[#005CA3] transition-colors duration-250 cursor-pointer">
             {post.title}
           </h2>
         </Link>
@@ -128,7 +128,7 @@ const FeaturedCard = ({ post }: { post: Post }) => {
         {/* Animated underline */}
         <div className="mb-5 h-0.5 rounded-full bg-slate-100 overflow-hidden">
           <motion.div
-            className="h-full rounded-full bg-gradient-to-r from-[#0369A1] to-[#38BDF8]"
+            className="h-full rounded-full bg-gradient-to-r from-[#005CA3] to-[#00AADD]"
             initial={{ width: "20%" }}
             whileInView={{ width: "100%" }}
             viewport={{ once: true }}
@@ -142,7 +142,7 @@ const FeaturedCard = ({ post }: { post: Post }) => {
 
         <Link
           href={`/events/${post.slug}`}
-          className="inline-flex items-center gap-2 text-[#0369A1] font-bold text-sm group/link"
+          className="inline-flex items-center gap-2 text-[#005CA3] font-bold text-sm group/link"
           aria-label={`Read article: ${post.title}`}
         >
           <span>Read Article</span>
@@ -233,7 +233,7 @@ const PostCard = ({ post, index }: { post: Post; index: number }) => {
             className="text-xl font-extrabold text-[#0F172A] leading-snug tracking-tight mb-3 transition-colors duration-200 cursor-pointer"
             style={{ ["--hover-color" as string]: meta.color }}
           >
-            <span className="group-hover:text-[#0369A1] transition-colors duration-200">
+            <span className="group-hover:text-[#005CA3] transition-colors duration-200">
               {post.title}
             </span>
           </h3>
@@ -337,7 +337,7 @@ const EventsClient = () => {
               <li>
                 <Link
                   href="/"
-                  className="hover:text-[#0369A1] transition-colors duration-150"
+                  className="hover:text-[#005CA3] transition-colors duration-150"
                 >
                   Home
                 </Link>
@@ -366,9 +366,9 @@ const EventsClient = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
           >
-            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#BFDBFE] bg-[#EFF6FF] text-[#1D4ED8] text-xs font-semibold tracking-widest uppercase mb-5">
+            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#FCD34D] bg-[#FFF7ED] text-[#005CA3] text-xs font-semibold tracking-widest uppercase mb-5">
               <span
-                className="w-1.5 h-1.5 rounded-full bg-[#3B82F6] animate-pulse"
+                className="w-1.5 h-1.5 rounded-full bg-[#F5A623] animate-pulse"
                 aria-hidden="true"
               />
               {posts.length} Posts Published
@@ -431,9 +431,9 @@ const EventsClient = () => {
           />
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
             <Reveal>
-              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#BFDBFE] bg-[#EFF6FF] text-[#1D4ED8] text-xs font-semibold tracking-widest uppercase mb-5">
+              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#FCD34D] bg-[#FFF7ED] text-[#005CA3] text-xs font-semibold tracking-widest uppercase mb-5">
                 <span
-                  className="w-1.5 h-1.5 rounded-full bg-[#3B82F6] animate-pulse"
+                  className="w-1.5 h-1.5 rounded-full bg-[#F5A623] animate-pulse"
                   aria-hidden="true"
                 />
                 Stay Connected
@@ -453,7 +453,7 @@ const EventsClient = () => {
               <div className="mt-8 flex flex-wrap gap-4 justify-center">
                 <Link
                   href="/contact-us-1"
-                  className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#0369A1] hover:bg-[#0284C7] text-white text-sm font-bold tracking-wide transition-all duration-200 shadow-[0_4px_20px_rgba(3,105,161,0.3)] hover:shadow-[0_8px_32px_rgba(3,105,161,0.4)] hover:-translate-y-0.5 group"
+                  className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#005CA3] hover:bg-[#0077BB] text-white text-sm font-bold tracking-wide transition-all duration-200 shadow-[0_4px_20px_rgba(3,105,161,0.3)] hover:shadow-[0_8px_32px_rgba(3,105,161,0.4)] hover:-translate-y-0.5 group"
                   aria-label="Contact SWEDINOX AB"
                 >
                   <span>Contact Us</span>
@@ -473,7 +473,7 @@ const EventsClient = () => {
                 </Link>
                 <Link
                   href="/products"
-                  className="inline-flex items-center gap-2 px-8 py-4 rounded-full border-2 border-[#E2E8F0] hover:border-[#0369A1] text-[#334155] hover:text-[#0369A1] text-sm font-bold tracking-wide transition-all duration-200"
+                  className="inline-flex items-center gap-2 px-8 py-4 rounded-full border-2 border-[#E2E8F0] hover:border-[#005CA3] text-[#334155] hover:text-[#005CA3] text-sm font-bold tracking-wide transition-all duration-200"
                   aria-label="View SWEDINOX AB products"
                 >
                   View Products
