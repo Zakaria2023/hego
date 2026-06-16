@@ -32,7 +32,7 @@ const HeroSection = () => {
           fill
           priority
           sizes="100vw"
-          className="object-cover"
+          className="object-cover animate-hero-zoom"
         />
       </div>
 
