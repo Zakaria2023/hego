@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const stats = [
   { value: "25+", label: "Years Experience" },
-  { value: "80+", label: "Countries Served" },
+  { value: "10+", label: "Countries Served" },
   { value: "500+", label: "Product Grades" },
   { value: "99%", label: "Client Retention" },
 ];
@@ -75,28 +75,26 @@ const HeroSection = () => {
                   className="w-1.5 h-1.5 rounded-full bg-[#F5A623] animate-pulse"
                   aria-hidden="true"
                 />
-                ISO 9001:2015 Certified Global Supplier
+                ISO 9001:2015 CERTIFIED STAINLESS STEEL SUPPLIER
               </span>
             </div>
 
             {/* Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-[4.25rem] font-extrabold leading-[1.04] tracking-tight animate-slide-up delay-100">
-              <span className="block text-[#0F172A]">Your Gateway to</span>
-              <span className="steel-text block mt-1">International</span>
-              <span className="block mt-1 text-[#0F172A]">Steel Trade</span>
+              <span className="block text-[#0F172A]">
+                Premium Stainless Steel.
+              </span>
+              <span className="steel-text block mt-1">Reliable Supply</span>
+              <span className="block mt-1 text-[#0F172A]">Worldwide.</span>
             </h1>
 
             {/* Description */}
             <p className="mt-6 text-[#475569] text-base sm:text-lg leading-relaxed animate-slide-up delay-200">
-              SWEDINOX AB delivers{" "}
-              <strong className="text-[#0F172A] font-semibold">
-                premium-grade stainless steel
-              </strong>{" "}
-              - coils, sheets, strips and circles - to industrial clients in{" "}
-              <strong className="text-[#0F172A] font-semibold">
-                80+ countries
-              </strong>
-              . Family-owned and trusted since 1999.
+              Swedinox AB supplies high-quality stainless steel coils, sheets,
+              strips, and circles to industrial customers worldwide. With
+              reliable sourcing, flexible processing, and efficient logistics,
+              we deliver the right material, in the right specification, at the
+              right time.
             </p>
 
             {/* CTAs */}

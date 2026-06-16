@@ -4,6 +4,7 @@ import { ShaderAnimation } from "@/app/components/ui/shader-lines";
 import { GlowCard } from "@/app/components/ui/spotlight-card";
 import {
   motion,
+  type Variants,
   useInView,
   useMotionValue,
   useScroll,
@@ -13,18 +14,20 @@ import {
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
+const revealEase = [0.22, 1, 0.36, 1] as const;
+
 /* ─── Shared fade-up variant ─── */
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 24, filter: "blur(4px)" },
   visible: {
     opacity: 1,
     y: 0,
     filter: "blur(0px)",
-    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+    transition: { duration: 0.6, ease: revealEase },
   },
 };
 
-const stagger = {
+const stagger: Variants = {
   hidden: {},
   visible: { transition: { staggerChildren: 0.12 } },
 };
@@ -156,7 +159,7 @@ const pillars = [
 /* ─── Stats ─── */
 const stats = [
   { value: 25, suffix: "+", label: "Years of Experience" },
-  { value: 80, suffix: "+", label: "Countries Served" },
+  { value: 10, suffix: "+", label: "Countries Served" },
   { value: 500, suffix: "+", label: "Product Grades" },
   { value: 99, suffix: "%", label: "Client Retention" },
 ];
@@ -288,7 +291,7 @@ const AboutUsClient = () => {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.8, ease: revealEase }}
           >
             <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#FCD34D] bg-[#FFF7ED] text-[#005CA3] text-xs font-semibold tracking-widest uppercase mb-5">
               <span
@@ -583,7 +586,7 @@ const AboutUsClient = () => {
                   transition={{
                     delay: 0.4,
                     duration: 0.5,
-                    ease: [0.22, 1, 0.36, 1],
+                    ease: revealEase,
                   }}
                   className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-[0_20px_40px_rgba(15,23,42,0.12)] border border-slate-100 px-5 py-4 flex items-center gap-4"
                 >
@@ -664,7 +667,7 @@ const AboutUsClient = () => {
                         transition: {
                           duration: 0.65,
                           delay: i * 0.08,
-                          ease: [0.22, 1, 0.36, 1],
+                          ease: revealEase,
                         },
                       },
                     }}
