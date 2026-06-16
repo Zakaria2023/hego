@@ -874,14 +874,26 @@ const IndustriesSection = () => {
   return (
     <section
       aria-labelledby="industries-heading"
-      className="bg-white py-24 px-4 sm:px-6 lg:px-8"
+      className="relative py-24 px-4 sm:px-6 lg:px-8 overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto">
+      {/* Background image with overlay */}
+      <div aria-hidden="true" className="absolute inset-0">
+        <Image
+          src="/coils.webp"
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover"
+          quality={60}
+        />
+        <div className="absolute inset-0 bg-[#0F172A]/88" />
+      </div>
+      <div className="relative max-w-7xl mx-auto">
         {/* Header */}
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-14">
           <div>
             <Reveal>
-              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#FCD34D] bg-[#FFF7ED] text-[#005CA3] text-xs font-semibold tracking-widest uppercase">
+              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#FCD34D] bg-[#FFF7ED]/10 text-[#FCD34D] text-xs font-semibold tracking-widest uppercase">
                 <span
                   className="w-1.5 h-1.5 rounded-full bg-[#F5A623] animate-pulse"
                   aria-hidden="true"
@@ -892,7 +904,7 @@ const IndustriesSection = () => {
             <Reveal delay={0.06}>
               <h2
                 id="industries-heading"
-                className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F172A] tracking-tight leading-tight max-w-lg"
+                className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight max-w-lg"
               >
                 Steel That Powers
                 <br />
@@ -901,7 +913,7 @@ const IndustriesSection = () => {
             </Reveal>
           </div>
           <Reveal delay={0.1} className="lg:pb-2">
-            <p className="text-[#64748B] text-base leading-relaxed max-w-sm">
+            <p className="text-slate-300 text-base leading-relaxed max-w-sm">
               From cookware to chemical reactors, our stainless steel products
               serve the most demanding applications across every major sector.
             </p>
@@ -920,19 +932,19 @@ const IndustriesSection = () => {
             <motion.div
               key={industry.name}
               variants={fadeUp}
-              className="group flex items-start gap-4 p-6 rounded-2xl border border-[#E2E8F0] hover:border-[#BFDBFE] hover:shadow-[0_8px_32px_rgba(3,105,161,0.08)] transition-all duration-300 cursor-default bg-white"
+              className="group flex items-start gap-4 p-6 rounded-2xl border border-white/10 hover:border-[#F5A623]/50 hover:shadow-[0_8px_32px_rgba(0,0,0,0.3)] transition-all duration-300 cursor-default bg-white/5 backdrop-blur-sm"
               whileHover={{ y: -4 }}
               transition={{ type: "spring", stiffness: 300, damping: 22 }}
             >
               {/* Icon */}
-              <div className="shrink-0 w-12 h-12 rounded-xl bg-[#EFF6FF] border border-[#BFDBFE] flex items-center justify-center text-[#005CA3] group-hover:bg-[#F5A623] group-hover:text-white group-hover:border-[#F5A623] transition-all duration-300">
+              <div className="shrink-0 w-12 h-12 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center text-[#F5A623] group-hover:bg-[#F5A623] group-hover:text-white group-hover:border-[#F5A623] transition-all duration-300">
                 {industry.icon}
               </div>
               <div>
-                <h3 className="font-bold text-[#0F172A] text-base leading-snug mb-1">
+                <h3 className="font-bold text-white text-base leading-snug mb-1">
                   {industry.name}
                 </h3>
-                <p className="text-[#64748B] text-sm leading-relaxed">
+                <p className="text-slate-300 text-sm leading-relaxed">
                   {industry.desc}
                 </p>
               </div>
@@ -949,27 +961,25 @@ const ProcessSection = () => (
   <section
     aria-labelledby="process-heading"
     className="relative overflow-hidden py-24 px-4 sm:px-6 lg:px-8"
-    style={{
-      background:
-        "linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 50%, #F0F9FF 100%)",
-    }}
   >
-    {/* Decorative blob */}
-    <div
-      aria-hidden="true"
-      className="absolute top-[-10%] right-[-5%] w-96 h-96 rounded-full pointer-events-none opacity-40"
-      style={{
-        background:
-          "radial-gradient(circle, rgba(186,230,253,0.8) 0%, transparent 70%)",
-        filter: "blur(40px)",
-      }}
-    />
+    {/* Background image with overlay */}
+    <div aria-hidden="true" className="absolute inset-0">
+      <Image
+        src="/sheets.webp"
+        alt=""
+        fill
+        sizes="100vw"
+        className="object-cover"
+        quality={60}
+      />
+      <div className="absolute inset-0 bg-[#0C2340]/90" />
+    </div>
 
     <div className="relative max-w-7xl mx-auto">
       {/* Header */}
       <div className="text-center mb-16">
         <Reveal>
-          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#FCD34D] bg-[#FFF7ED] text-[#005CA3] text-xs font-semibold tracking-widest uppercase">
+          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#FCD34D] bg-[#FFF7ED]/10 text-[#FCD34D] text-xs font-semibold tracking-widest uppercase">
             <span
               className="w-1.5 h-1.5 rounded-full bg-[#F5A623] animate-pulse"
               aria-hidden="true"
@@ -980,14 +990,14 @@ const ProcessSection = () => (
         <Reveal delay={0.06}>
           <h2
             id="process-heading"
-            className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F172A] tracking-tight leading-tight"
+            className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight"
           >
             Source Steel in{" "}
             <span className="steel-text">Three Simple Steps</span>
           </h2>
         </Reveal>
         <Reveal delay={0.12}>
-          <p className="mt-4 text-[#64748B] text-base sm:text-lg max-w-xl mx-auto leading-relaxed">
+          <p className="mt-4 text-slate-300 text-base sm:text-lg max-w-xl mx-auto leading-relaxed">
             Our streamlined B2B process means less back-and-forth and faster
             delivery — from first contact to warehouse.
           </p>
@@ -1002,33 +1012,33 @@ const ProcessSection = () => (
           className="hidden lg:block absolute top-13 left-[calc(16.67%+1rem)] right-[calc(16.67%+1rem)] h-px"
           style={{
             background:
-              "linear-gradient(90deg, transparent 0%, #BFDBFE 20%, #005CA3 50%, #BFDBFE 80%, transparent 100%)",
+              "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.2) 20%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0.2) 80%, transparent 100%)",
           }}
         />
 
         {steps.map((step, i) => (
           <Reveal key={step.num} delay={i * 0.15}>
-            <div className="relative flex flex-col items-center text-center p-8 rounded-2xl bg-white border border-[#E2E8F0] shadow-[0_4px_24px_rgba(3,105,161,0.06)] hover:shadow-[0_12px_40px_rgba(3,105,161,0.12)] hover:-translate-y-1 transition-all duration-300 cursor-default">
+            <div className="relative flex flex-col items-center text-center p-8 rounded-2xl bg-white/8 backdrop-blur-sm border border-white/15 hover:bg-white/12 hover:border-white/30 hover:-translate-y-1 transition-all duration-300 cursor-default">
               {/* Step number ring */}
               <div className="relative mb-6 z-10">
-                <div className="w-14 h-14 rounded-full bg-[#005CA3] flex items-center justify-center shadow-[0_4px_20px_rgba(0,92,163,0.4)]">
+                <div className="w-14 h-14 rounded-full bg-[#F5A623] flex items-center justify-center shadow-[0_4px_20px_rgba(245,166,35,0.4)]">
                   <span className="text-white font-black text-lg tracking-tight">
                     {step.num}
                   </span>
                 </div>
                 {/* Pulse ring */}
-                <div className="absolute inset-0 rounded-full border-2 border-[#005CA3]/30 scale-125 animate-pulse-ring" />
+                <div className="absolute inset-0 rounded-full border-2 border-[#F5A623]/40 scale-125 animate-pulse-ring" />
               </div>
 
               {/* Icon */}
-              <div className="w-10 h-10 rounded-xl bg-[#EFF6FF] border border-[#BFDBFE] flex items-center justify-center text-[#005CA3] mb-4">
+              <div className="w-10 h-10 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center text-[#F5A623] mb-4">
                 {step.icon}
               </div>
 
-              <h3 className="text-xl font-extrabold text-[#0F172A] mb-3">
+              <h3 className="text-xl font-extrabold text-white mb-3">
                 {step.title}
               </h3>
-              <p className="text-[#64748B] text-sm leading-relaxed">
+              <p className="text-slate-300 text-sm leading-relaxed">
                 {step.desc}
               </p>
             </div>

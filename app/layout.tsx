@@ -1,3 +1,4 @@
+import Footer from "@/app/components/Footer";
 import Navbar from "@/app/components/Navbar";
 import PageTransition from "@/app/components/PageTransition";
 import type { Metadata, Viewport } from "next";
@@ -335,7 +336,10 @@ export default function RootLayout({
           }}
         />
         <Navbar />
-        <PageTransition>{children}</PageTransition>
+        <main className="flex-1">
+          <PageTransition>{children}</PageTransition>
+        </main>
+        <Footer />
       </body>
     </html>
   );

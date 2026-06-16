@@ -11,6 +11,7 @@ import {
   useTransform,
   type Variants,
 } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
@@ -399,179 +400,19 @@ const AboutUsClient = () => {
               </Reveal>
             </div>
 
-            {/* Warehouse image placeholder */}
+            {/* About us image */}
             <Reveal delay={0.1}>
               <div className="relative group">
                 <div className="relative overflow-hidden rounded-2xl shadow-[0_30px_60px_rgba(15,23,42,0.15)] border border-slate-200">
-                  {/* Warehouse visual */}
-                  <div
-                    className="w-full h-[420px] relative overflow-hidden"
-                    style={{
-                      background:
-                        "linear-gradient(135deg,#1E293B 0%,#0F172A 100%)",
-                    }}
-                  >
-                    <svg
-                      viewBox="0 0 800 500"
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="absolute inset-0 w-full h-full"
-                      aria-label="SWEDINOX warehouse with stainless steel inventory"
-                      preserveAspectRatio="xMidYMid slice"
-                    >
-                      <defs>
-                        <linearGradient id="floorG" x1="0" y1="0" x2="0" y2="1">
-                          <stop offset="0%" stopColor="#374151" />
-                          <stop offset="100%" stopColor="#1F2937" />
-                        </linearGradient>
-                        <linearGradient id="wallG" x1="0" y1="0" x2="0" y2="1">
-                          <stop offset="0%" stopColor="#4B5563" />
-                          <stop offset="100%" stopColor="#374151" />
-                        </linearGradient>
-                        <linearGradient
-                          id="coilMetal"
-                          x1="0"
-                          y1="0"
-                          x2="1"
-                          y2="1"
-                        >
-                          <stop offset="0%" stopColor="#CBD5E1" />
-                          <stop offset="50%" stopColor="#94A3B8" />
-                          <stop offset="100%" stopColor="#475569" />
-                        </linearGradient>
-                        <radialGradient id="skylight">
-                          <stop offset="0%" stopColor="rgba(255,255,240,0.5)" />
-                          <stop offset="100%" stopColor="transparent" />
-                        </radialGradient>
-                      </defs>
-                      {/* Walls */}
-                      <rect
-                        x="0"
-                        y="0"
-                        width="800"
-                        height="500"
-                        fill="url(#wallG)"
-                      />
-                      {/* Floor */}
-                      <rect
-                        x="0"
-                        y="320"
-                        width="800"
-                        height="180"
-                        fill="url(#floorG)"
-                      />
-                      {/* Roof beams */}
-                      {[0, 1, 2, 3, 4, 5].map((i) => (
-                        <line
-                          key={i}
-                          x1={i * 160}
-                          y1="0"
-                          x2={i * 160 + 80}
-                          y2="320"
-                          stroke="rgba(75,85,99,0.6)"
-                          strokeWidth="8"
-                        />
-                      ))}
-                      {/* Skylights */}
-                      {[100, 280, 460, 640].map((x, i) => (
-                        <ellipse
-                          key={i}
-                          cx={x}
-                          cy="40"
-                          rx="60"
-                          ry="30"
-                          fill="url(#skylight)"
-                        />
-                      ))}
-                      {/* Steel coils on left */}
-                      {[1, 2, 3, 4].map((i) => (
-                        <g key={i}>
-                          <ellipse
-                            cx={80 + i * 45}
-                            cy={340}
-                            rx={30}
-                            ry={60}
-                            fill="url(#coilMetal)"
-                            opacity="0.9"
-                          />
-                          {[1, 2, 3, 4, 5].map((j) => (
-                            <ellipse
-                              key={j}
-                              cx={80 + i * 45}
-                              cy={340}
-                              rx={30 - j * 4}
-                              ry={60 - j * 8}
-                              fill="none"
-                              stroke="rgba(148,163,184,0.4)"
-                              strokeWidth="1.5"
-                            />
-                          ))}
-                          <ellipse
-                            cx={80 + i * 45}
-                            cy={340}
-                            rx={6}
-                            ry={10}
-                            fill="#0F172A"
-                          />
-                        </g>
-                      ))}
-                      {/* Steel sheets stacked right */}
-                      {[0, 1, 2, 3, 4].map((i) => (
-                        <rect
-                          key={i}
-                          x={480}
-                          y={260 + i * 12}
-                          width={280}
-                          height={10}
-                          rx={1}
-                          fill={i % 2 === 0 ? "#94A3B8" : "#CBD5E1"}
-                          opacity={0.85}
-                        />
-                      ))}
-                      {/* More coils center */}
-                      <ellipse
-                        cx={340}
-                        cy={355}
-                        rx={45}
-                        ry={90}
-                        fill="url(#coilMetal)"
-                        opacity="0.8"
-                      />
-                      {[1, 2, 3, 4, 5, 6].map((i) => (
-                        <ellipse
-                          key={i}
-                          cx={340}
-                          cy={355}
-                          rx={45 - i * 6}
-                          ry={90 - i * 11}
-                          fill="none"
-                          stroke="rgba(203,213,225,0.35)"
-                          strokeWidth="1.5"
-                        />
-                      ))}
-                      <ellipse
-                        cx={340}
-                        cy={355}
-                        rx={8}
-                        ry={14}
-                        fill="#0F172A"
-                      />
-                      {/* Floor reflection */}
-                      <rect
-                        x="0"
-                        y="320"
-                        width="800"
-                        height="3"
-                        fill="rgba(148,163,184,0.2)"
-                      />
-                      {/* Light overlay */}
-                      <rect
-                        x="0"
-                        y="0"
-                        width="800"
-                        height="500"
-                        fill="rgba(15,23,42,0.15)"
-                      />
-                    </svg>
+                  <div className="w-full h-105 relative overflow-hidden">
+                    <Image
+                      src="/about-us.jpg"
+                      alt="SWEDINOX AB facility"
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                      className="object-cover group-hover:scale-[1.04] transition-transform duration-700 ease-out"
+                    />
+                    <div className="absolute inset-0 bg-linear-to-t from-slate-900/40 via-transparent to-transparent" />
                     {/* Badge */}
                     <div className="absolute bottom-4 left-4 px-3 py-2 rounded-lg bg-white/90 backdrop-blur-sm border border-[#E2E8F0] text-xs text-[#0F172A] font-semibold">
                       European Port Warehouse
