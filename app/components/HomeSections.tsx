@@ -787,38 +787,55 @@ const WhySection = () => {
         <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {[
             {
-              label: "Weekly stock arrivals from European port warehouses",
+              title: "Weekly European Stock Availability",
+              description:
+                "Regular stock arrivals from European port warehouses.",
               icon: "🚢",
             },
             {
-              label: "Eye-to-sky and eye-to-band coil packaging available",
+              title: "Flexible Coil Packaging Options",
+              description:
+                "Packaging configurations adapted to your handling and transport requirements.",
               icon: "📦",
             },
             {
-              label: "Cut-to-length, slitting & custom dimensions on request",
+              title: "Custom Processing on Request",
+              description:
+                "Cut-to-length, slitting, and tailored dimensions to match your specifications.",
               icon: "✂️",
             },
             {
-              label: "Mill certificates & full traceability on every order",
+              title: "Certified Quality & Full Traceability",
+              description:
+                "Mill test certificates and full material traceability with every order.",
               icon: "📋",
             },
             {
-              label: "Competitive pricing on prime, ex-prime & 2nd choice",
+              title: "Competitive Supply Options",
+              description:
+                "Commercially competitive solutions across prime, ex-prime, and second-choice material.",
               icon: "💰",
             },
             {
-              label: "Dedicated account manager for all B2B clients",
+              title: "Dedicated B2B Account Support",
+              description:
+                "A single point of contact for quotations, order follow-up, and commercial coordination.",
               icon: "🤝",
             },
           ].map((item, i) => (
-            <Reveal key={item.label} delay={i * 0.05}>
+            <Reveal key={item.title} delay={i * 0.05}>
               <div className="flex items-start gap-3 p-4 rounded-xl bg-white border border-[#E2E8F0] hover:border-[#FCD34D] hover:shadow-sm transition-all duration-200">
                 <span className="text-xl shrink-0 mt-0.5" aria-hidden="true">
                   {item.icon}
                 </span>
-                <p className="text-[#334155] text-sm font-medium leading-snug">
-                  {item.label}
-                </p>
+                <div>
+                  <h3 className="text-[#0F172A] text-sm font-bold leading-snug">
+                    {item.title}
+                  </h3>
+                  <p className="mt-1 text-[#64748B] text-sm leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
               </div>
             </Reveal>
           ))}
