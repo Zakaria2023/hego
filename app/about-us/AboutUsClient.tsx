@@ -4,12 +4,12 @@ import { ShaderAnimation } from "@/app/components/ui/shader-lines";
 import { GlowCard } from "@/app/components/ui/spotlight-card";
 import {
   motion,
-  type Variants,
   useInView,
   useMotionValue,
   useScroll,
   useSpring,
   useTransform,
+  type Variants,
 } from "framer-motion";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
@@ -158,7 +158,7 @@ const pillars = [
 
 /* ─── Stats ─── */
 const stats = [
-  { value: 25, suffix: "+", label: "Years of Experience" },
+  { value: 11, suffix: "+", label: "Years of Experience" },
   { value: 10, suffix: "+", label: "Countries Served" },
   { value: 500, suffix: "+", label: "Product Grades" },
   { value: 99, suffix: "%", label: "Client Retention" },

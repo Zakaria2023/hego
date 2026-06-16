@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const stats = [
-  { value: "25+", label: "Years Experience" },
+  { value: "11+", label: "Years Experience" },
   { value: "10+", label: "Countries Served" },
   { value: "500+", label: "Product Grades" },
   { value: "99%", label: "Client Retention" },
