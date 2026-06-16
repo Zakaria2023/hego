@@ -55,7 +55,11 @@ const products = [
     tagline: "Prime, Ex-Prime & 2nd Choice",
     description:
       "Wide range of widths, thicknesses, and surface finishes for industrial applications worldwide.",
-    specs: ["Grades: 304 / 316L / 430", "Cold & Hot Rolled", "BA, 2B, No.1 Finish"],
+    specs: [
+      "Grades: 304 / 316L / 430",
+      "Cold & Hot Rolled",
+      "BA, 2B, No.1 Finish",
+    ],
     accent: "#005CA3",
   },
   {
@@ -75,7 +79,11 @@ const products = [
     tagline: "Cold & Hot Rolled",
     description:
       "Standard and non-standard sizes in comprehensive grades and surface finishes.",
-    specs: ["Standard & Custom Sizes", "BA, 2B, SB Finish", "Grades: 304 / 316L / 430"],
+    specs: [
+      "Standard & Custom Sizes",
+      "BA, 2B, SB Finish",
+      "Grades: 304 / 316L / 430",
+    ],
     accent: "#005CA3",
   },
   {
@@ -95,7 +103,11 @@ const products = [
     tagline: "Laser-Cut from 150 mm",
     description:
       "Laser-cut from 150 mm diameter in grades 304 and 430 with clean, burr-free edges.",
-    specs: ["Min. Diameter: 150 mm", "Laser Cut Precision", "Grades: 430 / 304"],
+    specs: [
+      "Min. Diameter: 150 mm",
+      "Laser Cut Precision",
+      "Grades: 430 / 304",
+    ],
     accent: "#005CA3",
   },
   {
@@ -153,9 +165,9 @@ const features = [
         />
       </svg>
     ),
-    title: "80+ Countries Delivered",
+    title: "10+ Countries Delivered",
     desc: "A global logistics network ensuring on-time delivery to clients across Europe, Asia, and the Americas.",
-    stat: "80+",
+    stat: "10+",
     color: "#0077BB",
   },
   {
@@ -176,9 +188,9 @@ const features = [
         />
       </svg>
     ),
-    title: "25+ Years of Experience",
-    desc: "Family-owned and trusted since 1999, with decades of market expertise and reliable supplier relationships.",
-    stat: "25+",
+    title: "11+ Years of Experience",
+    desc: "Backed by years of market expertise and reliable supplier relationships.",
+    stat: "11+",
     color: "#005CA3",
   },
   {
@@ -586,8 +598,7 @@ const ProductsSection = () => (
             id="home-products-heading"
             className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F172A] tracking-tight leading-tight"
           >
-            Our{" "}
-            <span className="steel-text">Stainless Steel</span>
+            Our <span className="steel-text">Stainless Steel</span>
             <br />
             Products
           </h2>
@@ -748,9 +759,22 @@ const WhySection = () => {
                 </p>
 
                 {/* Bottom tick */}
-                <div className="mt-5 flex items-center gap-2 text-xs font-semibold" style={{ color: feature.color }}>
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4 shrink-0" aria-hidden="true">
-                    <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clipRule="evenodd" />
+                <div
+                  className="mt-5 flex items-center gap-2 text-xs font-semibold"
+                  style={{ color: feature.color }}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    className="w-4 h-4 shrink-0"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                      clipRule="evenodd"
+                    />
                   </svg>
                   Verified
                 </div>
@@ -762,17 +786,39 @@ const WhySection = () => {
         {/* ── Checklist row ── */}
         <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {[
-            { label: "Weekly stock arrivals from European port warehouses", icon: "🚢" },
-            { label: "Eye-to-sky and eye-to-band coil packaging available", icon: "📦" },
-            { label: "Cut-to-length, slitting & custom dimensions on request", icon: "✂️" },
-            { label: "Mill certificates & full traceability on every order", icon: "📋" },
-            { label: "Competitive pricing on prime, ex-prime & 2nd choice", icon: "💰" },
-            { label: "Dedicated account manager for all B2B clients", icon: "🤝" },
+            {
+              label: "Weekly stock arrivals from European port warehouses",
+              icon: "🚢",
+            },
+            {
+              label: "Eye-to-sky and eye-to-band coil packaging available",
+              icon: "📦",
+            },
+            {
+              label: "Cut-to-length, slitting & custom dimensions on request",
+              icon: "✂️",
+            },
+            {
+              label: "Mill certificates & full traceability on every order",
+              icon: "📋",
+            },
+            {
+              label: "Competitive pricing on prime, ex-prime & 2nd choice",
+              icon: "💰",
+            },
+            {
+              label: "Dedicated account manager for all B2B clients",
+              icon: "🤝",
+            },
           ].map((item, i) => (
             <Reveal key={item.label} delay={i * 0.05}>
               <div className="flex items-start gap-3 p-4 rounded-xl bg-white border border-[#E2E8F0] hover:border-[#FCD34D] hover:shadow-sm transition-all duration-200">
-                <span className="text-xl shrink-0 mt-0.5" aria-hidden="true">{item.icon}</span>
-                <p className="text-[#334155] text-sm font-medium leading-snug">{item.label}</p>
+                <span className="text-xl shrink-0 mt-0.5" aria-hidden="true">
+                  {item.icon}
+                </span>
+                <p className="text-[#334155] text-sm font-medium leading-snug">
+                  {item.label}
+                </p>
               </div>
             </Reveal>
           ))}
@@ -788,8 +834,12 @@ const WhySection = () => {
           ].map(({ value, label }, i) => (
             <Reveal key={label} delay={i * 0.08}>
               <div className="flex flex-col items-center gap-1 p-4 rounded-xl bg-white border border-[#E2E8F0]">
-                <span className="text-3xl sm:text-4xl font-black text-[#005CA3]">{value}</span>
-                <span className="text-[#94A3B8] text-[11px] font-semibold tracking-widest uppercase mt-1">{label}</span>
+                <span className="text-3xl sm:text-4xl font-black text-[#005CA3]">
+                  {value}
+                </span>
+                <span className="text-[#94A3B8] text-[11px] font-semibold tracking-widest uppercase mt-1">
+                  {label}
+                </span>
               </div>
             </Reveal>
           ))}
@@ -1049,7 +1099,7 @@ const CTABanner = () => (
 
       <Reveal delay={0.12}>
         <p className="mt-6 text-slate-400 text-base sm:text-lg leading-relaxed max-w-xl mx-auto">
-          Join 500+ industrial clients across 80+ countries who trust SWEDINOX
+          Join 500+ industrial clients across 10+ countries who trust SWEDINOX
           AB for reliable, certified stainless steel supply.
         </p>
       </Reveal>
@@ -1106,7 +1156,7 @@ const CTABanner = () => (
       <Reveal delay={0.24}>
         <div className="mt-12 flex flex-wrap justify-center gap-x-8 gap-y-3">
           {[
-            "ISO 9001:2015 Certified",
+            "ISO 9001:2015 CERTIFIED STAINLESS STEEL SUPPLIER",
             "EN 10088 Compliant",
             "ASTM Standards",
             "REACH Compliant",
