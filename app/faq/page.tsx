@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "FAQ - Stainless Steel Questions Answered | SWEDINOX AB",
     description:
-      "35 answers covering stainless steel products, grades 304/316L/430, surface finishes, ordering, delivery times and fabrication. From SWEDINOX AB - 11+ years of expertise.",
+      "35 answers covering stainless steel products, grades 304/316L/430, surface finishes, ordering, delivery times and fabrication. From SWEDINOX AB - 12+ years of expertise.",
     url: "https://swedinox.se/faq",
     siteName: "SWEDINOX AB",
     images: [
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "FAQ - Stainless Steel Questions Answered | SWEDINOX AB",
     description:
-      "35 answers on grades, finishes, ordering and delivery. 11+ years of stainless steel expertise from SWEDINOX AB.",
+      "35 answers on grades, finishes, ordering and delivery. 12+ years of stainless steel expertise from SWEDINOX AB.",
     images: [{ url: "/og-faq.jpg", alt: "SWEDINOX AB FAQ" }],
   },
   robots: {

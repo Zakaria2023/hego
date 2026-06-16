@@ -40,8 +40,8 @@ const Footer = () => {
               SWEDINOX AB
             </h2>
             <p className="mt-3 text-sm sm:text-base text-[#D7E1EE] leading-relaxed">
-              Premium stainless steel supply for industrial buyers across
-              Europe and international export markets.
+              Premium stainless steel supply for industrial buyers across Europe
+              and international export markets.
             </p>
 
             <address className="mt-8 not-italic space-y-4 text-base leading-relaxed text-white">
@@ -51,12 +51,26 @@ const Footer = () => {
                 232 35 Arlov, Sweden
               </p>
               <p>
-                <a
-                  href="tel:+46732488880"
-                  className="text-[#F5A623] hover:text-[#FFB547] transition-colors duration-150"
-                >
-                  +46 (0)732 488 880
-                </a>
+                <div className="flex flex-col gap-2">
+                  <a
+                    href="tel:+46732488880"
+                    className="text-[#F5A623] hover:text-[#FFB547] transition-colors duration-150"
+                  >
+                    +46 (0)732 488 880
+                  </a>
+                  <a
+                    href="tel:+46790082383"
+                    className="text-[#F5A623] hover:text-[#FFB547] transition-colors duration-150"
+                  >
+                    +46 79 008 23 83
+                  </a>
+                  <a
+                    href="tel:+46406860186"
+                    className="text-[#F5A623] hover:text-[#FFB547] transition-colors duration-150"
+                  >
+                    +46 406 860 186
+                  </a>
+                </div>
                 <br />
                 <a
                   href="mailto:sales@swedinox.se"
@@ -103,7 +117,7 @@ const Footer = () => {
                   href="tel:+46406860186"
                   className="text-[#F5A623] hover:text-[#FFB547] transition-colors duration-150"
                 >
-                  +46 (0)40 686 01 86
+                  +46 732 488 880
                 </a>
               </p>
               <p>
@@ -115,7 +129,6 @@ const Footer = () => {
                   sales@swedinox.eu
                 </a>
               </p>
-              <p>Mon - Fri: 09:00 - 17:00</p>
             </div>
           </div>
         </div>

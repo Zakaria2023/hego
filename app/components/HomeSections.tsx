@@ -166,7 +166,7 @@ const features = [
       </svg>
     ),
     title: "10+ Countries Delivered",
-    desc: "A global logistics network ensuring on-time delivery to clients across Europe, Asia, and the Americas.",
+    desc: "A global logistics network ensuring on-time delivery to clients across the globe.",
     stat: "10+",
     color: "#0077BB",
   },
@@ -188,9 +188,9 @@ const features = [
         />
       </svg>
     ),
-    title: "11+ Years of Experience",
+    title: "12+ Years of Experience",
     desc: "Backed by years of market expertise and reliable supplier relationships.",
-    stat: "11+",
+    stat: "12+",
     color: "#005CA3",
   },
   {
@@ -216,9 +216,9 @@ const features = [
         />
       </svg>
     ),
-    title: "Custom Specifications",
-    desc: "Special alloy requirements and non-standard dimensions accommodated for your unique industrial needs.",
-    stat: "500+",
+    title: "Number of Clients",
+    desc: "We serve over 100 clients across the globe.",
+    stat: "100",
     color: "#0C4A6E",
   },
 ];
@@ -372,7 +372,7 @@ const steps = [
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
-          d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+          d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25"
         />
       </svg>
     ),
@@ -394,7 +394,12 @@ const steps = [
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
-          d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"
+          d="M9.568 3H5.25A2.25 2.25 0 003 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 005.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 009.568 3z"
+        />
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M6 6h.008v.008H6V6z"
         />
       </svg>
     ),
@@ -416,7 +421,7 @@ const steps = [
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
-          d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"
+          d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12"
         />
       </svg>
     ),
@@ -787,49 +792,40 @@ const WhySection = () => {
         <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {[
             {
-              title: "Weekly European Stock Availability",
+              title: "Weekly Stock Availability",
               description:
                 "Regular stock arrivals from European port warehouses.",
-              icon: "🚢",
             },
             {
               title: "Flexible Coil Packaging Options",
               description:
                 "Packaging configurations adapted to your handling and transport requirements.",
-              icon: "📦",
             },
             {
               title: "Custom Processing on Request",
               description:
                 "Cut-to-length, slitting, and tailored dimensions to match your specifications.",
-              icon: "✂️",
             },
             {
               title: "Certified Quality & Full Traceability",
               description:
                 "Mill test certificates and full material traceability with every order.",
-              icon: "📋",
             },
             {
               title: "Competitive Supply Options",
               description:
                 "Commercially competitive solutions across prime, ex-prime, and second-choice material.",
-              icon: "💰",
             },
             {
               title: "Dedicated B2B Account Support",
               description:
                 "A single point of contact for quotations, order follow-up, and commercial coordination.",
-              icon: "🤝",
             },
           ].map((item, i) => (
             <Reveal key={item.title} delay={i * 0.05}>
               <div className="flex items-start gap-3 p-4 rounded-xl bg-white border border-[#E2E8F0] hover:border-[#FCD34D] hover:shadow-sm transition-all duration-200">
-                <span className="text-xl shrink-0 mt-0.5" aria-hidden="true">
-                  {item.icon}
-                </span>
                 <div>
-                  <h3 className="text-[#0F172A] text-sm font-bold leading-snug">
+                  <h3 className="text-[#0F172A] text-lg font-bold leading-snug">
                     {item.title}
                   </h3>
                   <p className="mt-1 text-[#64748B] text-sm leading-relaxed">
@@ -845,7 +841,7 @@ const WhySection = () => {
         <div className="mt-14 pt-10 border-t border-[#E2E8F0] grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
           {[
             { value: "500+", label: "Product Grades" },
-            { value: "99%", label: "Client Retention" },
+            { value: "100", label: "Number of Clients" },
             { value: "Weekly", label: "Stock Updates" },
             { value: "48h", label: "Quote Turnaround" },
           ].map(({ value, label }, i) => (
@@ -874,20 +870,8 @@ const IndustriesSection = () => {
   return (
     <section
       aria-labelledby="industries-heading"
-      className="relative py-24 px-4 sm:px-6 lg:px-8 overflow-hidden"
+      className="relative py-24 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#0F172A]"
     >
-      {/* Background image with overlay */}
-      <div aria-hidden="true" className="absolute inset-0">
-        <Image
-          src="/coils.webp"
-          alt=""
-          fill
-          sizes="100vw"
-          className="object-cover"
-          quality={60}
-        />
-        <div className="absolute inset-0 bg-[#0F172A]/88" />
-      </div>
       <div className="relative max-w-7xl mx-auto">
         {/* Header */}
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-14">
@@ -960,21 +944,8 @@ const IndustriesSection = () => {
 const ProcessSection = () => (
   <section
     aria-labelledby="process-heading"
-    className="relative overflow-hidden py-24 px-4 sm:px-6 lg:px-8"
+    className="relative overflow-hidden py-24 px-4 sm:px-6 lg:px-8 bg-[#0C2340]"
   >
-    {/* Background image with overlay */}
-    <div aria-hidden="true" className="absolute inset-0">
-      <Image
-        src="/sheets.webp"
-        alt=""
-        fill
-        sizes="100vw"
-        className="object-cover"
-        quality={60}
-      />
-      <div className="absolute inset-0 bg-[#0C2340]/90" />
-    </div>
-
     <div className="relative max-w-7xl mx-auto">
       {/* Header */}
       <div className="text-center mb-16">
@@ -984,7 +955,7 @@ const ProcessSection = () => (
               className="w-1.5 h-1.5 rounded-full bg-[#F5A623] animate-pulse"
               aria-hidden="true"
             />
-            How It Works
+            How We Work
           </span>
         </Reveal>
         <Reveal delay={0.06}>

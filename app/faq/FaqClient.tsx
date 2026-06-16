@@ -3,10 +3,10 @@
 import {
   AnimatePresence,
   motion,
-  type Variants,
   useInView,
   useScroll,
   useTransform,
+  type Variants,
 } from "framer-motion";
 import Link from "next/link";
 import { useMemo, useRef, useState } from "react";
@@ -358,7 +358,7 @@ const FaqClient = () => {
               label="Categories"
               delay={0.05}
             />
-            <StatCard value="11+" label="Years of expertise" delay={0.1} />
+            <StatCard value="12+" label="Years of expertise" delay={0.1} />
             <StatCard value="10+" label="Countries served" delay={0.15} />
           </motion.div>
         </motion.div>

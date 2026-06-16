@@ -4,10 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 
 const stats = [
-  { value: "11+", label: "Years Experience" },
+  { value: "12+", label: "Years Experience" },
   { value: "10+", label: "Countries Served" },
   { value: "500+", label: "Product Grades" },
-  { value: "99%", label: "Client Retention" },
+  { value: "100", label: "NUmber of Clients" },
 ];
 
 const trustBadges = [

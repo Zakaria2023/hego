@@ -131,7 +131,7 @@ export const faqData: FaqCategory[] = [
       },
       {
         q: "What makes SWEDINOX different from other stainless steel distributors?",
-        a: "We combine three core strengths: strategic sourcing from premier global mills, a deep physical inventory that enables fast delivery without long lead times, and logistics expertise built over 25 years of global shipping. As a family-owned business, we offer a level of personal accountability and flexibility that larger corporations often cannot match. Our 99% on-time delivery record reflects that commitment.",
+        a: "We combine three core strengths: strategic sourcing from premier global mills, a deep physical inventory that enables fast delivery without long lead times, and logistics expertise built over 25 years of global shipping. As a family-owned business, we offer a level of personal accountability and flexibility that larger corporations often cannot match. Our 100 on-time delivery record reflects that commitment.",
       },
       {
         q: "Where is SWEDINOX AB located?",
