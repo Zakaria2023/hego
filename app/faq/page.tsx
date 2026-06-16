@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import FaqClient from "./FaqClient";
 
 export const metadata: Metadata = {
-  title: "FAQ – Stainless Steel Products, Grades, Ordering & Delivery",
+  title: "FAQ - Stainless Steel Products, Grades, Ordering & Delivery",
   description:
     "35 frequently asked questions about SWEDINOX AB's stainless steel products, grades (304, 316L, 430), surface finishes, ordering process, delivery times, and fabrication tips. Get answers instantly.",
   keywords: [
@@ -20,9 +20,9 @@ export const metadata: Metadata = {
   authors: [{ name: "SWEDINOX AB", url: "https://swedinox.se" }],
   alternates: { canonical: "/faq" },
   openGraph: {
-    title: "FAQ – Stainless Steel Questions Answered | SWEDINOX AB",
+    title: "FAQ - Stainless Steel Questions Answered | SWEDINOX AB",
     description:
-      "35 answers covering stainless steel products, grades 304/316L/430, surface finishes, ordering, delivery times and fabrication. From SWEDINOX AB — 25+ years of expertise.",
+      "35 answers covering stainless steel products, grades 304/316L/430, surface finishes, ordering, delivery times and fabrication. From SWEDINOX AB - 11+ years of expertise.",
     url: "https://swedinox.se/faq",
     siteName: "SWEDINOX AB",
     images: [
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
         url: "/og-faq.jpg",
         width: 1200,
         height: 630,
-        alt: "SWEDINOX AB FAQ – Stainless steel questions answered",
+        alt: "SWEDINOX AB FAQ - Stainless steel questions answered",
         type: "image/jpeg",
       },
     ],
@@ -39,9 +39,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "FAQ – Stainless Steel Questions Answered | SWEDINOX AB",
+    title: "FAQ - Stainless Steel Questions Answered | SWEDINOX AB",
     description:
-      "35 answers on grades, finishes, ordering and delivery. 25+ years of stainless steel expertise from SWEDINOX AB.",
+      "35 answers on grades, finishes, ordering and delivery. 11+ years of stainless steel expertise from SWEDINOX AB.",
     images: [{ url: "/og-faq.jpg", alt: "SWEDINOX AB FAQ" }],
   },
   robots: {

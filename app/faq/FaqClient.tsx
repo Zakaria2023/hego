@@ -3,6 +3,7 @@
 import {
   AnimatePresence,
   motion,
+  type Variants,
   useInView,
   useScroll,
   useTransform,
@@ -11,14 +12,16 @@ import Link from "next/link";
 import { useMemo, useRef, useState } from "react";
 import { allFaqItems, faqData, type FaqItem } from "./data";
 
+const revealEase = [0.22, 1, 0.36, 1] as const;
+
 /* ─── Animation helpers ─── */
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 28, filter: "blur(6px)" },
   visible: {
     opacity: 1,
     y: 0,
     filter: "blur(0px)",
-    transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] },
+    transition: { duration: 0.65, ease: revealEase },
   },
 };
 
@@ -90,7 +93,7 @@ const AccordionItem = ({
       transition={{
         duration: 0.5,
         delay: index * 0.04,
-        ease: [0.22, 1, 0.36, 1],
+        ease: revealEase,
       }}
       className={`rounded-2xl border transition-all duration-300 overflow-hidden
         ${
@@ -136,7 +139,7 @@ const AccordionItem = ({
           className={`flex-shrink-0 w-5 h-5 mt-0.5 transition-colors duration-200
             ${isOpen ? "text-[#005CA3]" : "text-slate-400 group-hover:text-slate-600"}`}
           animate={{ rotate: isOpen ? 180 : 0 }}
-          transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.3, ease: revealEase }}
           aria-hidden="true"
         >
           <path
@@ -154,7 +157,7 @@ const AccordionItem = ({
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.35, ease: revealEase }}
             className="overflow-hidden"
           >
             <div className="pb-6 px-6 pl-[4.25rem]">
@@ -314,7 +317,7 @@ const FaqClient = () => {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.85, ease: revealEase }}
           >
             <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#FCD34D] bg-[#FFF7ED] text-[#005CA3] text-xs font-semibold tracking-widest uppercase mb-5">
               <span
@@ -342,7 +345,7 @@ const FaqClient = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.7, delay: 0.3, ease: revealEase }}
             className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-2xl"
           >
             <StatCard
@@ -355,8 +358,8 @@ const FaqClient = () => {
               label="Categories"
               delay={0.05}
             />
-            <StatCard value="25+" label="Years of expertise" delay={0.1} />
-            <StatCard value="80+" label="Countries served" delay={0.15} />
+            <StatCard value="11+" label="Years of expertise" delay={0.1} />
+            <StatCard value="10+" label="Countries served" delay={0.15} />
           </motion.div>
         </motion.div>
       </section>
