@@ -1,6 +1,7 @@
 import Reveal from "@/components/shared/reveal";
 import { site } from "@/lib/site";
 import { MapPinned, Navigation } from "lucide-react";
+import ContactMapClient from "./contact-map-client";
 
 const mapQuery = "Pilevallen+77,+Arlov,+232+35,+Sweden";
 const mapHref = `https://maps.google.com/?q=${mapQuery}`;
@@ -42,15 +43,10 @@ const ContactMapSection = () => (
           </a>
         </div>
 
-        <iframe
-          title={`${site.name} location - ${site.address.street}, ${site.address.locality}, ${site.address.countryName}`}
-          src={`https://maps.google.com/maps?q=${mapQuery}&t=&z=15&ie=UTF8&iwloc=&output=embed`}
-          width="100%"
-          height="480"
-          className="block w-full border-0"
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          aria-label={`Google Map showing ${site.name} office location`}
+        <ContactMapClient
+          mapSrc={`https://maps.google.com/maps?q=${mapQuery}&t=&z=15&ie=UTF8&iwloc=&output=embed`}
+          mapTitle={`${site.name} location - ${site.address.street}, ${site.address.locality}, ${site.address.countryName}`}
+          mapLabel={`Google Map showing ${site.name} office location`}
         />
       </div>
     </Reveal>

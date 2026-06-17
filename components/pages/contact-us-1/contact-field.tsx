@@ -80,9 +80,9 @@ const ContactField = ({
                   ? "text-red-500"
                   : focused
                     ? "text-[#005CA3]"
-                    : "text-slate-400"
+                    : "text-slate-500"
               }`
-            : `${multiline ? "top-5" : "top-1/2 -translate-y-1/2"} text-sm text-slate-400`
+            : `${multiline ? "top-5" : "top-1/2 -translate-y-1/2"} text-sm text-slate-500`
         }`}
       >
         {label}

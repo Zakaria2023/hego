@@ -100,7 +100,7 @@ const FaqHero = () => {
                 <div className="text-3xl font-black text-[#0F172A] tracking-tight mb-1">
                   {stat.value}
                 </div>
-                <div className="text-[#64748B] text-xs font-medium tracking-wide uppercase">
+                <div className="text-[#475569] text-xs font-medium tracking-wide uppercase">
                   {stat.label}
                 </div>
               </div>

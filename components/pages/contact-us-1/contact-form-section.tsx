@@ -164,7 +164,7 @@ const ContactFormSection = () => {
                   </motion.button>
                 </div>
 
-                <p className="mt-4 text-center text-[11px] leading-relaxed text-slate-400">
+                <p className="mt-4 text-center text-[11px] leading-relaxed text-slate-600">
                   This site is protected by reCAPTCHA and the Google{" "}
                   <a
                     href="https://policies.google.com/privacy"

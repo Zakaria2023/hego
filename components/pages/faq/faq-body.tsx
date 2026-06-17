@@ -36,13 +36,13 @@ const CategoryHeader = ({ cat }: { cat: (typeof faqData)[number] }) => {
           <p className="text-[#64748B] text-xs mt-0.5">{cat.description}</p>
         </div>
         <div className="ml-auto shrink-0 hidden sm:block">
-          <span className="px-2.5 py-1 rounded-full bg-slate-100 text-slate-500 text-[11px] font-bold">
+          <span className="px-2.5 py-1 rounded-full bg-slate-100 text-slate-700 text-[11px] font-bold">
             {cat.items.length} Q&amp;A
           </span>
         </div>
       </div>
       <div
-        className="mt-4 h-px bg-gradient-to-r from-[#005CA3]/30 via-slate-200 to-transparent"
+        className="mt-4 h-px bg-linear-to-r from-[#005CA3]/30 via-slate-200 to-transparent"
         aria-hidden="true"
       />
     </motion.div>
@@ -179,8 +179,8 @@ const FaqBody = () => {
                   <span
                     className={`w-5 h-5 rounded-full text-[10px] font-black flex items-center justify-center ${
                       activeCategory === "all"
-                        ? "bg-white/20 text-white"
-                        : "bg-slate-100 text-slate-500"
+                        ? "bg-white text-[#005CA3]"
+                        : "bg-slate-100 text-slate-700"
                     }`}
                   >
                     {totalQuestions}

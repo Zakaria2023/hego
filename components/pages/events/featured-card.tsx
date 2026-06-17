@@ -47,7 +47,7 @@ const FeaturedCard = ({ post }: { post: Post }) => {
       <div className="flex flex-col justify-center p-8 lg:p-10 lg:w-[45%]">
         <div className="flex items-center gap-3 mb-4">
           <CategoryBadge category={post.category} />
-          <span className="text-slate-400 text-xs">{post.readTime}</span>
+          <span className="text-slate-500 text-xs">{post.readTime}</span>
         </div>
 
         <time

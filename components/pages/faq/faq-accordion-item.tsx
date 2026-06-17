@@ -57,7 +57,7 @@ const FaqAccordionItem = ({ item, index, isOpen, onToggle, highlight }: Props) =
           className={`shrink-0 w-7 h-7 rounded-full text-[11px] font-black flex items-center justify-center mt-0.5 transition-colors duration-200 ${
             isOpen
               ? "bg-[#005CA3] text-white"
-              : "bg-slate-100 text-slate-500 group-hover:bg-slate-200"
+              : "bg-slate-100 text-slate-700 group-hover:bg-slate-200"
           }`}
           aria-hidden="true"
         >
@@ -73,7 +73,7 @@ const FaqAccordionItem = ({ item, index, isOpen, onToggle, highlight }: Props) =
         </span>
 
         {item.category && (
-          <span className="shrink-0 hidden sm:inline-block px-2 py-0.5 rounded-full bg-slate-100 text-slate-500 text-[10px] font-semibold tracking-wide mr-2">
+          <span className="shrink-0 hidden sm:inline-block px-2 py-0.5 rounded-full bg-slate-100 text-slate-700 text-[10px] font-semibold tracking-wide mr-2">
             {item.category}
           </span>
         )}
