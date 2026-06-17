@@ -187,8 +187,8 @@ const StatCard = ({
   label: string;
   delay: number;
 }) => (
-  <Reveal delay={delay}>
-    <div className="text-center p-6 rounded-2xl bg-[#FFF7ED] border border-[#FCD34D]">
+  <Reveal delay={delay} className="h-full">
+    <div className="h-full flex flex-col justify-center text-center p-6 rounded-2xl bg-[#FFF7ED] border border-[#FCD34D]">
       <div className="text-3xl font-black text-[#0F172A] tracking-tight mb-1">
         {value}
       </div>
