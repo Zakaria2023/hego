@@ -1,8 +1,8 @@
 "use client";
 
 import Reveal from "@/components/shared/reveal";
-import { ArrowRight, BadgeCheck } from "lucide-react";
 import { motion } from "framer-motion";
+import { ArrowRight, BadgeCheck } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -27,23 +27,23 @@ const AboutCompanySection = () => (
           </h2>
           <div
             aria-hidden="true"
-            className="mt-4 h-1 w-12 rounded-full bg-gradient-to-r from-[#005CA3] to-[#00AADD]"
+            className="mt-4 h-1 w-12 rounded-full bg-linear-to-r from-[#005CA3] to-[#00AADD]"
           />
         </Reveal>
         <Reveal delay={0.1}>
           <p className="mt-6 text-base leading-relaxed text-[#334155]">
-            SWEDINOX AB is the destination for semi-manufactured stainless
-            steel products. As a family-owned company, we prioritize long-term
+            SWEDINOX AB is the destination for semi-manufactured stainless steel
+            products. As a family-owned company, we prioritize long-term
             relationships with our customers and suppliers, and that has been a
             primary goal since our founding.
           </p>
         </Reveal>
         <Reveal delay={0.15}>
           <p className="mt-4 text-base leading-relaxed text-[#334155]">
-            We cater to end users and smaller wholesalers in the stainless
-            steel industry, ensuring efficient logistics as a reliable supplier.
-            Our customers remain the main point of focus and SWEDINOX is built
-            for long-lasting cooperation in semi-manufactured stainless steel.
+            We cater to end users and smaller wholesalers in the stainless steel
+            industry, ensuring efficient logistics as a reliable supplier. Our
+            customers remain the main point of focus and SWEDINOX is built for
+            long-lasting cooperation in semi-manufactured stainless steel.
           </p>
         </Reveal>
         <Reveal delay={0.2}>
@@ -89,7 +89,7 @@ const AboutCompanySection = () => (
             transition={{ delay: 0.4, duration: 0.5 }}
             className="absolute -bottom-6 -left-6 flex items-center gap-4 rounded-2xl border border-slate-100 bg-white px-5 py-4 shadow-[0_20px_40px_rgba(15,23,42,0.12)]"
           >
-            <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-[#005CA3]/10">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#005CA3]/10">
               <BadgeCheck className="h-5 w-5 text-[#005CA3]" />
             </div>
             <div>

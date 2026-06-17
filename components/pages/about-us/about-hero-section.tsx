@@ -29,7 +29,7 @@ const AboutHeroSection = () => {
 
       <div
         aria-hidden="true"
-        className="absolute top-[-20%] right-[-5%] h-[600px] w-[600px] rounded-full pointer-events-none"
+        className="absolute top-[-20%] right-[-5%] h-150 w-150 rounded-full pointer-events-none"
         style={{
           background:
             "radial-gradient(circle, rgba(219,234,254,0.5) 0%, transparent 70%)",
@@ -37,7 +37,7 @@ const AboutHeroSection = () => {
       />
       <div
         aria-hidden="true"
-        className="absolute bottom-0 left-[-10%] h-[400px] w-[400px] rounded-full pointer-events-none"
+        className="absolute bottom-0 left-[-10%] h-100 w-100 rounded-full pointer-events-none"
         style={{
           background:
             "radial-gradient(circle, rgba(186,230,253,0.3) 0%, transparent 70%)",
@@ -68,14 +68,14 @@ const AboutHeroSection = () => {
               Excellence
               <span
                 aria-hidden="true"
-                className="absolute left-0 -bottom-1 h-1 w-full rounded-full bg-gradient-to-r from-[#005CA3] to-[#00AADD]"
+                className="absolute left-0 -bottom-1 h-1 w-full rounded-full bg-linear-to-r from-[#005CA3] to-[#00AADD]"
               />
             </span>
           </h1>
           <p className="mt-5 max-w-xl text-lg leading-relaxed text-[#64748B]">
-            SWEDINOX AB is the destination for semi-manufactured stainless
-            steel products and a trusted partner for industrial clients across
-            the globe.
+            SWEDINOX AB is the destination for semi-manufactured stainless steel
+            products and a trusted partner for industrial clients across the
+            globe.
           </p>
         </motion.div>
       </motion.div>

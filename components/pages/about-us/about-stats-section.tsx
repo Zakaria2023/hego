@@ -1,18 +1,24 @@
 "use client";
 
+import { revealEase } from "@/components/shared/motion";
 import { GlowCard } from "@/components/ui/spotlight-card";
 import { motion, useInView, useMotionValue, useSpring } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import { revealEase } from "@/components/shared/motion";
 
 const stats = [
   { value: 11, suffix: "+", label: "Years of Experience" },
   { value: 10, suffix: "+", label: "Countries Served" },
   { value: 500, suffix: "+", label: "Product Grades" },
-  { value: 300, suffix: "", label: "Number of Clients" },
+  { value: 300, suffix: "+", label: "Number of Clients" },
 ];
 
-const Counter = ({ value, suffix = "" }: { value: number; suffix?: string }) => {
+const Counter = ({
+  value,
+  suffix = "",
+}: {
+  value: number;
+  suffix?: string;
+}) => {
   const ref = useRef<HTMLSpanElement | null>(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
   const motionValue = useMotionValue(0);
@@ -25,9 +31,10 @@ const Counter = ({ value, suffix = "" }: { value: number; suffix?: string }) => 
     }
   }, [inView, motionValue, value]);
 
-  useEffect(() => spring.on("change", (latest) => setDisplay(Math.round(latest))), [
-    spring,
-  ]);
+  useEffect(
+    () => spring.on("change", (latest) => setDisplay(Math.round(latest))),
+    [spring],
+  );
 
   return (
     <span ref={ref} className="tabular-nums">
@@ -44,7 +51,7 @@ const AboutStatsSection = () => (
   >
     <div
       aria-hidden="true"
-      className="absolute left-[-10%] top-1/2 h-[500px] w-[500px] -translate-y-1/2 rounded-full pointer-events-none"
+      className="absolute left-[-10%] top-1/2 h-125 w-125 -translate-y-1/2 rounded-full pointer-events-none"
       style={{
         background:
           "radial-gradient(circle, rgba(219,234,254,0.55) 0%, transparent 70%)",
@@ -52,7 +59,7 @@ const AboutStatsSection = () => (
     />
     <div
       aria-hidden="true"
-      className="absolute right-[-10%] top-1/2 h-[400px] w-[400px] -translate-y-1/2 rounded-full pointer-events-none"
+      className="absolute right-[-10%] top-1/2 h-100 w-100 -translate-y-1/2 rounded-full pointer-events-none"
       style={{
         background:
           "radial-gradient(circle, rgba(186,230,253,0.4) 0%, transparent 70%)",
@@ -110,7 +117,7 @@ const AboutStatsSection = () => (
               </div>
               <div
                 aria-hidden="true"
-                className="absolute right-0 bottom-0 left-0 h-[3px] origin-left scale-x-0 rounded-full bg-gradient-to-r from-[#005CA3] via-[#00AADD] to-[#005CA3] transition-transform duration-500 group-hover:scale-x-100"
+                className="absolute right-0 bottom-0 left-0 h-0.75 origin-left scale-x-0 rounded-full bg-linear-to-r from-[#005CA3] via-[#00AADD] to-[#005CA3] transition-transform duration-500 group-hover:scale-x-100"
               />
             </motion.div>
           </GlowCard>

@@ -1,11 +1,10 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
 import { ArrowRight, ChevronRight, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -16,50 +15,9 @@ const navLinks = [
   { label: "FAQ", href: "/faq" },
 ];
 
-const mobileMenuVariants = {
-  closed: {
-    x: "100%",
-    transition: {
-      duration: 0.38,
-      ease: [0.4, 0, 0.2, 1] as const,
-      staggerChildren: 0,
-      staggerDirection: -1,
-    },
-  },
-  open: {
-    x: "0%",
-    transition: {
-      duration: 0.42,
-      ease: [0.22, 1, 0.36, 1] as const,
-      staggerChildren: 0.06,
-      delayChildren: 0.1,
-    },
-  },
-};
-
-const mobileLinkVariants = {
-  closed: { opacity: 0, x: 24, filter: "blur(4px)" },
-  open: {
-    opacity: 1,
-    x: 0,
-    filter: "blur(0px)",
-    transition: { duration: 0.32, ease: [0.22, 1, 0.36, 1] as const },
-  },
-};
-
 const Navbar = () => {
-  const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
-
-  const handleScroll = useCallback(() => {
-    setScrolled(window.scrollY > 20);
-  }, []);
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [handleScroll]);
 
   useEffect(() => {
     setMobileOpen(false);
@@ -67,6 +25,7 @@ const Navbar = () => {
 
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
+
     return () => {
       document.body.style.overflow = "";
     };
@@ -74,53 +33,43 @@ const Navbar = () => {
 
   return (
     <>
-      <motion.header
+      <header
         role="banner"
-        initial={{ y: -80, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] as const }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled
-            ? "bg-white/97 backdrop-blur-xl shadow-sm border-b border-slate-100"
-            : "bg-transparent"
-        }`}
+        className="fixed top-0 left-0 right-0 z-50 border-b border-slate-100 bg-white/95 shadow-sm backdrop-blur-xl"
       >
-        {/* Top accent line — yellow → blue (logo colors) */}
         <div className="h-[2.5px] w-full bg-linear-to-r from-[#F5A623] via-[#00AADD] to-[#005CA3]" />
 
         <nav
           aria-label="Main navigation"
-          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+          className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
         >
-          <div className="flex items-center justify-between h-20">
-            {/* Logo — actual logo.png */}
+          <div className="flex h-20 items-center justify-between">
             <Link
               href="/"
-              aria-label="SWEDINOX AB – Home"
-              className="flex items-center cursor-pointer group"
+              aria-label="SWEDINOX AB - Home"
+              className="group flex items-center"
             >
               <Image
-                src="/logo.png"
-                alt="SWEDINOX AB – Keeping your business stainless"
+                src="/logo.webp"
+                alt="SWEDINOX AB - Keeping your business stainless"
                 width={240}
                 height={60}
-                priority
-                quality={100}
-                className="h-14 w-auto object-contain group-hover:opacity-90 transition-opacity duration-200"
+                className="h-14 w-auto object-contain transition-opacity duration-200 group-hover:opacity-90"
               />
             </Link>
 
-            {/* Desktop nav links */}
-            <div className="hidden md:flex items-center gap-6" role="menubar">
+            <div className="hidden items-center gap-6 md:flex" role="menubar">
               {navLinks.map(({ label, href }) => {
                 const isActive =
                   href === "/" ? pathname === "/" : pathname.startsWith(href);
+
                 return (
                   <Link
                     key={href}
                     href={href}
+                    prefetch={false}
                     role="menuitem"
-                    className="relative pb-1 text-sm font-medium tracking-wide cursor-pointer group"
+                    className="group relative pb-1 text-sm font-medium tracking-wide"
                   >
                     <span
                       className={`transition-colors duration-200 ${
@@ -131,206 +80,150 @@ const Navbar = () => {
                     >
                       {label}
                     </span>
-                    {/* Animated underline — yellow → blue */}
-                    <motion.span
+                    <span
                       aria-hidden="true"
-                      className="absolute bottom-0 left-0 h-[2px] rounded-full"
-                      style={{
-                        background:
-                          "linear-gradient(90deg, #F5A623, #00AADD)",
-                      }}
-                      initial={false}
-                      animate={{ width: isActive ? "100%" : "0%" }}
-                      whileHover={{ width: "100%" }}
-                      transition={{
-                        duration: 0.28,
-                        ease: [0.22, 1, 0.36, 1] as const,
-                      }}
+                      className={`absolute bottom-0 left-0 h-[2px] rounded-full bg-linear-to-r from-[#F5A623] to-[#00AADD] transition-[width] duration-300 ${
+                        isActive ? "w-full" : "w-0 group-hover:w-full"
+                      }`}
                     />
                   </Link>
                 );
               })}
             </div>
 
-            {/* Desktop CTA */}
-            <div className="hidden md:flex items-center">
+            <div className="hidden items-center md:flex">
               <Link
                 href="/contact-us-1"
+                prefetch={false}
                 aria-label="Get a quote from SWEDINOX AB"
-                className="cta-glow relative inline-flex items-center gap-2 px-5 py-2.5 rounded-sm bg-[#005CA3] hover:bg-[#0077BB] text-white text-sm font-semibold tracking-wide uppercase cursor-pointer overflow-hidden group transition-colors duration-200"
+                className="cta-glow group relative inline-flex items-center gap-2 overflow-hidden rounded-sm bg-[#005CA3] px-5 py-2.5 text-sm font-semibold uppercase tracking-wide text-white transition-colors duration-200 hover:bg-[#0077BB]"
               >
                 <span className="relative z-10">Get Quote</span>
-                <motion.span
-                  className="w-4 h-4 relative z-10"
-                  aria-hidden="true"
-                  whileHover={{ x: 3 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 20 }}
-                >
+                <span className="relative z-10 transition-transform duration-200 group-hover:translate-x-0.5">
                   <ArrowRight className="h-4 w-4" />
-                </motion.span>
-                <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-linear-to-r from-transparent via-white/20 to-transparent" />
+                </span>
+                <span className="absolute inset-0 -translate-x-full bg-linear-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
               </Link>
             </div>
 
-            {/* Mobile hamburger */}
-            <motion.button
+            <button
+              type="button"
               aria-label={mobileOpen ? "Close menu" : "Open menu"}
               aria-expanded={mobileOpen}
               aria-controls="mobile-menu"
-              onClick={() => setMobileOpen((v) => !v)}
-              className="md:hidden relative w-8 h-8 flex items-center justify-center cursor-pointer"
-              whileTap={{ scale: 0.88 }}
+              onClick={() => setMobileOpen((value) => !value)}
+              className="relative flex h-8 w-8 items-center justify-center md:hidden"
             >
               <span className="sr-only">
                 {mobileOpen ? "Close menu" : "Open menu"}
               </span>
-              <motion.span
+              <span
                 aria-hidden="true"
-                className="absolute w-5 h-[2px] bg-[#0F172A] rounded-full"
-                animate={
-                  mobileOpen ? { rotate: 45, y: 0 } : { rotate: 0, y: -6 }
-                }
-                transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] as const }}
+                className={`absolute h-[2px] w-5 rounded-full bg-[#0F172A] transition-all duration-200 ${
+                  mobileOpen ? "rotate-45 translate-y-0" : "-translate-y-[6px]"
+                }`}
               />
-              <motion.span
+              <span
                 aria-hidden="true"
-                className="absolute w-5 h-[2px] bg-[#0F172A] rounded-full"
-                animate={
-                  mobileOpen
-                    ? { opacity: 0, scaleX: 0 }
-                    : { opacity: 1, scaleX: 1 }
-                }
-                transition={{ duration: 0.2 }}
+                className={`absolute h-[2px] w-5 rounded-full bg-[#0F172A] transition-all duration-200 ${
+                  mobileOpen ? "scale-x-0 opacity-0" : "scale-x-100 opacity-100"
+                }`}
               />
-              <motion.span
+              <span
                 aria-hidden="true"
-                className="absolute w-5 h-[2px] bg-[#0F172A] rounded-full"
-                animate={
-                  mobileOpen ? { rotate: -45, y: 0 } : { rotate: 0, y: 6 }
-                }
-                transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] as const }}
+                className={`absolute h-[2px] w-5 rounded-full bg-[#0F172A] transition-all duration-200 ${
+                  mobileOpen ? "-rotate-45 translate-y-0" : "translate-y-[6px]"
+                }`}
               />
-            </motion.button>
+            </button>
           </div>
         </nav>
-      </motion.header>
+      </header>
 
-      {/* Mobile menu overlay */}
-      <AnimatePresence>
-        {mobileOpen && (
-          <>
-            {/* Backdrop */}
-            <motion.div
-              key="backdrop"
-              aria-hidden="true"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm md:hidden"
-              onClick={() => setMobileOpen(false)}
-            />
+      {mobileOpen ? (
+        <>
+          <div
+            aria-hidden="true"
+            className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm md:hidden"
+            onClick={() => setMobileOpen(false)}
+          />
 
-            {/* Slide-in drawer */}
-            <motion.aside
-              key="mobile-menu"
-              id="mobile-menu"
-              role="dialog"
-              aria-modal="true"
-              aria-label="Mobile navigation"
-              variants={mobileMenuVariants}
-              initial="closed"
-              animate="open"
-              exit="closed"
-              className="fixed top-0 right-0 bottom-0 z-50 w-4/5 max-w-xs bg-[#0D1526] border-l border-white/5 flex flex-col md:hidden shadow-[0_0_60px_rgba(0,0,0,0.8)]"
-            >
-              {/* Yellow-to-blue accent at top of drawer */}
-              <div className="h-[2.5px] w-full bg-linear-to-r from-[#F5A623] via-[#00AADD] to-[#005CA3]" />
+          <aside
+            id="mobile-menu"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Mobile navigation"
+            className="fixed top-0 right-0 bottom-0 z-50 flex w-4/5 max-w-xs flex-col border-l border-white/5 bg-[#0D1526] shadow-[0_0_60px_rgba(0,0,0,0.8)] md:hidden"
+          >
+            <div className="h-[2.5px] w-full bg-linear-to-r from-[#F5A623] via-[#00AADD] to-[#005CA3]" />
 
-              {/* Drawer header */}
-              <div className="flex items-center justify-between px-6 py-4 border-b border-white/5">
-                <Link
-                  href="/"
-                  className="flex items-center cursor-pointer"
-                  onClick={() => setMobileOpen(false)}
-                >
-                  <Image
-                    src="/logo.png"
-                    alt="SWEDINOX AB"
-                    width={160}
-                    height={40}
-                    quality={100}
-                    className="h-10 w-auto object-contain brightness-0 invert"
-                  />
-                </Link>
-                <motion.button
-                  onClick={() => setMobileOpen(false)}
-                  aria-label="Close menu"
-                  className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center cursor-pointer"
-                  whileTap={{ scale: 0.88 }}
-                >
-                  <X className="h-4 w-4 text-slate-400" />
-                </motion.button>
-              </div>
-
-              {/* Nav links */}
-              <nav className="flex-1 flex flex-col gap-1 px-4 py-6 overflow-y-auto">
-                {navLinks.map(({ label, href }) => {
-                  const isActive =
-                    href === "/" ? pathname === "/" : pathname.startsWith(href);
-                  return (
-                    <motion.div key={href} variants={mobileLinkVariants}>
-                      <Link
-                        href={href}
-                        onClick={() => setMobileOpen(false)}
-                        className={`flex items-center justify-between px-4 py-3.5 rounded-lg text-sm font-medium transition-colors duration-200 cursor-pointer group ${
-                          isActive
-                            ? "bg-[#005CA3]/20 text-white border border-[#F5A623]/40"
-                            : "text-slate-300 hover:text-white hover:bg-white/5 border border-transparent"
-                        }`}
-                      >
-                        <span>{label}</span>
-                        <motion.span
-                          className={`w-4 h-4 shrink-0 ${
-                            isActive
-                              ? "text-[#F5A623]"
-                              : "text-slate-600 group-hover:text-slate-400"
-                          }`}
-                          aria-hidden="true"
-                          whileHover={{ x: 3 }}
-                          transition={{
-                            type: "spring",
-                            stiffness: 400,
-                            damping: 20,
-                          }}
-                        >
-                          <ChevronRight className="h-4 w-4" />
-                        </motion.span>
-                      </Link>
-                    </motion.div>
-                  );
-                })}
-              </nav>
-
-              {/* Drawer CTA */}
-              <motion.div
-                variants={mobileLinkVariants}
-                className="px-4 py-6 border-t border-white/5"
+            <div className="flex items-center justify-between border-b border-white/5 px-6 py-4">
+              <Link
+                href="/"
+                className="flex items-center"
+                onClick={() => setMobileOpen(false)}
               >
-                <Link
-                  href="/contact-us-1"
-                  onClick={() => setMobileOpen(false)}
-                  className="cta-glow flex items-center justify-center gap-2 w-full px-5 py-3.5 rounded-lg bg-[#005CA3] hover:bg-[#0077BB] text-white text-sm font-bold tracking-widest uppercase transition-colors duration-200 cursor-pointer overflow-hidden group relative"
-                >
-                  <span className="relative z-10">Get a Quote</span>
-                  <ArrowRight className="relative z-10 h-4 w-4" />
-                  <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-linear-to-r from-transparent via-white/20 to-transparent" />
-                </Link>
-              </motion.div>
-            </motion.aside>
-          </>
-        )}
-      </AnimatePresence>
+                <Image
+                  src="/logo.webp"
+                  alt="SWEDINOX AB"
+                  width={160}
+                  height={40}
+                  className="h-10 w-auto object-contain brightness-0 invert"
+                />
+              </Link>
+              <button
+                type="button"
+                onClick={() => setMobileOpen(false)}
+                aria-label="Close menu"
+                className="flex h-8 w-8 items-center justify-center rounded-full border border-white/10 bg-white/5"
+              >
+                <X className="h-4 w-4 text-slate-400" />
+              </button>
+            </div>
+
+            <nav className="flex flex-1 flex-col gap-1 overflow-y-auto px-4 py-6">
+              {navLinks.map(({ label, href }) => {
+                const isActive =
+                  href === "/" ? pathname === "/" : pathname.startsWith(href);
+
+                return (
+                  <Link
+                    key={href}
+                    href={href}
+                    prefetch={false}
+                    onClick={() => setMobileOpen(false)}
+                    className={`flex items-center justify-between rounded-lg border px-4 py-3.5 text-sm font-medium transition-colors duration-200 ${
+                      isActive
+                        ? "border-[#F5A623]/40 bg-[#005CA3]/20 text-white"
+                        : "border-transparent text-slate-300 hover:bg-white/5 hover:text-white"
+                    }`}
+                  >
+                    <span>{label}</span>
+                    <ChevronRight
+                      className={`h-4 w-4 shrink-0 ${
+                        isActive ? "text-[#F5A623]" : "text-slate-600"
+                      }`}
+                    />
+                  </Link>
+                );
+              })}
+            </nav>
+
+            <div className="border-t border-white/5 px-4 py-6">
+              <Link
+                href="/contact-us-1"
+                prefetch={false}
+                onClick={() => setMobileOpen(false)}
+                className="cta-glow group relative flex w-full items-center justify-center gap-2 overflow-hidden rounded-lg bg-[#005CA3] px-5 py-3.5 text-sm font-bold uppercase tracking-widest text-white transition-colors duration-200 hover:bg-[#0077BB]"
+              >
+                <span className="relative z-10">Get a Quote</span>
+                <ArrowRight className="relative z-10 h-4 w-4" />
+                <span className="absolute inset-0 -translate-x-full bg-linear-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
+              </Link>
+            </div>
+          </aside>
+        </>
+      ) : null}
     </>
   );
 };

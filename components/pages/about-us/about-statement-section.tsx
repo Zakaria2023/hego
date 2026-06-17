@@ -18,7 +18,7 @@ const AboutStatementSection = () => (
         />
         <div
           aria-hidden="true"
-          className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#005CA3] via-[#00AADD] to-[#005CA3]"
+          className="absolute top-0 left-0 right-0 h-1 bg-linear-to-r from-[#005CA3] via-[#00AADD] to-[#005CA3]"
         />
 
         <div className="relative px-8 py-16 text-center sm:px-16">
@@ -32,8 +32,8 @@ const AboutStatementSection = () => (
             <p className="mx-auto max-w-3xl text-lg font-semibold leading-relaxed text-[#0F172A] sm:text-2xl">
               &ldquo;In the end, we offer our semi-manufactured stainless steel
               products in various specifications to meet the divergent demands
-              of our clients. Along with this, several factors enable us to
-              meet expectations, including{" "}
+              of our clients. Along with this, several factors enable us to meet
+              expectations, including{" "}
               <strong className="text-[#005CA3]">
                 prompt delivery, high-quality products, transparent business
                 policies, and cost-effective solutions

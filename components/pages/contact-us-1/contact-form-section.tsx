@@ -59,7 +59,7 @@ const ContactFormSection = () => {
     <Reveal>
       <section className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-[0_8px_40px_rgba(15,23,42,0.08)]">
         <div
-          className="h-1 bg-gradient-to-r from-[#005CA3] via-[#00AADD] to-[#005CA3]"
+          className="h-1 bg-linear-to-r from-[#005CA3] via-[#00AADD] to-[#005CA3]"
           aria-hidden="true"
         />
 
@@ -156,7 +156,7 @@ const ContactFormSection = () => {
                         <span className="relative z-10">Send Message</span>
                         <ArrowRight className="relative z-10 h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
                         <span
-                          className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full"
+                          className="absolute inset-0 -translate-x-full bg-linear-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full"
                           aria-hidden="true"
                         />
                       </>

@@ -3,14 +3,17 @@ import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 const AboutCtaSection = () => (
-  <section aria-label="Contact call to action" className="relative overflow-hidden">
+  <section
+    aria-label="Contact call to action"
+    className="relative overflow-hidden"
+  >
     <div
       aria-hidden="true"
-      className="absolute inset-0 bg-gradient-to-br from-[#EFF6FF] via-white to-[#F0F9FF]"
+      className="absolute inset-0 bg-linear-to-br from-[#EFF6FF] via-white to-[#F0F9FF]"
     />
     <div
       aria-hidden="true"
-      className="absolute top-1/2 left-1/2 h-[400px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full pointer-events-none"
+      className="absolute top-1/2 left-1/2 h-100 w-175 -translate-x-1/2 -translate-y-1/2 rounded-full pointer-events-none"
       style={{
         background:
           "radial-gradient(ellipse, rgba(219,234,254,0.7) 0%, transparent 70%)",

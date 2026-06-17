@@ -18,6 +18,15 @@ const productPreviewSpecs: Record<string, string[]> = {
   "head-and-tail": ["700+ mm width", "Up to 3000 mm", "0.4-6 mm thickness"],
 };
 
+const productCardImages: Record<string, string> = {
+  coils: "/coils-card.webp",
+  "baby-coils": "/baby-coils-card.webp",
+  sheets: "/sheets-card.webp",
+  strips: "/strips-card.webp",
+  circles: "/circles-card.webp",
+  "head-and-tail": "/head-and-tail-card.webp",
+};
+
 export type ProductCardData = {
   id: string;
   slug: string;
@@ -33,7 +42,7 @@ export type ProductCardData = {
 export const productCatalog: ProductCardData[] = products.map((product) => ({
   id: product.id,
   slug: product.slug,
-  image: product.image,
+  image: productCardImages[product.slug] ?? product.image,
   name: product.name,
   tagline: product.tagline,
   badge: productBadges[product.slug] ?? product.tagline,

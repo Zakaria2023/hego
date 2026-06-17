@@ -21,7 +21,7 @@ const ContactHeroSection = () => {
     >
       <div
         aria-hidden="true"
-        className="absolute top-[-15%] right-[-5%] h-[600px] w-[600px] rounded-full pointer-events-none"
+        className="absolute top-[-15%] right-[-5%] h-150 w-150 rounded-full pointer-events-none"
         style={{
           background:
             "radial-gradient(circle, rgba(219,234,254,0.5) 0%, transparent 70%)",

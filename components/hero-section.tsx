@@ -1,5 +1,3 @@
-"use client";
-
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -8,19 +6,19 @@ const stats = [
   { value: "12+", label: "Years Experience" },
   { value: "10+", label: "Countries Served" },
   { value: "500+", label: "Product Grades" },
-  { value: "300", label: "Number of Clients" },
+  { value: "300+", label: "Number of Clients" },
 ];
 
 const trustBrands = [
-  { alt: "Outokumpu", src: "/outokumpu.png", widthClass: "w-[132px]" },
-  { alt: "Thyssenkrupp", src: "/thyssenkrupp.png", widthClass: "w-[170px]" },
-  { alt: "Terninox", src: "/Terninox.png", widthClass: "w-[132px]" },
-  { alt: "HEGO", src: "/HEGO.png", widthClass: "w-[98px]" },
-  { alt: "Posco", src: "/posco.png", widthClass: "w-[112px]" },
-  { alt: "Acerinox", src: "/ACERINOX.png", widthClass: "w-[150px]" },
-  { alt: "Marcegaglia", src: "/Marcegaglia.png", widthClass: "w-[176px]" },
-  { alt: "Hyundai", src: "/hyundai-logo.png", widthClass: "w-[138px]" },
-  { alt: "Aperam", src: "/aperam.png", widthClass: "w-[128px]" },
+  { alt: "Outokumpu", src: "/outokumpu.webp", widthClass: "w-[132px]" },
+  { alt: "Thyssenkrupp", src: "/thyssenkrupp.webp", widthClass: "w-[170px]" },
+  { alt: "Terninox", src: "/terninox.webp", widthClass: "w-[132px]" },
+  { alt: "HEGO", src: "/hego.webp", widthClass: "w-[98px]" },
+  { alt: "Posco", src: "/posco.webp", widthClass: "w-[112px]" },
+  { alt: "Acerinox", src: "/acerinox.webp", widthClass: "w-[150px]" },
+  { alt: "Marcegaglia", src: "/marcegaglia.webp", widthClass: "w-[176px]" },
+  { alt: "Hyundai", src: "/hyundai-logo.webp", widthClass: "w-[138px]" },
+  { alt: "Aperam", src: "/aperam.webp", widthClass: "w-[128px]" },
 ];
 
 const heroTextShadow = "0 2px 18px rgba(255,255,255,0.42)";
@@ -43,23 +41,6 @@ const HeroSection = () => {
           className="object-cover animate-hero-zoom"
         />
       </div>
-
-      {/* JSON-LD */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            name: "SWEDINOX AB",
-            url: "https://swedinox.se",
-            logo: "https://swedinox.se/logo.png",
-            description:
-              "SWEDINOX AB is a global B2B supplier of premium stainless steel products including coils, sheets, tubes and more.",
-            address: { "@type": "PostalAddress", addressCountry: "SE" },
-          }),
-        }}
-      />
 
       {/* Subtle light wash behind text for legibility */}
       <div
@@ -118,6 +99,7 @@ const HeroSection = () => {
             <div className="mt-8 flex flex-wrap gap-4 animate-slide-up delay-300">
               <Link
                 href="/contact-us-1"
+                prefetch={false}
                 className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#005CA3] hover:bg-[#0077BB] text-white text-sm font-bold tracking-wide transition-all duration-200 shadow-[0_4px_20px_rgba(0,92,163,0.3)] hover:shadow-[0_6px_28px_rgba(0,170,221,0.45)] hover:-translate-y-0.5 cursor-pointer group"
                 aria-label="Contact SWEDINOX AB for a quote"
               >
@@ -127,6 +109,7 @@ const HeroSection = () => {
 
               <Link
                 href="/products"
+                prefetch={false}
                 className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border-2 border-[#F5A623]/70 hover:border-[#F5A623] text-[#005CA3] hover:text-[#005CA3] text-sm font-bold tracking-wide transition-all duration-200 cursor-pointer group bg-white/40 hover:bg-white/60 backdrop-blur-sm"
                 aria-label="Browse our steel product catalog"
               >

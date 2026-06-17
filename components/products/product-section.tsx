@@ -1,7 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { ArrowRight } from "lucide-react";
-import Reveal from "../shared/reveal";
 import ProductGrid from "./product-grid";
 import type { ProductCardData } from "./product-catalog";
 
@@ -75,29 +74,23 @@ const ProductSection = ({
 
       <div className="relative mx-auto max-w-7xl">
         <div className="mb-14 text-center">
-          <Reveal>
-            <span className={badgeClassName}>
-              <span
-                className="h-1.5 w-1.5 rounded-full bg-[#F5A623] animate-pulse"
-                aria-hidden="true"
-              />
-              {badge}
-            </span>
-          </Reveal>
-          <Reveal delay={0.06}>
-            <h2 id={id} className={titleClassName}>
-              {title}
-            </h2>
-          </Reveal>
-          <Reveal delay={0.12}>
-            <p className={descriptionClassName}>{description}</p>
-          </Reveal>
+          <span className={badgeClassName}>
+            <span
+              className="h-1.5 w-1.5 rounded-full bg-[#F5A623] animate-pulse"
+              aria-hidden="true"
+            />
+            {badge}
+          </span>
+          <h2 id={id} className={titleClassName}>
+            {title}
+          </h2>
+          <p className={descriptionClassName}>{description}</p>
         </div>
 
         <ProductGrid products={products} ctaLabel={cardCtaLabel} />
 
         {cta ? (
-          <Reveal delay={0.1} className="mt-12 text-center">
+          <div className="mt-12 text-center">
             <Link
               href={cta.href}
               className={ctaClassName}
@@ -106,7 +99,7 @@ const ProductSection = ({
               <span>{cta.label}</span>
               <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
             </Link>
-          </Reveal>
+          </div>
         ) : null}
       </div>
     </section>

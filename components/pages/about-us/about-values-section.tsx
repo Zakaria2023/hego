@@ -1,7 +1,7 @@
 "use client";
 
-import Reveal from "@/components/shared/reveal";
 import { fadeUp, stagger } from "@/components/shared/motion";
+import Reveal from "@/components/shared/reveal";
 import { GlowCard } from "@/components/ui/spotlight-card";
 import { motion } from "framer-motion";
 
@@ -35,7 +35,7 @@ const AboutValuesSection = () => (
   >
     <div
       aria-hidden="true"
-      className="absolute top-[-10%] right-[-5%] h-[500px] w-[500px] rounded-full pointer-events-none"
+      className="absolute top-[-10%] right-[-5%] h-125 w-125 rounded-full pointer-events-none"
       style={{
         background:
           "radial-gradient(circle, rgba(219,234,254,0.5) 0%, transparent 70%)",
@@ -78,9 +78,12 @@ const AboutValuesSection = () => (
               transition={{ type: "spring", stiffness: 300, damping: 25 }}
               className="group flex h-full gap-5 rounded-2xl p-6 transition-all duration-300"
             >
-              <div className="mt-1 flex-shrink-0">
+              <div className="mt-1 shrink-0">
                 <div className="flex h-5 w-5 items-center justify-center rounded-full border border-[#FCD34D] bg-[#FFF7ED]">
-                  <div className="h-2 w-2 rounded-full bg-[#005CA3]" aria-hidden="true" />
+                  <div
+                    className="h-2 w-2 rounded-full bg-[#005CA3]"
+                    aria-hidden="true"
+                  />
                 </div>
               </div>
               <div>
