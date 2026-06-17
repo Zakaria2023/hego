@@ -1,6 +1,8 @@
-import Footer from "@/app/components/Footer";
-import Navbar from "@/app/components/Navbar";
-import PageTransition from "@/app/components/PageTransition";
+import Footer from "@/components/footer";
+import Navbar from "@/components/navbar";
+import PageTransition from "@/components/page-transition";
+import StructuredData from "@/components/shared/structured-data";
+import { businessHours, defaultKeywords, seoImages, site } from "@/lib/site";
 import type { Metadata, Viewport } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
@@ -12,7 +14,6 @@ const plusJakarta = Plus_Jakarta_Sans({
   display: "swap",
 });
 
-/* ─── Viewport & theme-color (separate export per Next.js 14+) ─── */
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
@@ -24,44 +25,21 @@ export const viewport: Viewport = {
   colorScheme: "dark light",
 };
 
-/* ─── Root metadata (inherited / overridden by each page) ─── */
 export const metadata: Metadata = {
-  /* Title template – pages export `title: "Page Title"` and get "Page Title | SWEDINOX AB" */
   title: {
     default:
-      "SWEDINOX AB – Premium Stainless Steel Products | Global B2B Supplier",
+      "SWEDINOX AB - Premium Stainless Steel Products | Global B2B Supplier",
     template: "%s | SWEDINOX AB",
   },
   description:
-    "SWEDINOX AB is your trusted gateway to international stainless steel trade. We supply premium-grade stainless steel products worldwide — coils, sheets, tubes and more. ISO 9001:2015 certified. Request a quote today.",
-  keywords: [
-    "stainless steel products",
-    "stainless steel supplier",
-    "B2B steel trade",
-    "SWEDINOX AB",
-    "steel coils",
-    "stainless steel sheets",
-    "stainless steel strips",
-    "steel circles",
-    "baby coils",
-    "head and tail stainless",
-    "304 stainless steel",
-    "316L stainless steel",
-    "430 stainless steel",
-    "international steel supplier",
-    "Sweden steel export",
-    "semi manufactured stainless steel",
-    "cold rolled stainless",
-    "hot rolled stainless",
-    "ISO 9001 stainless steel",
-    "stainless steel Arlöv Sweden",
-  ],
-  authors: [{ name: "SWEDINOX AB", url: "https://swedinox.se" }],
-  creator: "SWEDINOX AB",
-  publisher: "SWEDINOX AB",
+    "SWEDINOX AB is a trusted global B2B supplier of stainless steel coils, sheets, strips, circles, baby coils, and head and tail sheets for industrial buyers and distributors.",
+  keywords: [...defaultKeywords, "SWEDINOX AB", "stainless steel Sweden"],
+  authors: [{ name: site.name, url: site.url }],
+  creator: site.name,
+  publisher: site.name,
   category: "Industrial Metals & Materials",
   classification: "B2B Manufacturing & Supply",
-  metadataBase: new URL("https://swedinox.se"),
+  metadataBase: new URL(site.url),
   alternates: {
     canonical: "/",
     languages: {
@@ -70,45 +48,37 @@ export const metadata: Metadata = {
       "sv-SE": "/",
     },
   },
-
-  /* Open Graph */
   openGraph: {
     title:
-      "SWEDINOX AB – Premium Stainless Steel Products | Global B2B Supplier",
+      "SWEDINOX AB - Premium Stainless Steel Products | Global B2B Supplier",
     description:
-      "Your gateway to international stainless steel business and trade. Premium-grade steel products supplied to 80+ countries. ISO 9001:2015 certified.",
-    url: "https://swedinox.se",
-    siteName: "SWEDINOX AB",
+      "Premium stainless steel products for industrial buyers worldwide. SWEDINOX AB supports sourcing, stock availability, and responsive delivery coordination.",
+    url: site.url,
+    siteName: site.name,
     images: [
       {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "SWEDINOX AB – Premium Stainless Steel Products",
-        type: "image/jpeg",
+        url: seoImages.default.url,
+        width: seoImages.default.width,
+        height: seoImages.default.height,
+        alt: seoImages.default.alt,
+        type: seoImages.default.type,
       },
     ],
-    locale: "en_US",
+    locale: site.locale,
     type: "website",
-    countryName: "Sweden",
-    emails: ["sales@swedinox.se", "sales@swedinox.eu"],
-    phoneNumbers: ["+46732488880", "+46406860186"],
+    countryName: site.address.countryName,
+    emails: [...site.emails],
+    phoneNumbers: [...site.phoneNumbers],
   },
-
-  /* Twitter / X */
   twitter: {
     card: "summary_large_image",
-    title: "SWEDINOX AB – Premium Stainless Steel Products",
+    title: "SWEDINOX AB - Premium Stainless Steel Products",
     description:
-      "Your gateway to international stainless steel trade. Premium-grade products, 80+ countries, ISO 9001:2015 certified.",
-    images: [
-      { url: "/og-image.jpg", alt: "SWEDINOX AB stainless steel products" },
-    ],
-    site: "@swedinoxab",
-    creator: "@swedinoxab",
+      "Premium stainless steel products, sourcing support, and responsive delivery coordination for global B2B buyers.",
+    images: [{ url: seoImages.default.url, alt: seoImages.default.alt }],
+    site: site.twitterHandle,
+    creator: site.twitterHandle,
   },
-
-  /* Robots */
   robots: {
     index: true,
     follow: true,
@@ -122,49 +92,166 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-
-  /* Icons */
   icons: {
-    icon: [
-      { url: "/favicon.ico", sizes: "any" },
-      { url: "/icon.svg", type: "image/svg+xml" },
-      { url: "/icon-192.png", type: "image/png", sizes: "192x192" },
-      { url: "/icon-512.png", type: "image/png", sizes: "512x512" },
-    ],
-    apple: [
-      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
-    ],
+    icon: [{ url: "/favicon.ico", sizes: "any" }],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
     shortcut: "/favicon.ico",
   },
-
-  /* PWA manifest */
   manifest: "/site.webmanifest",
-
-  /* Search engine verification */
-  verification: {
-    google: "REPLACE_WITH_GOOGLE_SITE_VERIFICATION_TOKEN",
-    yandex: "REPLACE_WITH_YANDEX_VERIFICATION_TOKEN",
-    other: {
-      "msvalidate.01": "REPLACE_WITH_BING_VERIFICATION_TOKEN",
-    },
-  },
-
-  /* App links */
   appleWebApp: {
-    title: "SWEDINOX AB",
+    title: site.name,
     statusBarStyle: "black-translucent",
     capable: true,
   },
-
-  /* Format detection */
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
-
-  /* Referrer */
   referrer: "origin-when-cross-origin",
+};
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": `${site.url}/#organization`,
+  name: site.name,
+  url: site.url,
+  logo: {
+    "@type": "ImageObject",
+    url: `${site.url}/logo.png`,
+    width: 200,
+    height: 60,
+  },
+  description:
+    "SWEDINOX AB is a family-owned global B2B supplier of premium semi-manufactured stainless steel products including coils, sheets, strips, circles, and head and tail sheets.",
+  foundingDate: "1999",
+  legalName: site.legalName,
+  vatID: "SE-XXXXXXXXXX",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: site.address.street,
+    addressLocality: site.address.locality,
+    postalCode: site.address.postalCode,
+    addressCountry: site.address.countryCode,
+    addressRegion: site.address.region,
+  },
+  contactPoint: [
+    {
+      "@type": "ContactPoint",
+      telephone: "+46-732-488-880",
+      contactType: "sales",
+      availableLanguage: ["English", "Swedish"],
+      areaServed: "Worldwide",
+    },
+    {
+      "@type": "ContactPoint",
+      telephone: "+46-406-860-186",
+      contactType: "customer service",
+      availableLanguage: ["English", "Swedish"],
+      areaServed: "Worldwide",
+    },
+    {
+      "@type": "ContactPoint",
+      email: site.emails[0],
+      contactType: "sales",
+      availableLanguage: ["English", "Swedish"],
+      areaServed: "Worldwide",
+    },
+  ],
+  email: [...site.emails],
+  telephone: "+46-732-488-880",
+  openingHoursSpecification: businessHours
+    .filter((item) => item.opens && item.closes)
+    .map((item) => ({
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: item.day,
+      opens: item.opens,
+      closes: item.closes,
+    })),
+  sameAs: [site.url],
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Stainless Steel Products",
+    itemListElement: [
+      {
+        "@type": "Offer",
+        itemOffered: { "@type": "Product", name: "Stainless Steel Coils" },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: { "@type": "Product", name: "Baby Coils" },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: { "@type": "Product", name: "Stainless Steel Sheets" },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: { "@type": "Product", name: "Stainless Steel Strips" },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: { "@type": "Product", name: "Stainless Steel Circles" },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: { "@type": "Product", name: "Head & Tail Sheets" },
+      },
+    ],
+  },
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${site.url}/#website`,
+  url: site.url,
+  name: site.name,
+  description: "Premium stainless steel products supplier for global B2B trade",
+  publisher: { "@id": `${site.url}/#organization` },
+  potentialAction: {
+    "@type": "SearchAction",
+    target: {
+      "@type": "EntryPoint",
+      urlTemplate: `${site.url}/faq?q={search_term_string}`,
+    },
+    "query-input": "required name=search_term_string",
+  },
+  inLanguage: "en-US",
+};
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": `${site.url}/#localbusiness`,
+  name: site.name,
+  image: `${site.url}${seoImages.default.url}`,
+  url: site.url,
+  telephone: "+46-732-488-880",
+  email: site.emails[0],
+  priceRange: "$$",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: site.address.street,
+    addressLocality: site.address.locality,
+    postalCode: site.address.postalCode,
+    addressCountry: site.address.countryCode,
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: site.geo.latitude,
+    longitude: site.geo.longitude,
+  },
+  openingHoursSpecification: businessHours
+    .filter((item) => item.opens && item.closes)
+    .map((item) => ({
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: item.day,
+      opens: item.opens,
+      closes: item.closes,
+    })),
+  sameAs: [site.url],
 };
 
 export default function RootLayout({
@@ -172,169 +259,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const organizationSchema = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "@id": "https://swedinox.se/#organization",
-    name: "SWEDINOX AB",
-    url: "https://swedinox.se",
-    logo: {
-      "@type": "ImageObject",
-      url: "https://swedinox.se/logo.png",
-      width: 200,
-      height: 60,
-    },
-    description:
-      "SWEDINOX AB is a family-owned global B2B supplier of premium semi-manufactured stainless steel products including coils, sheets, strips, circles, and head & tail. ISO 9001:2015 certified, serving 80+ countries since 1999.",
-    foundingDate: "1999",
-    legalName: "SWEDINOX AB",
-    vatID: "SE-XXXXXXXXXX",
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "Pilevallen 77",
-      addressLocality: "Arlöv",
-      postalCode: "232 35",
-      addressCountry: "SE",
-      addressRegion: "Skåne",
-    },
-    contactPoint: [
-      {
-        "@type": "ContactPoint",
-        telephone: "+46-732-488-880",
-        contactType: "sales",
-        availableLanguage: ["English", "Swedish"],
-        areaServed: "Worldwide",
-      },
-      {
-        "@type": "ContactPoint",
-        telephone: "+46-406-860-186",
-        contactType: "customer service",
-        availableLanguage: ["English", "Swedish"],
-        areaServed: "Worldwide",
-      },
-      {
-        "@type": "ContactPoint",
-        email: "sales@swedinox.se",
-        contactType: "sales",
-        availableLanguage: ["English", "Swedish"],
-        areaServed: "Worldwide",
-      },
-    ],
-    email: ["sales@swedinox.se", "sales@swedinox.eu"],
-    telephone: "+46-732-488-880",
-    openingHoursSpecification: [
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        opens: "09:00",
-        closes: "17:00",
-      },
-    ],
-    sameAs: ["https://swedinox.se"],
-    hasOfferCatalog: {
-      "@type": "OfferCatalog",
-      name: "Stainless Steel Products",
-      itemListElement: [
-        {
-          "@type": "Offer",
-          itemOffered: { "@type": "Product", name: "Stainless Steel Coils" },
-        },
-        {
-          "@type": "Offer",
-          itemOffered: { "@type": "Product", name: "Baby Coils" },
-        },
-        {
-          "@type": "Offer",
-          itemOffered: { "@type": "Product", name: "Stainless Steel Sheets" },
-        },
-        {
-          "@type": "Offer",
-          itemOffered: { "@type": "Product", name: "Stainless Steel Strips" },
-        },
-        {
-          "@type": "Offer",
-          itemOffered: { "@type": "Product", name: "Stainless Steel Circles" },
-        },
-        {
-          "@type": "Offer",
-          itemOffered: { "@type": "Product", name: "Head & Tail" },
-        },
-      ],
-    },
-  };
-
-  const websiteSchema = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "@id": "https://swedinox.se/#website",
-    url: "https://swedinox.se",
-    name: "SWEDINOX AB",
-    description: "Premium stainless steel products supplier — global B2B trade",
-    publisher: { "@id": "https://swedinox.se/#organization" },
-    potentialAction: {
-      "@type": "SearchAction",
-      target: {
-        "@type": "EntryPoint",
-        urlTemplate: "https://swedinox.se/faq?q={search_term_string}",
-      },
-      "query-input": "required name=search_term_string",
-    },
-    inLanguage: "en-US",
-  };
-
-  const localBusinessSchema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "@id": "https://swedinox.se/#localbusiness",
-    name: "SWEDINOX AB",
-    image: "https://swedinox.se/og-image.jpg",
-    url: "https://swedinox.se",
-    telephone: "+46-732-488-880",
-    email: "sales@swedinox.se",
-    priceRange: "$$",
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "Pilevallen 77",
-      addressLocality: "Arlöv",
-      postalCode: "232 35",
-      addressCountry: "SE",
-    },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: 55.6325,
-      longitude: 13.0768,
-    },
-    openingHoursSpecification: [
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        opens: "09:00",
-        closes: "17:00",
-      },
-    ],
-    sameAs: ["https://swedinox.se"],
-  };
-
   return (
     <html lang="en" className={`${plusJakarta.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col font-[family-name:var(--font-plus-jakarta)]">
-        {/* Global structured data */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(organizationSchema),
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(localBusinessSchema),
-          }}
-        />
+        <StructuredData data={organizationSchema} />
+        <StructuredData data={websiteSchema} />
+        <StructuredData data={localBusinessSchema} />
         <Navbar />
         <main className="flex-1">
           <PageTransition>{children}</PageTransition>

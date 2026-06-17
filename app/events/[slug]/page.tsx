@@ -1,76 +1,54 @@
+import EventDetailPage from "@/components/pages/event-detail/event-detail-page";
+import { buildPageMetadata } from "@/lib/seo";
+import { seoImages } from "@/lib/site";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getPost, posts } from "../data";
-import EventDetailClient from "./EventDetailClient";
 
 type Props = { params: Promise<{ slug: string }> };
 
 export async function generateStaticParams() {
-  return posts.map((p) => ({ slug: p.slug }));
+  return posts.map((post) => ({ slug: post.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const post = getPost(slug);
-  if (!post) return { title: "Post Not Found" };
 
-  return {
+  if (!post) {
+    return { title: "Post Not Found" };
+  }
+
+  return buildPageMetadata({
     title: post.title,
     description: post.excerpt,
+    path: `/events/${post.slug}`,
+    image:
+      post.category === "Industry Guide"
+        ? seoImages.products
+        : seoImages.events,
+    category: post.category,
     keywords: [
       post.category,
-      "SWEDINOX AB",
-      "stainless steel",
-      "stainless steel industry",
       post.title,
+      "stainless steel industry article",
+      "SWEDINOX AB insights",
     ],
-    authors: [{ name: "SWEDINOX AB", url: "https://swedinox.se" }],
-    alternates: { canonical: `/events/${post.slug}` },
-    openGraph: {
-      title: post.title,
-      description: post.excerpt,
-      url: `https://swedinox.se/events/${post.slug}`,
-      siteName: "SWEDINOX AB",
-      images: [
-        {
-          url: "/og-events.jpg",
-          width: 1200,
-          height: 630,
-          alt: post.title,
-          type: "image/jpeg",
-        },
-      ],
-      locale: "en_US",
-      type: "article",
-      publishedTime: post.dateISO,
-      authors: ["SWEDINOX AB"],
-      section: post.category,
-      tags: ["stainless steel", post.category, "SWEDINOX AB"],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: post.title,
-      description: post.excerpt,
-      images: [{ url: "/og-events.jpg", alt: post.title }],
-    },
-    robots: {
-      index: true,
-      follow: true,
-      googleBot: {
-        index: true,
-        follow: true,
-        "max-image-preview": "large",
-        "max-snippet": -1,
-      },
-    },
-  };
+    type: "article",
+    section: post.category,
+    publishedTime: post.dateISO,
+    modifiedTime: post.dateISO,
+    tags: ["stainless steel", post.category, "SWEDINOX AB"],
+  });
 }
 
-const EventDetailPage = async ({ params }: Props) => {
+const EventPage = async ({ params }: Props) => {
   const { slug } = await params;
   const post = getPost(slug);
+
   if (!post) notFound();
-  return <EventDetailClient slug={slug} />;
+
+  return <EventDetailPage slug={slug} />;
 };
 
-export default EventDetailPage;
+export default EventPage;

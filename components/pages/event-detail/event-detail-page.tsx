@@ -1,6 +1,6 @@
 "use client";
 
-import { ShaderAnimation } from "@/app/components/ui/shader-lines";
+import { ShaderAnimation } from "@/components/ui/shader-lines";
 import {
   AnimatePresence,
   motion,
@@ -17,8 +17,8 @@ import {
   getRecentPosts,
   type Block,
   type Post,
-} from "../data";
-import { thumbnails } from "../thumbnails";
+} from "@/app/events/data";
+import { thumbnails } from "@/components/pages/events/event-thumbnails";
 
 /* ─── Animation helpers ─── */
 const revealEase = [0.22, 1, 0.36, 1] as const;
@@ -279,7 +279,7 @@ const ShareButton = ({
 );
 
 /* ═══════════════════════════ MAIN COMPONENT ═══════════════════════════ */
-const EventDetailClient = ({ slug }: { slug: string }) => {
+const EventDetailPage = ({ slug }: { slug: string }) => {
   const post = getPost(slug);
   const recentPosts = getRecentPosts(slug, 2);
 
@@ -689,4 +689,4 @@ const EventDetailClient = ({ slug }: { slug: string }) => {
   );
 };
 
-export default EventDetailClient;
+export default EventDetailPage;

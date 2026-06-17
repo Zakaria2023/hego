@@ -1,5 +1,6 @@
 "use client";
 
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -10,16 +11,16 @@ const stats = [
   { value: "300", label: "Number of Clients" },
 ];
 
-const trustBadges = [
-  "Aperam",
-  "Outokumpu",
-  "Thyssenkrupp",
-  "Terninox",
-  "HEGO",
-  "Posco",
-  "Acerinox",
-  "Marcegaglia",
-  "Hyundai",
+const trustBrands = [
+  { alt: "Outokumpu", src: "/outokumpu.png", widthClass: "w-[132px]" },
+  { alt: "Thyssenkrupp", src: "/thyssenkrupp.png", widthClass: "w-[170px]" },
+  { alt: "Terninox", src: "/Terninox.png", widthClass: "w-[132px]" },
+  { alt: "HEGO", src: "/HEGO.png", widthClass: "w-[98px]" },
+  { alt: "Posco", src: "/posco.png", widthClass: "w-[112px]" },
+  { alt: "Acerinox", src: "/ACERINOX.png", widthClass: "w-[150px]" },
+  { alt: "Marcegaglia", src: "/Marcegaglia.png", widthClass: "w-[176px]" },
+  { alt: "Hyundai", src: "/hyundai-logo.png", widthClass: "w-[138px]" },
+  { alt: "Aperam", src: "/aperam.png", widthClass: "w-[128px]" },
 ];
 
 const heroTextShadow = "0 2px 18px rgba(255,255,255,0.42)";
@@ -121,19 +122,7 @@ const HeroSection = () => {
                 aria-label="Contact SWEDINOX AB for a quote"
               >
                 <span>Contact Us</span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200"
-                  aria-hidden="true"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z"
-                    clipRule="evenodd"
-                  />
-                </svg>
+                <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
               </Link>
 
               <Link
@@ -142,21 +131,7 @@ const HeroSection = () => {
                 aria-label="Browse our steel product catalog"
               >
                 <span>View Products</span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={2}
-                  stroke="currentColor"
-                  className="w-4 h-4 group-hover:rotate-45 transition-transform duration-200"
-                  aria-hidden="true"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
-                  />
-                </svg>
+                <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover:rotate-45" />
               </Link>
             </div>
 
@@ -196,21 +171,37 @@ const HeroSection = () => {
             Leading Brands We Work With
           </span>
         </div>
-        <div className="flex animate-marquee whitespace-nowrap py-4 gap-0">
-          {[...trustBadges, ...trustBadges, ...trustBadges, ...trustBadges].map(
-            (badge, i) => (
+        <p className="sr-only">
+          Leading brands we work with:{" "}
+          {trustBrands.map((brand) => brand.alt).join(", ")}.
+        </p>
+        <div
+          aria-hidden="true"
+          className="flex animate-marquee whitespace-nowrap py-4 gap-0"
+        >
+          {[...trustBrands, ...trustBrands, ...trustBrands].map((brand, i) => (
+            <div
+              key={`${brand.alt}-${i}`}
+              className="inline-flex items-center gap-4 px-8"
+            >
+              <span
+                className="w-1 h-1 rounded-full bg-[#F5A623]"
+                aria-hidden="true"
+              />
               <div
-                key={i}
-                className="inline-flex items-center gap-2 px-8 text-white/85 text-xs font-semibold tracking-widest uppercase"
+                className={`relative h-7 ${brand.widthClass} shrink-0 overflow-hidden rounded-sm`}
+                style={{ filter: "drop-shadow(0 2px 10px rgba(0,0,0,0.28))" }}
               >
-                <span
-                  className="w-1 h-1 rounded-full bg-[#F5A623]"
-                  aria-hidden="true"
+                <Image
+                  src={brand.src}
+                  alt=""
+                  fill
+                  sizes="180px"
+                  className="object-contain"
                 />
-                <span style={{ textShadow: tickerTextShadow }}>{badge}</span>
               </div>
-            ),
-          )}
+            </div>
+          ))}
         </div>
       </div>
     </section>

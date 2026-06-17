@@ -1,6 +1,6 @@
 "use client";
 
-import { ShaderAnimation } from "@/app/components/ui/shader-lines";
+import { ShaderAnimation } from "@/components/ui/shader-lines";
 import {
   motion,
   useInView,
@@ -10,8 +10,8 @@ import {
 } from "framer-motion";
 import Link from "next/link";
 import { useRef } from "react";
-import { categoryMeta, posts, type Post } from "./data";
-import { thumbnails } from "./thumbnails";
+import { categoryMeta, posts, type Post } from "@/app/events/data";
+import { thumbnails } from "./event-thumbnails";
 
 /* ─── Animation helpers ─── */
 const revealEase = [0.22, 1, 0.36, 1] as const;
@@ -280,7 +280,7 @@ const PostCard = ({ post, index }: { post: Post; index: number }) => {
 };
 
 /* ═══════════════════════════ MAIN PAGE ═══════════════════════════ */
-const EventsClient = () => {
+const EventsPage = () => {
   const heroRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: heroRef,
@@ -495,4 +495,4 @@ const EventsClient = () => {
   );
 };
 
-export default EventsClient;
+export default EventsPage;

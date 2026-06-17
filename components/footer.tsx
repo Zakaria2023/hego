@@ -50,7 +50,7 @@ const Footer = () => {
                 <br />
                 232 35 Arlov, Sweden
               </p>
-              <p>
+              <div>
                 <div className="flex flex-col gap-2">
                   <a
                     href="tel:+46732488880"
@@ -78,7 +78,7 @@ const Footer = () => {
                 >
                   sales@swedinox.se
                 </a>
-              </p>
+              </div>
               <p>Mon - Fri: 09:00 - 17:00</p>
             </address>
           </div>

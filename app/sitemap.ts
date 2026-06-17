@@ -1,47 +1,57 @@
 import type { MetadataRoute } from "next";
 import { posts } from "./events/data";
+import { products } from "./products/data";
 
 const BASE = "https://swedinox.se";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const now = new Date();
+
   const staticPages: MetadataRoute.Sitemap = [
     {
       url: BASE,
-      lastModified: new Date(),
+      lastModified: now,
       changeFrequency: "weekly",
-      priority: 1.0,
+      priority: 1,
     },
     {
       url: `${BASE}/about-us`,
-      lastModified: new Date(),
+      lastModified: now,
       changeFrequency: "monthly",
       priority: 0.9,
     },
     {
       url: `${BASE}/products`,
-      lastModified: new Date(),
+      lastModified: now,
       changeFrequency: "weekly",
       priority: 0.95,
     },
     {
       url: `${BASE}/events`,
-      lastModified: new Date(),
+      lastModified: now,
       changeFrequency: "weekly",
       priority: 0.8,
     },
     {
       url: `${BASE}/contact-us-1`,
-      lastModified: new Date(),
+      lastModified: now,
       changeFrequency: "monthly",
       priority: 0.85,
     },
     {
       url: `${BASE}/faq`,
-      lastModified: new Date(),
+      lastModified: now,
       changeFrequency: "monthly",
       priority: 0.75,
     },
   ];
+
+  const productPages: MetadataRoute.Sitemap = products.map((product) => ({
+    url: `${BASE}/products/${product.slug}`,
+    lastModified: now,
+    changeFrequency: "weekly" as const,
+    priority: 0.9,
+  }));
 
   const eventPages: MetadataRoute.Sitemap = posts.map((post) => ({
     url: `${BASE}/events/${post.slug}`,
@@ -50,5 +60,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticPages, ...eventPages];
+  return [...staticPages, ...productPages, ...eventPages];
 }

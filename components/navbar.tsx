@@ -1,6 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
+import { ArrowRight, ChevronRight, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -159,21 +160,14 @@ const Navbar = () => {
                 className="cta-glow relative inline-flex items-center gap-2 px-5 py-2.5 rounded-sm bg-[#005CA3] hover:bg-[#0077BB] text-white text-sm font-semibold tracking-wide uppercase cursor-pointer overflow-hidden group transition-colors duration-200"
               >
                 <span className="relative z-10">Get Quote</span>
-                <motion.svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
+                <motion.span
                   className="w-4 h-4 relative z-10"
                   aria-hidden="true"
                   whileHover={{ x: 3 }}
                   transition={{ type: "spring", stiffness: 400, damping: 20 }}
                 >
-                  <path
-                    fillRule="evenodd"
-                    d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z"
-                    clipRule="evenodd"
-                  />
-                </motion.svg>
+                  <ArrowRight className="h-4 w-4" />
+                </motion.span>
                 <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-linear-to-r from-transparent via-white/20 to-transparent" />
               </Link>
             </div>
@@ -275,15 +269,7 @@ const Navbar = () => {
                   className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center cursor-pointer"
                   whileTap={{ scale: 0.88 }}
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    className="w-4 h-4 text-slate-400"
-                    aria-hidden="true"
-                  >
-                    <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
-                  </svg>
+                  <X className="h-4 w-4 text-slate-400" />
                 </motion.button>
               </div>
 
@@ -304,10 +290,7 @@ const Navbar = () => {
                         }`}
                       >
                         <span>{label}</span>
-                        <motion.svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
+                        <motion.span
                           className={`w-4 h-4 shrink-0 ${
                             isActive
                               ? "text-[#F5A623]"
@@ -321,12 +304,8 @@ const Navbar = () => {
                             damping: 20,
                           }}
                         >
-                          <path
-                            fillRule="evenodd"
-                            d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
-                            clipRule="evenodd"
-                          />
-                        </motion.svg>
+                          <ChevronRight className="h-4 w-4" />
+                        </motion.span>
                       </Link>
                     </motion.div>
                   );
@@ -344,19 +323,7 @@ const Navbar = () => {
                   className="cta-glow flex items-center justify-center gap-2 w-full px-5 py-3.5 rounded-lg bg-[#005CA3] hover:bg-[#0077BB] text-white text-sm font-bold tracking-widest uppercase transition-colors duration-200 cursor-pointer overflow-hidden group relative"
                 >
                   <span className="relative z-10">Get a Quote</span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    className="w-4 h-4 relative z-10"
-                    aria-hidden="true"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
+                  <ArrowRight className="relative z-10 h-4 w-4" />
                   <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-linear-to-r from-transparent via-white/20 to-transparent" />
                 </Link>
               </motion.div>

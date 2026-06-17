@@ -10,7 +10,7 @@ import {
 } from "framer-motion";
 import Link from "next/link";
 import { useMemo, useRef, useState } from "react";
-import { allFaqItems, faqData, type FaqItem } from "./data";
+import { allFaqItems, faqData, type FaqItem } from "@/app/faq/data";
 
 const revealEase = [0.22, 1, 0.36, 1] as const;
 
@@ -200,7 +200,7 @@ const StatCard = ({
 );
 
 /* ═══════════════════════════ MAIN PAGE ═══════════════════════════ */
-const FaqClient = () => {
+const FaqPage = () => {
   const heroRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: heroRef,
@@ -739,4 +739,4 @@ const FaqClient = () => {
   );
 };
 
-export default FaqClient;
+export default FaqPage;

@@ -1,32 +1,24 @@
-import HeroSection from "@/app/components/HeroSection";
-import HomeSections from "@/app/components/HomeSections";
+import HeroSection from "@/components/hero-section";
+import HomeSections from "@/components/home-sections";
+import { buildPageMetadata } from "@/lib/seo";
+import { seoImages } from "@/lib/site";
 import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Premium Stainless Steel Products – Global B2B Supplier",
+export const metadata: Metadata = buildPageMetadata({
+  title: "Premium Stainless Steel Products for Global B2B Supply",
   description:
-    "SWEDINOX AB supplies premium-grade stainless steel coils, sheets, strips, circles and more to 80+ countries. ISO 9001:2015 certified. 25+ years of experience. Request a quote today.",
-  alternates: {
-    canonical: "/",
-    languages: { "en-US": "/", "sv-SE": "/" },
-  },
-  openGraph: {
-    title:
-      "SWEDINOX AB – Premium Stainless Steel Products | Global B2B Supplier",
-    description:
-      "Your gateway to international stainless steel trade. Premium-grade steel products supplied to 80+ countries. ISO 9001:2015 certified. Request a quote.",
-    url: "https://swedinox.se",
-    images: [
-      {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "SWEDINOX AB – Stainless steel coils warehouse",
-      },
-    ],
-    type: "website",
-  },
-};
+    "SWEDINOX AB supplies premium-grade stainless steel coils, sheets, strips, circles, baby coils, and head and tail sheets to industrial buyers worldwide. Request a quote from our Sweden team.",
+  path: "/",
+  image: seoImages.home,
+  category: "Industrial Materials Supplier",
+  keywords: [
+    "global stainless steel supplier",
+    "stainless steel exporter Sweden",
+    "industrial stainless steel sourcing",
+    "stainless steel quote",
+    "B2B stainless steel supply",
+  ],
+});
 
 const Home = () => {
   return (
