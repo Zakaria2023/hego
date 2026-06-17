@@ -1,0 +1,51 @@
+# SWEDINOX AB robots.txt
+# Crawl policy for search engines, preview bots, and discovery crawlers.
+
+User-agent: *
+Allow: /
+Disallow: /api/
+Allow: /_next/static/
+Allow: /_next/image/
+Allow: /favicon.ico
+Allow: /apple-touch-icon.png
+Allow: /site.webmanifest
+
+# Major search engine crawlers
+User-agent: Googlebot
+User-agent: Googlebot-Image
+User-agent: Googlebot-News
+User-agent: Googlebot-Video
+User-agent: GoogleOther
+User-agent: Bingbot
+User-agent: AdIdxBot
+User-agent: Applebot
+User-agent: DuckDuckBot
+User-agent: Slurp
+User-agent: Baiduspider
+User-agent: YandexBot
+Allow: /
+Disallow: /api/
+
+# Social and link preview crawlers
+User-agent: facebot
+User-agent: Twitterbot
+User-agent: LinkedInBot
+User-agent: Slackbot
+User-agent: Discordbot
+User-agent: WhatsApp
+User-agent: SkypeUriPreview
+Allow: /
+Disallow: /api/
+
+# AI and discovery crawlers
+User-agent: GPTBot
+User-agent: ChatGPT-User
+User-agent: Google-Extended
+User-agent: PerplexityBot
+User-agent: ClaudeBot
+User-agent: CCBot
+Allow: /
+Disallow: /api/
+
+Host: https://swedinox.se
+Sitemap: https://swedinox.se/sitemap.xml

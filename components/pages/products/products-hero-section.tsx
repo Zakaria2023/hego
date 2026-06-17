@@ -1,11 +1,11 @@
 "use client";
 
+import { revealEase } from "@/components/shared/motion";
 import { ShaderAnimation } from "@/components/ui/shader-lines";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { useRef } from "react";
-import { revealEase } from "@/components/shared/motion";
 
 const ProductsHeroSection = () => {
   const heroRef = useRef<HTMLElement | null>(null);
@@ -31,7 +31,7 @@ const ProductsHeroSection = () => {
 
       <div
         aria-hidden="true"
-        className="absolute top-[-15%] right-[-5%] h-[600px] w-[600px] rounded-full pointer-events-none"
+        className="absolute top-[-15%] right-[-5%] h-150 w-150 rounded-full pointer-events-none"
         style={{
           background:
             "radial-gradient(circle, rgba(219,234,254,0.5) 0%, transparent 70%)",
@@ -43,7 +43,7 @@ const ProductsHeroSection = () => {
         className="relative z-10 mx-auto w-full max-w-7xl px-4 pt-36 pb-16 sm:px-6 lg:px-8"
       >
         <nav aria-label="Breadcrumb" className="mb-6">
-          <ol className="flex items-center gap-2 text-xs text-[#94A3B8]">
+          <ol className="flex items-center gap-2 text-xs text-[#475569]">
             <li>
               <Link
                 href="/"

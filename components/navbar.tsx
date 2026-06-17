@@ -27,7 +27,7 @@ const Navbar = () => {
               width={139}
               height={56}
               loading="eager"
-              className="h-14 w-[139px] object-contain transition-opacity duration-200 group-hover:opacity-90"
+              className="h-14 w-34.75 object-contain transition-opacity duration-200 group-hover:opacity-90"
             />
           </Link>
 
@@ -45,7 +45,7 @@ const Navbar = () => {
                 </span>
                 <span
                   aria-hidden="true"
-                  className="absolute bottom-0 left-0 h-[2px] w-0 rounded-full bg-linear-to-r from-[#F5A623] to-[#00AADD] transition-[width] duration-300 group-hover:w-full"
+                  className="absolute bottom-0 left-0 h-0.5 w-0 rounded-full bg-linear-to-r from-[#F5A623] to-[#00AADD] transition-[width] duration-300 group-hover:w-full"
                 />
               </Link>
             ))}
@@ -67,7 +67,11 @@ const Navbar = () => {
           </div>
 
           <div className="relative md:hidden">
-            <input id="mobile-menu-toggle" type="checkbox" className="peer sr-only" />
+            <input
+              id="mobile-menu-toggle"
+              type="checkbox"
+              className="peer sr-only"
+            />
 
             <label
               htmlFor="mobile-menu-toggle"
@@ -77,15 +81,15 @@ const Navbar = () => {
               <span className="sr-only">Open menu</span>
               <span
                 aria-hidden="true"
-                className="absolute h-[2px] w-5 -translate-y-[6px] rounded-full bg-[#0F172A]"
+                className="absolute h-0.5 w-5 -translate-y-1.5 rounded-full bg-[#0F172A]"
               />
               <span
                 aria-hidden="true"
-                className="absolute h-[2px] w-5 rounded-full bg-[#0F172A]"
+                className="absolute h-0.5 w-5 rounded-full bg-[#0F172A]"
               />
               <span
                 aria-hidden="true"
-                className="absolute h-[2px] w-5 translate-y-[6px] rounded-full bg-[#0F172A]"
+                className="absolute h-0.5 w-5 translate-y-1.5 rounded-full bg-[#0F172A]"
               />
             </label>
 
@@ -103,15 +107,15 @@ const Navbar = () => {
               <div className="h-[2.5px] w-full bg-linear-to-r from-[#F5A623] via-[#00AADD] to-[#005CA3]" />
 
               <div className="flex items-center justify-between border-b border-white/5 px-6 py-4">
-                <a href="/" className="flex items-center">
+                <Link href="/" className="flex items-center">
                   <Image
                     src="/logo.webp"
                     alt="SWEDINOX AB"
                     width={99}
                     height={40}
-                    className="h-10 w-[99px] object-contain brightness-0 invert"
+                    className="h-10 w-24.75 object-contain brightness-0 invert"
                   />
-                </a>
+                </Link>
                 <label
                   htmlFor="mobile-menu-toggle"
                   aria-label="Close menu"

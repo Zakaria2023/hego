@@ -32,7 +32,7 @@ const ContactHeroSection = () => {
         className="relative z-10 mx-auto w-full max-w-7xl px-4 pb-16 pt-36 sm:px-6 lg:px-8"
       >
         <nav aria-label="Breadcrumb" className="mb-6">
-          <ol className="flex items-center gap-2 text-xs text-[#94A3B8]">
+          <ol className="flex items-center gap-2 text-xs text-[#475569]">
             <li>
               <Link
                 href="/"

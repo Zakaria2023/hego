@@ -26,14 +26,17 @@ const quickLinks = [
 ] as const;
 
 const ContactQuickLinksSection = () => (
-  <section aria-label="Quick contact options" className="relative overflow-hidden">
+  <section
+    aria-label="Quick contact options"
+    className="relative overflow-hidden"
+  >
     <div
       aria-hidden="true"
-      className="absolute inset-0 bg-gradient-to-br from-[#EFF6FF] via-white to-[#F0F9FF]"
+      className="absolute inset-0 bg-linear-to-br from-[#EFF6FF] via-white to-[#F0F9FF]"
     />
     <div
       aria-hidden="true"
-      className="absolute top-1/2 left-1/2 h-[400px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full pointer-events-none"
+      className="absolute top-1/2 left-1/2 h-100 w-150 -translate-x-1/2 -translate-y-1/2 rounded-full pointer-events-none"
       style={{
         background:
           "radial-gradient(ellipse, rgba(219,234,254,0.7) 0%, transparent 70%)",
@@ -62,7 +65,7 @@ const ContactQuickLinksSection = () => (
                   <Icon className="h-5 w-5" />
                 </div>
                 <div>
-                  <span className="mb-0.5 block text-[10px] font-bold uppercase tracking-widest text-[#94A3B8]">
+                  <span className="mb-0.5 block text-[10px] font-bold uppercase tracking-widest text-[#475569]">
                     {item.label}
                   </span>
                   <span className="block text-sm font-semibold text-[#0F172A] transition-colors duration-200 group-hover:text-[#005CA3]">

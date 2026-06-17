@@ -1,7 +1,7 @@
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
-import Reveal from "@/components/shared/reveal";
 import type { Product } from "@/app/products/data";
+import Reveal from "@/components/shared/reveal";
+import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 type ProductInquiryBannerProps = {
   product: Product;
@@ -9,16 +9,20 @@ type ProductInquiryBannerProps = {
 
 const ProductInquiryBanner = ({ product }: ProductInquiryBannerProps) => (
   <Reveal>
-    <div className="relative mx-4 mb-20 overflow-hidden rounded-3xl bg-gradient-to-r from-[#005CA3] to-[#0077BB] p-10 text-center sm:mx-6 lg:mx-8 lg:p-14">
+    <div className="relative mx-4 mb-20 overflow-hidden rounded-3xl bg-linear-to-r from-[#005CA3] to-[#0077BB] p-10 text-center sm:mx-6 lg:mx-8 lg:p-14">
       <div
         aria-hidden="true"
         className="absolute top-0 right-0 h-80 w-80 rounded-full opacity-10"
-        style={{ background: "radial-gradient(circle, white 0%, transparent 70%)" }}
+        style={{
+          background: "radial-gradient(circle, white 0%, transparent 70%)",
+        }}
       />
       <div
         aria-hidden="true"
         className="absolute bottom-0 left-0 h-60 w-60 rounded-full opacity-10"
-        style={{ background: "radial-gradient(circle, white 0%, transparent 70%)" }}
+        style={{
+          background: "radial-gradient(circle, white 0%, transparent 70%)",
+        }}
       />
       <p className="relative mb-3 text-xs font-bold uppercase tracking-widest text-blue-100">
         Ready to order?

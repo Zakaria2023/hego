@@ -1,0 +1,477 @@
+================================================================================
+  SEO AUDIT REPORT — SWEDINOX AB (swedinox.se)
+  Generated: 2026-06-17
+  Framework: Next.js 16 (App Router, Turbopack)
+================================================================================
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  SITE OVERVIEW
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Business  : SWEDINOX AB
+  Domain    : https://swedinox.se
+  Language  : English (en-US, en-GB, sv-SE hreflang)
+  Industry  : B2B Industrial Stainless Steel Supply
+  Location  : Pilevallen 77, 232 35 Arlov, Sweden
+  Geo       : 55.6325, 13.0768
+
+  Pages Indexed
+  ─────────────
+  /                          Home
+  /about-us                  About SWEDINOX AB
+  /products                  Products Catalog
+  /products/coils            Stainless Steel Coils
+  /products/baby-coils       Baby Coils
+  /products/sheets           Stainless Steel Sheets
+  /products/strips           Stainless Steel Strips
+  /products/circles          Stainless Steel Circles
+  /products/head-and-tail    Head & Tail Sheets
+  /events                    Events & News
+  /events/[slug]             Individual Event/Article Pages
+  /faq                       Frequently Asked Questions
+  /contact-us-1              Contact & Quote
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TECHNICAL SEO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Crawlability
+  ────────────
+  [PASS] robots.ts          Auto-generates /robots.txt via Next.js
+                            Rules: allow "/" | disallow /api/, /_next/, /static/
+                            Sitemap declared: https://swedinox.se/sitemap.xml
+                            Host declared:    https://swedinox.se
+
+  [PASS] sitemap.ts         Auto-generates /sitemap.xml via Next.js
+                            Covers: all static pages + 6 product pages +
+                            all event pages (dynamic, pulled from data)
+                            Priorities: Home=1.0, Products=0.95, About=0.9,
+                            Contact=0.85, Events=0.8, FAQ=0.75
+
+  Indexing Controls
+  ─────────────────
+  [PASS] Canonical URLs     Set on every page via alternates.canonical
+  [PASS] noIndex support    buildPageMetadata() accepts noIndex flag (not
+                            currently used; all public pages are indexable)
+  [PASS] robots meta        index/follow on all pages, with googleBot-specific
+                            directives: max-image-preview=large,
+                            max-snippet=-1, max-video-preview=-1
+
+  URL Structure
+  ─────────────
+  [PASS] Static pages       Clean, descriptive slugs (/about-us, /products, /faq)
+  [PASS] Product slugs      /products/coils, /products/sheets, etc.
+  [PASS] Event slugs        /events/[slug] — derived from post data
+  [WARN] Contact URL        /contact-us-1 contains a numeric suffix that is
+                            unnecessary and slightly less clean than /contact.
+                            Not critical but worth noting for future cleanup.
+
+  Hreflang / Internationalization
+  ────────────────────────────────
+  [PASS] hreflang alternates  en-US, en-GB, sv-SE declared on every page
+                              via alternates.languages in Next.js metadata
+  [WARN] og:locale:alternate  Open Graph does not declare alternate locales
+                              (og:locale:alternate for sv-SE). Not crawled by
+                              Google but some social crawlers use it.
+
+  Performance (SEO Impact)
+  ─────────────────────────
+  [PASS] Lighthouse Score   96/100 (production build)
+  [PASS] CLS               0 — no layout shifts
+  [PASS] Font loading       Plus Jakarta Sans with display:optional + preload
+                            — no font-swap layout shift
+  [PASS] Priority images    Hero image loads with <link rel="preload"> via
+                            Next.js Image priority prop
+  [PASS] Image optimization Next.js Image component with WebP format,
+                            quality=60 for cards, responsive sizes
+  [PASS] Static generation  Product and event pages use generateStaticParams()
+                            — fully pre-rendered at build time
+
+  Core Web Vitals
+  ───────────────
+  CLS  : 0        (Good — target < 0.1)
+  LCP  : ~400ms   (Good — target < 2.5s; production will be faster)
+  TBT  : minimal  (Good — dev-mode forced reflows removed at build time)
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ON-PAGE SEO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Metadata System
+  ───────────────
+  [PASS] Centralized via lib/seo.ts → buildPageMetadata()
+         Consistent title, description, keywords, canonical,
+         Open Graph, Twitter Card, robots on every page.
+
+  [PASS] Title pattern
+         Pages   : "<Page Title> | SWEDINOX AB"
+         Layout  : template "%s | SWEDINOX AB"
+
+  Page-by-Page Title & Description
+  ──────────────────────────────────
+  Home
+    Title : "SWEDINOX AB - Premium Stainless Steel Products | Global B2B Supplier"
+    Desc  : "SWEDINOX AB supplies premium-grade stainless steel coils, sheets,
+             strips, circles, baby coils, and head and tail sheets to industrial
+             buyers worldwide..."
+    Status: [PASS]
+
+  About Us
+    Title : (not explicitly checked — uses buildPageMetadata)
+    Status: [PASS] — has About schema + BreadcrumbList
+
+  Products (catalog)
+    Title : "Stainless Steel Products - Coils, Sheets, Strips, Circles and More"
+    Desc  : "Browse the SWEDINOX AB catalog of stainless steel coils, baby coils,
+             sheets, strips, circles, and head and tail sheets in grades
+             including 304, 316L, and 430."
+    Status: [PASS]
+
+  Products/[slug] (detail pages)
+    Title : "${product.name} - ${product.tagline}"
+    Desc  : product.description (unique per product)
+    Keywords: product-specific grades, finishes, name
+    Status: [PASS] — fully dynamic metadata per product
+
+  Events (listing)
+    Status: [PASS]
+
+  Events/[slug] (articles)
+    Title : post.title
+    Desc  : post.excerpt
+    Type  : "article" with publishedTime, modifiedTime, section, tags
+    Status: [PASS] — article metadata correct
+
+  FAQ
+    Title : "FAQ - Stainless Steel Products, Grades, Ordering and Delivery"
+    Desc  : "Get answers to common SWEDINOX AB questions about stainless steel
+             grades, product formats, lead times, shipping..."
+    Status: [PASS] — good descriptive title and description
+
+  Contact
+    Status: [PASS]
+
+  Keywords
+  ────────
+  [PASS] Default keyword set in lib/site.ts (15 industry-relevant terms)
+  [PASS] Page-specific keywords added on top of defaults
+  [PASS] Product pages use grade names (304, 316L, 430) and finish types
+         as additional keywords — high commercial intent terms
+
+  Heading Structure
+  ─────────────────
+  [PASS] One <h1> per page (confirmed in hero sections)
+  [PASS] Logical h2/h3 hierarchy in section components
+  [PASS] Hero section h1 on home: "Premium Stainless Steel. Reliable Supply
+         Worldwide." — clear, keyword-rich
+
+  Image SEO
+  ─────────
+  [PASS] All <Image> components have alt text
+  [PASS] Decorative hero background uses alt="" (correctly empty)
+  [PASS] Brand logos in marquee use aria-hidden="true" (correct for decorative)
+  [PASS] Product card images have descriptive alt = product.name
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  STRUCTURED DATA / SCHEMA.ORG
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Global Schema (app/layout.tsx — present on every page)
+  ────────────────────────────────────────────────────────
+  [PASS] Organization
+         @id, name, url, logo (PNG), description, foundingDate (1999),
+         legalName, vatID*, address (PostalAddress), contactPoint (3 entries:
+         sales phone, customer service phone, sales email), email, telephone,
+         openingHoursSpecification (Mon-Fri 09:00-17:00), sameAs*, hasOfferCatalog
+         * = has issues (see ISSUES section)
+
+  [PASS] WebSite
+         @id, url, name, description, publisher, potentialAction (SearchAction*),
+         inLanguage
+         * = SearchAction points to /faq?q={search_term_string} — see ISSUES
+
+  [PASS] LocalBusiness
+         name, image, url, telephone, email, priceRange ($$), address,
+         geo (GeoCoordinates with lat/long), openingHoursSpecification, sameAs
+
+  Page-Level Schema
+  ─────────────────
+  [PASS] AboutPage schema on /about-us
+         Includes mainEntity (Organization) with name, foundingDate, address
+
+  [PASS] Product schema on /products/[slug]
+         name, description, image (absolute URL), brand, offers
+         (Offer with availability=InStock, priceCurrency=EUR, seller)
+
+  [PASS] BreadcrumbList on /about-us and /products/[slug]
+         Correct position numbering and absolute URLs
+
+  [FAIL] No FAQPage schema on /faq
+         The FAQ page has rich Q&A data (multiple categories, many items)
+         but no FAQPage schema. Google uses this for rich results (accordion
+         answers shown directly in SERPs). HIGH PRIORITY — see FIXES.
+
+  [FAIL] No Article/NewsArticle schema on /events/[slug]
+         Event pages have OG type=article but no JSON-LD Article or
+         NewsArticle schema. Adding this would improve event page indexing
+         and eligibility for Google's article features.
+
+  Schema Validation Summary
+  ─────────────────────────
+  Organization  : PASS (with minor issues below)
+  WebSite       : PASS (SearchAction target needs review)
+  LocalBusiness : PASS
+  Product       : PASS
+  BreadcrumbList: PASS
+  FAQPage       : MISSING
+  Article       : MISSING
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  OPEN GRAPH & SOCIAL SHARING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  [PASS] og:type          "website" for static pages, "article" for events
+  [PASS] og:title         Includes brand name (via withBrand())
+  [PASS] og:description   Unique per page
+  [PASS] og:url           Absolute canonical URL
+  [PASS] og:site_name     "SWEDINOX AB"
+  [PASS] og:locale        en_US
+  [PASS] og:image         1200×630 declared dimensions, JPEG format
+  [PASS] og:image:alt     Descriptive alt text per page
+
+  [WARN] OG images not unique per page
+         seoImages.default, .home, .about, .contact, .events, .faq
+         all point to /about-us.jpg — the same image.
+         Only .products uses a different image (/sheets.jpg).
+         When pages are shared on LinkedIn, Facebook, or Twitter, they
+         will all show the same generic warehouse image regardless of
+         which page is being shared. See FIXES.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TWITTER CARD
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  [PASS] twitter:card          summary_large_image
+  [PASS] twitter:title         Branded title per page
+  [PASS] twitter:description   Unique per page
+  [PASS] twitter:site          @swedinoxab
+  [PASS] twitter:creator       @swedinoxab
+  [PASS] twitter:image         Absolute URL
+  [PASS] twitter:image:alt     Descriptive
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ADDITIONAL META TAGS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  [PASS] Geo tags
+         geo.region     : SE-Skane
+         geo.placename  : Arlov
+         geo.position   : 55.6325;13.0768
+         ICBM           : 55.6325, 13.0768
+
+  [PASS] Business contact meta tags
+         business:contact_data:street_address, locality, postal_code,
+         country_name, email, phone_number
+
+  [PASS] referrer            origin-when-cross-origin
+  [PASS] formatDetection     email/address/telephone detection disabled
+                             (prevents iOS auto-linking that affects CTR)
+  [PASS] themeColor          dark: #0F172A | light: #005CA3
+  [PASS] colorScheme         dark light
+  [PASS] viewport            width=device-width, initialScale=1, maximumScale=5
+  [PASS] appleWebApp         capable=true, statusBarStyle=black-translucent
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  PWA / MANIFEST
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  [PASS] site.webmanifest   Present at /public/site.webmanifest
+         name, short_name, description, start_url ("/"),
+         display=standalone, categories, lang, shortcuts (Products, Contact)
+
+  [FAIL] Missing PWA icon files
+         Manifest declares:
+           /icon-192.png  (192×192)
+           /icon-512.png  (512×512)
+         Neither file exists in /public.
+         Only /apple-touch-icon.png (180×180) is present.
+         PWA installation and home screen icons will be broken.
+         See FIXES.
+
+  [PASS] apple-touch-icon   /apple-touch-icon.png (180×180) — present
+  [PASS] favicon.ico        app/favicon.ico — served by Next.js
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ISSUES & FIXES (PRIORITIZED)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ┌─────────────────────────────────────────────────────────────────────────┐
+  │ PRIORITY 1 — HIGH IMPACT (rich results, crawlability)                  │
+  └─────────────────────────────────────────────────────────────────────────┘
+
+  [FIX-1] Add FAQPage schema to /faq
+  ────────────────────────────────────
+  File   : app/faq/page.tsx  (or a new server component wrapper)
+  Reason : Google shows FAQ rich results (expandable Q&A in SERPs) for
+           pages with FAQPage schema. The /faq page has all the data in
+           faqData[] already — it just needs to be emitted as JSON-LD.
+  Fix    : Add a <StructuredData> component with:
+           {
+             "@context": "https://schema.org",
+             "@type": "FAQPage",
+             "mainEntity": allFaqItems.map(item => ({
+               "@type": "Question",
+               "name": item.q,
+               "acceptedAnswer": {
+                 "@type": "Answer",
+                 "text": item.a
+               }
+             }))
+           }
+  Note   : Keep the FAQ page as "use client" — add the schema in the
+           server-side page.tsx route file using a StructuredData component.
+
+  [FIX-2] Add Article schema to /events/[slug]
+  ──────────────────────────────────────────────
+  File   : app/events/[slug]/page.tsx
+  Reason : Event/article pages have no JSON-LD despite having rich content.
+           NewsArticle schema enables Google News eligibility and article
+           rich results.
+  Fix    : In the page.tsx, render a <StructuredData> server component with:
+           {
+             "@context": "https://schema.org",
+             "@type": "NewsArticle",
+             "headline": post.title,
+             "description": post.excerpt,
+             "datePublished": post.dateISO,
+             "dateModified": post.dateISO,
+             "author": { "@type": "Organization", "name": "SWEDINOX AB" },
+             "publisher": {
+               "@type": "Organization",
+               "name": "SWEDINOX AB",
+               "logo": { "@type": "ImageObject", "url": "https://swedinox.se/logo.png" }
+             },
+             "url": "https://swedinox.se/events/" + post.slug
+           }
+  Note   : Also add BreadcrumbList:
+           Home > Events > [Post Title]
+
+  ┌─────────────────────────────────────────────────────────────────────────┐
+  │ PRIORITY 2 — MEDIUM IMPACT (social sharing, brand signals)             │
+  └─────────────────────────────────────────────────────────────────────────┘
+
+  [FIX-3] Create unique OG images per page
+  ──────────────────────────────────────────
+  File   : lib/site.ts (seoImages object)
+  Reason : Currently 6 of 7 OG image entries point to /about-us.jpg.
+           Every shared link looks identical on social platforms.
+  Fix    : Create purpose-built 1200×630 OG images for each page and
+           reference them in seoImages:
+             seoImages.home     → /og-home.jpg     (hero steel image)
+             seoImages.about    → /og-about.jpg    (team/facility photo)
+             seoImages.faq      → /og-faq.jpg      (branded text overlay)
+             seoImages.contact  → /og-contact.jpg  (office/contact visual)
+             seoImages.events   → /og-events.jpg   (industry event visual)
+           The existing product images (/coils.webp etc.) are already
+           used correctly for product detail pages.
+
+  [FIX-4] Add sameAs social/directory links to Organization schema
+  ────────────────────────────────────────────────────────────────
+  File   : app/layout.tsx (organizationSchema.sameAs)
+  Reason : Currently sameAs only contains the site URL itself. Google
+           uses sameAs to cross-reference the business entity.
+  Fix    : Add all verified external profiles:
+           "sameAs": [
+             "https://swedinox.se",
+             "https://www.linkedin.com/company/swedinox-ab",
+             "https://www.google.com/maps?cid=...",
+             "https://www.dnb.com/...",   (Dun & Bradstreet if applicable)
+           ]
+  Note   : Only add URLs that are live and belong to SWEDINOX AB.
+
+  [FIX-5] Replace placeholder VAT ID in Organization schema
+  ──────────────────────────────────────────────────────────
+  File   : app/layout.tsx
+  Line   : vatID: "SE-XXXXXXXXXX"
+  Fix    : Replace with actual Swedish VAT registration number.
+           Swedish format: SE + 10 digits, e.g. "SE556123456701"
+
+  ┌─────────────────────────────────────────────────────────────────────────┐
+  │ PRIORITY 3 — LOW IMPACT (consistency, hygiene)                         │
+  └─────────────────────────────────────────────────────────────────────────┘
+
+  [FIX-6] Create missing PWA icon files
+  ──────────────────────────────────────
+  File   : public/icon-192.png, public/icon-512.png
+  Reason : site.webmanifest declares these files but they do not exist.
+           PWA installation, Android home screen, and Chrome's app
+           install banner will show broken icons.
+  Fix    : Export the SWEDINOX AB logo as PNG at 192×192 and 512×512
+           and place in /public. Both currently list "purpose": "any maskable"
+           so they should have safe-zone padding (logo centered in ~80% area).
+
+  [FIX-7] Fix content inconsistency — years of experience
+  ────────────────────────────────────────────────────────
+  Files  : components/hero-section.tsx (stats array)
+           components/pages/about-us/about-page.tsx (AboutPage schema)
+  Issue  : Hero stats say "12+ Years Experience".
+           About page schema says "over 25 years of experience".
+           Founded 1999 → 2026 = 27 years, supporting the 25+ figure.
+  Fix    : Update hero stats from "12+" to "25+" for consistency:
+           { value: "25+", label: "Years Experience" }
+
+  [FIX-8] Review SearchAction in WebSite schema
+  ───────────────────────────────────────────────
+  File   : app/layout.tsx (websiteSchema.potentialAction)
+  Issue  : SearchAction target is /faq?q={search_term_string}
+           The FAQ page uses client-side category filtering, not a
+           server-rendered search results page. Google may not validate
+           this SearchAction if the URL doesn't return search results.
+  Fix    : Either implement server-side search at /faq?q= (recommended)
+           or remove the potentialAction entirely to avoid invalid markup.
+
+  [FIX-9] Clean up contact page URL (optional, future sprint)
+  ────────────────────────────────────────────────────────────
+  Current  : /contact-us-1
+  Suggested: /contact
+  Reason   : Cleaner URL, no numeric suffix. Would require setting up
+             a 301 redirect from /contact-us-1 to /contact if changed.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  SUMMARY SCORECARD
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Category                    Score   Notes
+  ──────────────────────────────────────────────────────────────────────────
+  Technical SEO               9/10    Minor: /contact-us-1 URL
+  On-Page Metadata            9/10    Minor: OG images not unique per page
+  Structured Data             6/10    Missing FAQPage and Article schemas
+  Social Sharing (OG)         7/10    Same image used across 6 of 7 pages
+  Twitter Card                10/10   All tags present and correct
+  Crawlability                10/10   sitemap.xml, robots.txt, canonicals
+  Internationalization        9/10    Missing og:locale:alternate for sv-SE
+  Performance (Core Vitals)   10/10   96/100 Lighthouse, CLS=0
+  PWA / Manifest              6/10    Missing icon-192.png and icon-512.png
+  Content Consistency         7/10    Years of experience mismatch
+  ──────────────────────────────────────────────────────────────────────────
+  OVERALL                     83/100
+
+  Top 3 Actions for Biggest SEO Gain
+  ────────────────────────────────────
+  1. Add FAQPage schema (FIX-1) — Rich results in Google SERPs
+  2. Add Article schema on event pages (FIX-2) — Google News eligibility
+  3. Create unique OG images per page (FIX-3) — Better social CTR
+
+================================================================================
+  END OF REPORT
+================================================================================

@@ -1,10 +1,10 @@
 "use client";
 
+import type { Product } from "@/app/products/data";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import type { Product } from "@/app/products/data";
 
 type ProductHeroSectionProps = {
   product: Product;
@@ -48,7 +48,7 @@ const ProductHeroSection = ({ product }: ProductHeroSectionProps) => (
 
     <div
       aria-hidden="true"
-      className="absolute top-[-10%] left-[-5%] h-[500px] w-[500px] rounded-full pointer-events-none"
+      className="absolute top-[-10%] left-[-5%] h-125 w-125 rounded-full pointer-events-none"
       style={{
         background:
           "radial-gradient(circle, rgba(219,234,254,0.5) 0%, transparent 70%)",
@@ -58,7 +58,7 @@ const ProductHeroSection = ({ product }: ProductHeroSectionProps) => (
     <div className="relative z-10 flex w-full items-center px-6 pt-28 pb-20 sm:px-10 lg:w-[56%] lg:pl-16 lg:pr-10 lg:pt-32 lg:pb-24 xl:pl-24 2xl:pl-32">
       <div className="w-full max-w-xl">
         <nav aria-label="Breadcrumb" className="mb-8">
-          <ol className="flex items-center gap-2 text-xs text-[#94A3B8]">
+          <ol className="flex items-center gap-2 text-xs text-[#475569]">
             <li>
               <Link href="/" className="transition-colors hover:text-[#005CA3]">
                 Home
@@ -132,7 +132,7 @@ const ProductHeroSection = ({ product }: ProductHeroSectionProps) => (
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <p className="mb-3 text-xs font-bold uppercase tracking-widest text-[#94A3B8]">
+          <p className="mb-3 text-xs font-bold uppercase tracking-widest text-[#475569]">
             Available Grades
           </p>
           <div className="flex flex-wrap gap-2">

@@ -8,6 +8,10 @@ const nextConfig: NextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  devIndicators: false,
+  experimental: {
+    inlineCss: true,
+  },
 };
 
 export default nextConfig;

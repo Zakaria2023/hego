@@ -13,7 +13,7 @@ const ContactInfoSection = () => (
   <Reveal delay={0.08}>
     <section className="space-y-6 rounded-3xl border border-slate-200 bg-white p-8 shadow-[0_8px_40px_rgba(15,23,42,0.08)] sm:p-10">
       <div>
-        <p className="text-xs font-bold uppercase tracking-[0.28em] text-[#94A3B8]">
+        <p className="text-xs font-bold uppercase tracking-[0.28em] text-[#475569]">
           Direct Contact
         </p>
         <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-[#0F172A]">
@@ -36,7 +36,7 @@ const ContactInfoSection = () => (
         </div>
         <span>Message us on WhatsApp</span>
         <span
-          className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/5 to-transparent transition-transform duration-700 group-hover:translate-x-full"
+          className="absolute inset-0 -translate-x-full bg-linear-to-r from-transparent via-white/5 to-transparent transition-transform duration-700 group-hover:translate-x-full"
           aria-hidden="true"
         />
       </a>

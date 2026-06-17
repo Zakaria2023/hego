@@ -11,7 +11,12 @@ const stats = [
 
 const trustBrands = [
   { alt: "Outokumpu", src: "/outokumpu.webp", frameWidth: 220, scale: 1.06 },
-  { alt: "Thyssenkrupp", src: "/thyssenkrupp.webp", frameWidth: 140, scale: 1.2 },
+  {
+    alt: "Thyssenkrupp",
+    src: "/thyssenkrupp.webp",
+    frameWidth: 140,
+    scale: 1.2,
+  },
   { alt: "Terninox", src: "/terninox.webp", frameWidth: 175, scale: 1.08 },
   { alt: "HEGO", src: "/hego.webp", frameWidth: 124, scale: 1.12 },
   { alt: "Posco", src: "/posco.webp", frameWidth: 134, scale: 1.18 },
@@ -56,7 +61,7 @@ const HeroSection = () => {
       <div className="relative z-10 flex-1 flex min-h-screen">
         {/* Left: text content */}
         <div className="relative flex items-center w-full lg:w-[57%] px-6 sm:px-10 lg:pl-16 xl:pl-24 2xl:pl-32 pt-28 pb-24 lg:pt-32 lg:pb-28">
-          <div className="relative z-10 max-w-[540px]">
+          <div className="relative z-10 max-w-135">
             {/* Badge */}
             <div className="animate-slide-up mb-7">
               <span
@@ -73,7 +78,7 @@ const HeroSection = () => {
 
             {/* Headline */}
             <h1
-              className="text-4xl sm:text-5xl lg:text-6xl xl:text-[4.25rem] font-extrabold leading-[1.04] tracking-tight animate-slide-up delay-100"
+              className="text-4xl sm:text-5xl lg:text-6xl xl:text-[4.25rem] font-extrabold leading-[1.04] tracking-tight animate-slide-in delay-100"
               style={{ textShadow: heroTextShadow }}
             >
               <span className="block text-[#0F172A]">

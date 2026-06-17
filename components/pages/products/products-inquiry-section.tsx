@@ -1,6 +1,6 @@
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import Reveal from "@/components/shared/reveal";
+import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 const ProductsInquirySection = () => (
   <section
@@ -19,7 +19,7 @@ const ProductsInquirySection = () => (
         />
         <div
           aria-hidden="true"
-          className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#005CA3] via-[#00AADD] to-[#005CA3]"
+          className="absolute top-0 left-0 right-0 h-1 bg-linear-to-r from-[#005CA3] via-[#00AADD] to-[#005CA3]"
         />
         <div
           aria-hidden="true"
@@ -53,7 +53,7 @@ const ProductsInquirySection = () => (
             >
               <span className="relative z-10">Request a Custom Quote</span>
               <ArrowRight className="relative z-10 h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
-              <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
+              <span className="absolute inset-0 -translate-x-full bg-linear-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
             </Link>
             <Link
               href="/about-us"

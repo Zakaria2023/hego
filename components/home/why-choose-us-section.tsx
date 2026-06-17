@@ -190,7 +190,7 @@ const WhyChooseUsSection = () => (
             <span className="text-3xl font-black text-[#005CA3] sm:text-4xl">
               {stat.value}
             </span>
-            <span className="mt-1 text-[11px] font-semibold uppercase tracking-widest text-[#94A3B8]">
+            <span className="mt-1 text-[11px] font-semibold uppercase tracking-widest text-[#475569]">
               {stat.label}
             </span>
           </div>

@@ -9,7 +9,7 @@ const ContactMapSection = () => (
   <section aria-label="Office location map" className="relative">
     <div
       aria-hidden="true"
-      className="absolute top-0 right-0 left-0 z-10 h-12 bg-gradient-to-b from-[#F8FAFC] to-transparent"
+      className="absolute top-0 right-0 left-0 z-10 h-12 bg-linear-to-b from-[#F8FAFC] to-transparent"
     />
 
     <Reveal className="overflow-hidden">
@@ -57,7 +57,7 @@ const ContactMapSection = () => (
 
     <div
       aria-hidden="true"
-      className="absolute bottom-0 right-0 left-0 z-10 h-12 bg-gradient-to-t from-[#0F172A] to-transparent"
+      className="absolute bottom-0 right-0 left-0 z-10 h-12 bg-linear-to-t from-[#0F172A] to-transparent"
     />
   </section>
 );
