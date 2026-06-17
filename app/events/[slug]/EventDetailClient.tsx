@@ -7,6 +7,7 @@ import {
   useInView,
   useScroll,
   useTransform,
+  type Variants,
 } from "framer-motion";
 import Link from "next/link";
 import { useRef, useState } from "react";
@@ -20,13 +21,15 @@ import {
 import { thumbnails } from "../thumbnails";
 
 /* ─── Animation helpers ─── */
-const fadeUp = {
+const revealEase = [0.22, 1, 0.36, 1] as const;
+
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 28, filter: "blur(4px)" },
   visible: {
     opacity: 1,
     y: 0,
     filter: "blur(0px)",
-    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+    transition: { duration: 0.6, ease: revealEase },
   },
 };
 

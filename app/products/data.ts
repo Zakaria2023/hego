@@ -20,7 +20,7 @@ export const products: Product[] = [
   {
     id: "coils",
     slug: "coils",
-    image: "/coils.webp",
+    image: "/coils.JPG",
     name: "Stainless Steel Coils",
     tagline: "Reliable Stainless Steel Solutions for Industrial Applications",
     description:
@@ -28,13 +28,13 @@ export const products: Product[] = [
     longDescription:
       "SWEDINOX provides stainless steel coils for customers requiring reliable material sourcing, flexible specifications, and coordinated delivery. Through our European and international supplier network, we can support requirements relating to stainless steel grade, thickness, width, surface finish, coil weight, and processing. Coils can be supplied in standard mill dimensions or processed according to customer requirements through slitting, decoiling, grinding, brushing, and protective film application.",
     specs: [
-      "Product forms: stainless steel coils, slit coils, baby coils, and customized coil widths",
-      "Standards: EN 10088 and ASTM specifications upon request",
-      "Thickness and width according to stock and customer requirements",
-      "Surface finishes: 1D, 2D, 2B, BA/2R, brushed, and polished",
-      "Edge condition: mill edge or slit edge",
-      "Processing: slitting, decoiling, grinding, and brushing",
-      "Documentation and export packaging available upon request",
+      "Product forms: stainless steel coils, slit coils, baby coils, and customized coil widths.",
+      "Standards: EN 10088 and ASTM specifications upon request.",
+      "Thickness and width according to stock and customer requirements.",
+      "Surface finishes: 1D, 2D, 2B, BA/2R, brushed, and polished.",
+      "Edge condition: mill edge or slit edge.",
+      "Processing: slitting, decoiling, grinding, and brushing.",
+      "Documentation and export packaging available upon request.",
     ],
     grades: ["304", "304L", "316", "316L", "430"],
     finishes: [
@@ -65,7 +65,7 @@ export const products: Product[] = [
   {
     id: "baby-coils",
     slug: "baby-coils",
-    image: "/baby-cols.webp",
+    image: "/baby-cols.jpg",
     name: "Baby Coils",
     tagline: "Stainless Steel Coils Starting from Approximately 500 KG",
     description:
@@ -73,12 +73,12 @@ export const products: Product[] = [
     longDescription:
       "Produced from prime mother coils, baby coils can be slit according to the required width, thickness, grade, and surface finish. They offer the same material quality as standard coils while helping customers reduce minimum purchasing quantities, storage requirements, and excess inventory.",
     specs: [
-      "Grades: 304, 304L, 316L, 430, 201, and other grades upon request",
-      "Thickness according to mother coil stock and customer requirements",
-      "Customized widths according to available slitting capabilities",
-      "Coil weight starting from approximately 500 KG",
-      "Surface finishes: 2B, BA/2R, brushed, polished, and other finishes upon request",
-      "Surface protection options may be available",
+      "Grades: 304, 304L, 316L, 430, 201, and other grades upon request.",
+      "Thickness according to mother coil stock and customer requirements.",
+      "Customized widths according to available slitting capabilities.",
+      "Coil weight starting from approximately 500 KG.",
+      "Surface finishes: 2B, BA/2R, brushed, polished, and other finishes upon request.",
+      "Surface protection options may be available.",
     ],
     grades: ["304", "304L", "316L", "430", "201"],
     finishes: ["2B", "BA/2R", "Brushed", "Polished", "Protective Film"],
@@ -102,7 +102,7 @@ export const products: Product[] = [
   {
     id: "sheets",
     slug: "sheets",
-    image: "/sheets.webp",
+    image: "/sheets.jpg",
     name: "Stainless Steel Sheets",
     tagline: "Cold-Rolled and Hot-Rolled Sheets",
     description:
@@ -110,12 +110,12 @@ export const products: Product[] = [
     longDescription:
       "Sheets can be supplied in different grades, thicknesses, dimensions, and surface finishes according to stock availability and customer requirements. Cold-rolled sheets provide a smoother surface, tighter dimensional tolerance, and a more refined appearance. Hot-rolled sheets are suitable for heavier industrial applications where strength, durability, and material thickness are more important than decorative appearance.",
     specs: [
-      "Grades: 304, 304L, 316, 316L, 430, Duplex 2205, and other grades upon request",
-      "Thickness according to grade, rolling type, stock, and customer requirements",
-      "Standard and customized sheet sizes may be available",
-      "Surface finishes: 1D, 2B, BA/2R, brushed, polished, and other finishes upon request",
-      "Protective film available for selected finishes and applications",
-      "Standard dimensions or cut-to-order sheets according to project requirements",
+      "Grades: 304, 304L, 316, 316L, 430, Duplex 2205, and other grades upon request.",
+      "Thickness according to grade, rolling type, stock, and customer requirements.",
+      "Standard and customized sheet sizes may be available.",
+      "Surface finishes: 1D, 2B, BA/2R, brushed, polished, and other finishes upon request.",
+      "Protective film available for selected finishes and applications.",
+      "Standard dimensions or cut-to-order sheets according to project requirements.",
     ],
     grades: ["304", "304L", "316", "316L", "430", "Duplex 2205"],
     finishes: ["1D", "2B", "BA/2R", "Brushed", "Polished", "Protective Film"],
@@ -138,7 +138,7 @@ export const products: Product[] = [
   {
     id: "strips",
     slug: "strips",
-    image: "/strips.webp",
+    image: "/strips.jpg",
     name: "Stainless Steel Strips",
     tagline: "Precision-Slit from 10 mm Width",
     description:
@@ -146,12 +146,12 @@ export const products: Product[] = [
     longDescription:
       "Strips can be prepared from suitable stainless steel mother coils according to the required grade, thickness, width, finish, and quantity. They are suitable for precision manufacturing, roll-forming, fabricated components, and continuous production processes.",
     specs: [
-      "Width available from approximately 10 mm depending on the selected material and thickness",
-      "Thickness according to mother coil stock and customer requirements",
-      "Grades: 304, 304L, 316L, 430, 301, 17-7PH, and other grades upon request",
-      "Surface finishes: 2B, BA/2R, brushed, polished, and other finishes according to availability",
-      "Edge condition: slit edge, deburred edge, or other edge preparation upon request",
-      "Supply form: coil or other prepared formats according to the order",
+      "Width available from approximately 10 mm depending on the selected material and thickness.",
+      "Thickness according to mother coil stock and customer requirements.",
+      "Grades: 304, 304L, 316L, 430, 301, 17-7PH, and other grades upon request.",
+      "Surface finishes: 2B, BA/2R, brushed, polished, and other finishes according to availability.",
+      "Edge condition: slit edge, deburred edge, or other edge preparation upon request.",
+      "Supply form: coil or other prepared formats according to the order.",
     ],
     grades: ["304", "304L", "316L", "430", "301", "17-7PH"],
     finishes: ["2B", "BA/2R", "Brushed", "Polished"],
@@ -176,7 +176,7 @@ export const products: Product[] = [
   {
     id: "circles",
     slug: "circles",
-    image: "/circles.webp",
+    image: "/circles.jpeg",
     name: "Stainless Steel Circles",
     tagline: "Precision-Cut from Approximately 150 mm Diameter",
     description:
@@ -184,12 +184,12 @@ export const products: Product[] = [
     longDescription:
       "Circles can be prepared from suitable stainless steel sheets according to the required grade, thickness, diameter, surface finish, and quantity. They are suitable for cookware, industrial components, covers, flanges, discs, and decorative applications.",
     specs: [
-      "Diameter available from approximately 150 mm depending on material and production capability",
-      "Thickness according to sheet stock, grade, diameter, and customer requirements",
-      "Grades: 304, 304L, 316L, 430, and other grades upon request",
-      "Surface finishes: 2B, BA/2R, brushed, polished, and other finishes according to availability",
-      "Cutting method: laser cutting or other suitable methods according to specification and quantity",
-      "Packaging: flat, stacked, or on edge according to diameter, thickness, and transport requirements",
+      "Diameter available from approximately 150 mm depending on material and production capability.",
+      "Thickness according to sheet stock, grade, diameter, and customer requirements.",
+      "Grades: 304, 304L, 316L, 430, and other grades upon request.",
+      "Surface finishes: 2B, BA/2R, brushed, polished, and other finishes according to availability.",
+      "Cutting method: laser cutting or other suitable methods according to specification and quantity.",
+      "Packaging: flat, stacked, or on edge according to diameter, thickness, and transport requirements.",
     ],
     grades: ["304", "304L", "316L", "430"],
     finishes: ["2B", "BA/2R", "Brushed", "Polished"],
@@ -214,7 +214,7 @@ export const products: Product[] = [
   {
     id: "head-and-tail",
     slug: "head-and-tail",
-    image: "/head-and-tail.webp",
+    image: "/head-and-tail.jpeg",
     name: "Head & Tail Sheets",
     tagline: "Flexible Stainless Steel Sheet Sizes at Competitive Prices",
     description:
@@ -222,12 +222,12 @@ export const products: Product[] = [
     longDescription:
       "SWEDINOX supplies these materials for general fabrication, small components, trial production, and applications where exact standard sheet sizes are not essential. Availability depends on the original coil, current stock, accepted dimensions, grade, and finish.",
     specs: [
-      "Width typically from approximately 700 mm and above",
-      "Variable lengths potentially reaching approximately 3000 mm",
-      "Thickness typically between approximately 0.4 mm and 6 mm",
-      "Grades: 304, 316L, 430, and other grades according to availability",
-      "Surface finishes: 2B, BA/2R, SB, and other finishes according to stock",
-      "Supplied in variable or non-standard sheet dimensions",
+      "Width typically from approximately 700 mm and above.",
+      "Variable lengths potentially reaching approximately 3000 mm.",
+      "Thickness typically between approximately 0.4 mm and 6 mm.",
+      "Grades: 304, 316L, 430, and other grades according to availability.",
+      "Surface finishes: 2B, BA/2R, SB, and other finishes according to stock.",
+      "Supplied in variable or non-standard sheet dimensions.",
     ],
     grades: ["304", "316L", "430"],
     finishes: ["2B", "BA/2R", "SB"],

@@ -1,20 +1,28 @@
 "use client";
 
 import { ShaderAnimation } from "@/app/components/ui/shader-lines";
-import { motion, useInView, useScroll, useTransform } from "framer-motion";
+import {
+  motion,
+  useInView,
+  useScroll,
+  useTransform,
+  type Variants,
+} from "framer-motion";
 import Link from "next/link";
 import { useRef } from "react";
 import { categoryMeta, posts, type Post } from "./data";
 import { thumbnails } from "./thumbnails";
 
 /* ─── Animation helpers ─── */
-const fadeUp = {
+const revealEase = [0.22, 1, 0.36, 1] as const;
+
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 36, filter: "blur(6px)" },
   visible: {
     opacity: 1,
     y: 0,
     filter: "blur(0px)",
-    transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] },
+    transition: { duration: 0.65, ease: revealEase },
   },
 };
 

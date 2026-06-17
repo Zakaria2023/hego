@@ -2,23 +2,31 @@
 
 import { ShaderAnimation } from "@/app/components/ui/shader-lines";
 import { GlowCard } from "@/app/components/ui/spotlight-card";
-import { motion, useInView, useScroll, useTransform } from "framer-motion";
+import {
+  motion,
+  useInView,
+  useScroll,
+  useTransform,
+  type Variants,
+} from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useRef, useState } from "react";
 
 /* ─── Shared variants ─── */
-const fadeUp = {
+const revealEase = [0.22, 1, 0.36, 1] as const;
+
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 40, filter: "blur(6px)" },
   visible: {
     opacity: 1,
     y: 0,
     filter: "blur(0px)",
-    transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] },
+    transition: { duration: 0.65, ease: revealEase },
   },
 };
 
-const stagger = {
+const stagger: Variants = {
   hidden: {},
   visible: { transition: { staggerChildren: 0.1 } },
 };
@@ -52,8 +60,8 @@ const Reveal = ({
 const products = [
   {
     id: "coils",
-    image: "/coils.webp",
-    name: "Coils",
+    image: "/coils.JPG",
+    name: "Stainless Steel Coils",
     tagline: "Prime, Ex-Prime & 2nd Choice",
     description:
       "Prime, ex-prime and 2nd choice quality in stainless steel coils, stainless steel sheets, and stainless steel strips. Available in a wide range of widths, thicknesses, and surface finishes.",
@@ -154,7 +162,7 @@ const products = [
   },
   {
     id: "baby-coils",
-    image: "/baby-cols.webp",
+    image: "/baby-cols.jpg",
     name: "Baby Coils",
     tagline: "From 500 KG",
     description:
@@ -253,7 +261,7 @@ const products = [
   },
   {
     id: "sheets",
-    image: "/sheets.webp",
+    image: "/sheets.jpg",
     name: "Sheets",
     tagline: "Cold & Hot Rolled",
     description:
@@ -369,7 +377,7 @@ const products = [
   },
   {
     id: "strips",
-    image: "/strips.webp",
+    image: "/strips.jpg",
     name: "Strips",
     tagline: "From 10 mm Width",
     description:
@@ -500,8 +508,8 @@ const products = [
   },
   {
     id: "circles",
-    image: "/circles.webp",
-    name: "Circles",
+    image: "/circles.jpeg",
+    name: "Stainless Steel Circles",
     tagline: "Laser-Cut from 150 mm",
     description:
       "Diameter beginning from 150 mm, cut by laser, available in stainless steel coils, stainless steel sheets, and 430 and 304 grades of stainless steel strips.",
@@ -621,7 +629,7 @@ const products = [
   },
   {
     id: "head-and-tail",
-    image: "/head-and-tail.webp",
+    image: "/head-and-tail.jpeg",
     name: "Head & Tail",
     tagline: "700–3000 mm · 0.4–6 mm",
     description:
@@ -767,189 +775,189 @@ const ProductCard = ({
           transition={{
             duration: 0.7,
             delay: (index % 3) * 0.12,
-            ease: [0.22, 1, 0.36, 1],
+            ease: revealEase,
           }}
           onHoverStart={() => setHovered(true)}
           onHoverEnd={() => setHovered(false)}
           className="group relative rounded-2xl overflow-hidden cursor-pointer h-full"
           whileHover={{
             y: -8,
-            transition: { duration: 0.35, ease: [0.22, 1, 0.36, 1] },
+            transition: { duration: 0.35, ease: revealEase },
           }}
           aria-label={`${product.name} – ${product.tagline}`}
         >
-        {/* ── IMAGE AREA ── */}
-        <div className="relative overflow-hidden h-52 bg-[#0F172A]">
-          {/* Product image */}
-          <motion.div
-            className="absolute inset-0 w-full h-full"
-            animate={hovered ? { scale: 1.08 } : { scale: 1 }}
-            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <Image
-              src={product.image}
-              alt={product.name}
-              fill
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              className="object-cover"
-            />
-          </motion.div>
-
-          {/* Hover overlay: specs reveal */}
-          <motion.div
-            className="absolute inset-0 flex flex-col justify-end p-5"
-            style={{
-              background: `linear-gradient(to top, ${product.accent}ee 0%, ${product.accent}99 40%, transparent 100%)`,
-            }}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: hovered ? 1 : 0 }}
-            transition={{ duration: 0.3 }}
-            aria-hidden={!hovered}
-          >
-            <motion.ul
-              className="flex flex-col gap-1.5"
-              initial="hidden"
-              animate={hovered ? "visible" : "hidden"}
-              variants={{
-                hidden: {},
-                visible: {
-                  transition: { staggerChildren: 0.07, delayChildren: 0.05 },
-                },
-              }}
-            >
-              {product.specs.map((spec) => (
-                <motion.li
-                  key={spec}
-                  variants={{
-                    hidden: { opacity: 0, x: -12 },
-                    visible: {
-                      opacity: 1,
-                      x: 0,
-                      transition: { duration: 0.3, ease: [0.22, 1, 0.36, 1] },
-                    },
-                  }}
-                  className="flex items-center gap-2 text-white text-xs font-semibold"
-                >
-                  <span
-                    className="w-1 h-1 rounded-full bg-white/80 flex-shrink-0"
-                    aria-hidden="true"
-                  />
-                  {spec}
-                </motion.li>
-              ))}
-            </motion.ul>
-          </motion.div>
-
-          {/* Tag pill */}
-          <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-[#0F172A]/70 backdrop-blur-sm border border-white/10 text-[10px] text-slate-300 font-semibold tracking-wide">
-            {product.tagline}
-          </div>
-
-          {/* Shine sweep on hover */}
-          <motion.div
-            className="absolute inset-0 pointer-events-none"
-            style={{
-              background:
-                "linear-gradient(105deg,transparent 40%,rgba(255,255,255,0.12) 50%,transparent 60%)",
-              backgroundSize: "200% 100%",
-            }}
-            animate={
-              hovered
-                ? { backgroundPosition: ["200% center", "-200% center"] }
-                : { backgroundPosition: "200% center" }
-            }
-            transition={{ duration: 0.7, ease: "easeInOut" }}
-          />
-        </div>
-
-        {/* ── CONTENT ── */}
-        <div className="p-6">
-          <div className="flex items-start justify-between gap-3">
-            <div>
-              <span
-                className="text-[10px] font-bold tracking-widest uppercase"
-                style={{ color: product.accent }}
-              >
-                Product
-              </span>
-              <h3 className="mt-0.5 text-xl font-extrabold text-[#0F172A] leading-tight">
-                {product.name}
-              </h3>
-            </div>
-            {/* Icon circle */}
+          {/* ── IMAGE AREA ── */}
+          <div className="relative overflow-hidden h-52 bg-[#0F172A]">
+            {/* Product image */}
             <motion.div
-              className="flex-shrink-0 w-10 h-10 rounded-full border-2 flex items-center justify-center"
+              className="absolute inset-0 w-full h-full"
+              animate={hovered ? { scale: 1.08 } : { scale: 1 }}
+              transition={{ duration: 0.6, ease: revealEase }}
+            >
+              <Image
+                src={product.image}
+                alt={product.name}
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className="object-cover"
+              />
+            </motion.div>
+
+            {/* Hover overlay: specs reveal */}
+            <motion.div
+              className="absolute inset-0 flex flex-col justify-end p-5"
               style={{
-                borderColor: `${product.accent}33`,
-                backgroundColor: `${product.accent}0D`,
+                background: `linear-gradient(to top, ${product.accent}ee 0%, ${product.accent}99 40%, transparent 100%)`,
+              }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: hovered ? 1 : 0 }}
+              transition={{ duration: 0.3 }}
+              aria-hidden={!hovered}
+            >
+              <motion.ul
+                className="flex flex-col gap-1.5"
+                initial="hidden"
+                animate={hovered ? "visible" : "hidden"}
+                variants={{
+                  hidden: {},
+                  visible: {
+                    transition: { staggerChildren: 0.07, delayChildren: 0.05 },
+                  },
+                }}
+              >
+                {product.specs.map((spec) => (
+                  <motion.li
+                    key={spec}
+                    variants={{
+                      hidden: { opacity: 0, x: -12 },
+                      visible: {
+                        opacity: 1,
+                        x: 0,
+                        transition: { duration: 0.3, ease: revealEase },
+                      },
+                    }}
+                    className="flex items-center gap-2 text-white text-xs font-semibold"
+                  >
+                    <span
+                      className="w-1 h-1 rounded-full bg-white/80 flex-shrink-0"
+                      aria-hidden="true"
+                    />
+                    {spec}
+                  </motion.li>
+                ))}
+              </motion.ul>
+            </motion.div>
+
+            {/* Tag pill */}
+            <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-[#0F172A]/70 backdrop-blur-sm border border-white/10 text-[10px] text-slate-300 font-semibold tracking-wide">
+              {product.tagline}
+            </div>
+
+            {/* Shine sweep on hover */}
+            <motion.div
+              className="absolute inset-0 pointer-events-none"
+              style={{
+                background:
+                  "linear-gradient(105deg,transparent 40%,rgba(255,255,255,0.12) 50%,transparent 60%)",
+                backgroundSize: "200% 100%",
               }}
               animate={
                 hovered
-                  ? { scale: 1.15, borderColor: product.accent }
-                  : { scale: 1 }
+                  ? { backgroundPosition: ["200% center", "-200% center"] }
+                  : { backgroundPosition: "200% center" }
               }
-              transition={{ type: "spring", stiffness: 300, damping: 20 }}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                className="w-4 h-4 transition-transform duration-300 group-hover:rotate-45"
-                style={{ color: product.accent }}
-                aria-hidden="true"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </motion.div>
-          </div>
-
-          {/* Animated underline */}
-          <div className="mt-3 h-0.5 rounded-full bg-slate-100 overflow-hidden">
-            <motion.div
-              className="h-full rounded-full"
-              style={{
-                background: `linear-gradient(90deg, ${product.accent}, ${product.accent}88)`,
-              }}
-              animate={hovered ? { width: "100%" } : { width: "30%" }}
-              transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.7, ease: "easeInOut" }}
             />
           </div>
 
-          <p className="mt-4 text-[#475569] text-sm leading-relaxed line-clamp-3">
-            {product.description}
-          </p>
-
-          {/* Request quote label */}
-          <motion.div className="mt-5">
-            <span
-              className="inline-flex items-center gap-1.5 text-sm font-semibold"
-              style={{ color: product.accent }}
-            >
-              <span>Request Quote</span>
-              <motion.svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                className="w-4 h-4"
-                aria-hidden="true"
-                animate={hovered ? { x: 4 } : { x: 0 }}
-                transition={{ type: "spring", stiffness: 400, damping: 20 }}
+          {/* ── CONTENT ── */}
+          <div className="p-6">
+            <div className="flex items-start justify-between gap-3">
+              <div>
+                <span
+                  className="text-[10px] font-bold tracking-widest uppercase"
+                  style={{ color: product.accent }}
+                >
+                  Product
+                </span>
+                <h3 className="mt-0.5 text-xl font-extrabold text-[#0F172A] leading-tight">
+                  {product.name}
+                </h3>
+              </div>
+              {/* Icon circle */}
+              <motion.div
+                className="flex-shrink-0 w-10 h-10 rounded-full border-2 flex items-center justify-center"
+                style={{
+                  borderColor: `${product.accent}33`,
+                  backgroundColor: `${product.accent}0D`,
+                }}
+                animate={
+                  hovered
+                    ? { scale: 1.15, borderColor: product.accent }
+                    : { scale: 1 }
+                }
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
-                <path
-                  fillRule="evenodd"
-                  d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z"
-                  clipRule="evenodd"
-                />
-              </motion.svg>
-            </span>
-          </motion.div>
-        </div>
-      </motion.article>
-    </GlowCard>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  className="w-4 h-4 transition-transform duration-300 group-hover:rotate-45"
+                  style={{ color: product.accent }}
+                  aria-hidden="true"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </motion.div>
+            </div>
+
+            {/* Animated underline */}
+            <div className="mt-3 h-0.5 rounded-full bg-slate-100 overflow-hidden">
+              <motion.div
+                className="h-full rounded-full"
+                style={{
+                  background: `linear-gradient(90deg, ${product.accent}, ${product.accent}88)`,
+                }}
+                animate={hovered ? { width: "100%" } : { width: "30%" }}
+                transition={{ duration: 0.4, ease: revealEase }}
+              />
+            </div>
+
+            <p className="mt-4 text-[#475569] text-sm leading-relaxed line-clamp-3">
+              {product.description}
+            </p>
+
+            {/* Request quote label */}
+            <motion.div className="mt-5">
+              <span
+                className="inline-flex items-center gap-1.5 text-sm font-semibold"
+                style={{ color: product.accent }}
+              >
+                <span>Request Quote</span>
+                <motion.svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  className="w-4 h-4"
+                  aria-hidden="true"
+                  animate={hovered ? { x: 4 } : { x: 0 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 20 }}
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z"
+                    clipRule="evenodd"
+                  />
+                </motion.svg>
+              </span>
+            </motion.div>
+          </div>
+        </motion.article>
+      </GlowCard>
     </Link>
   );
 };
@@ -1047,7 +1055,7 @@ const ProductsClient = () => {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.8, ease: revealEase }}
           >
             <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#FCD34D] bg-[#FFF7ED] text-[#005CA3] text-xs font-semibold tracking-widest uppercase mb-5">
               <span

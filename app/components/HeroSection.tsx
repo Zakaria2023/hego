@@ -7,7 +7,7 @@ const stats = [
   { value: "12+", label: "Years Experience" },
   { value: "10+", label: "Countries Served" },
   { value: "500+", label: "Product Grades" },
-  { value: "100", label: "NUmber of Clients" },
+  { value: "300", label: "Number of Clients" },
 ];
 
 const trustBadges = [
@@ -21,6 +21,9 @@ const trustBadges = [
   "Marcegaglia",
   "Hyundai",
 ];
+
+const heroTextShadow = "0 2px 18px rgba(255,255,255,0.42)";
+const tickerTextShadow = "0 2px 10px rgba(0,0,0,0.45)";
 
 const HeroSection = () => {
   return (
@@ -74,7 +77,10 @@ const HeroSection = () => {
           <div className="relative z-10 max-w-[540px]">
             {/* Badge */}
             <div className="animate-slide-up mb-7">
-              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FFF7ED] border border-[#FCD34D] text-[#005CA3] text-xs font-bold tracking-widest uppercase">
+              <span
+                className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FFF7ED] border border-[#FCD34D] text-[#005CA3] text-xs font-bold tracking-widest uppercase"
+                style={{ textShadow: heroTextShadow }}
+              >
                 <span
                   className="w-1.5 h-1.5 rounded-full bg-[#F5A623] animate-pulse"
                   aria-hidden="true"
@@ -84,7 +90,10 @@ const HeroSection = () => {
             </div>
 
             {/* Headline */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-[4.25rem] font-extrabold leading-[1.04] tracking-tight animate-slide-up delay-100">
+            <h1
+              className="text-4xl sm:text-5xl lg:text-6xl xl:text-[4.25rem] font-extrabold leading-[1.04] tracking-tight animate-slide-up delay-100"
+              style={{ textShadow: heroTextShadow }}
+            >
               <span className="block text-[#0F172A]">
                 Premium Stainless Steel.
               </span>
@@ -93,7 +102,10 @@ const HeroSection = () => {
             </h1>
 
             {/* Description */}
-            <p className="mt-6 text-[#475569] text-base sm:text-lg leading-relaxed animate-slide-up delay-200">
+            <p
+              className="mt-6 text-[#475569] text-base sm:text-lg leading-relaxed animate-slide-up delay-200"
+              style={{ textShadow: heroTextShadow }}
+            >
               Swedinox AB supplies high-quality stainless steel coils, sheets,
               strips, and circles to industrial customers worldwide. With
               reliable sourcing, flexible processing, and efficient logistics,
@@ -152,10 +164,16 @@ const HeroSection = () => {
             <div className="mt-10 pt-8 border-t border-[#0F172A]/20 grid grid-cols-2 sm:grid-cols-4 gap-6 animate-slide-up delay-400">
               {stats.map(({ value, label }) => (
                 <div key={label} className="flex flex-col gap-0.5">
-                  <span className="text-2xl sm:text-3xl font-extrabold text-[#0F172A]">
+                  <span
+                    className="text-2xl sm:text-3xl font-extrabold text-[#0F172A]"
+                    style={{ textShadow: heroTextShadow }}
+                  >
                     {value}
                   </span>
-                  <span className="text-xs text-[#64748B] font-medium tracking-wide">
+                  <span
+                    className="text-xs text-[#64748B] font-medium tracking-wide"
+                    style={{ textShadow: heroTextShadow }}
+                  >
                     {label}
                   </span>
                 </div>
@@ -170,18 +188,26 @@ const HeroSection = () => {
         aria-label="Certifications and standards"
         className="relative z-10 border-t border-white/20 bg-black/20 backdrop-blur-sm overflow-hidden"
       >
+        <div className="px-6 pt-3 text-center">
+          <span
+            className="text-white/90 text-[11px] font-bold tracking-[0.28em] uppercase"
+            style={{ textShadow: tickerTextShadow }}
+          >
+            Leading Brands We Work With
+          </span>
+        </div>
         <div className="flex animate-marquee whitespace-nowrap py-4 gap-0">
           {[...trustBadges, ...trustBadges, ...trustBadges, ...trustBadges].map(
             (badge, i) => (
               <div
                 key={i}
-                className="inline-flex items-center gap-2 px-8 text-white/70 text-xs font-semibold tracking-widest uppercase"
+                className="inline-flex items-center gap-2 px-8 text-white/85 text-xs font-semibold tracking-widest uppercase"
               >
                 <span
                   className="w-1 h-1 rounded-full bg-[#F5A623]"
                   aria-hidden="true"
                 />
-                <span>{badge}</span>
+                <span style={{ textShadow: tickerTextShadow }}>{badge}</span>
               </div>
             ),
           )}

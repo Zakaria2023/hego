@@ -162,7 +162,7 @@ const stats = [
   { value: 11, suffix: "+", label: "Years of Experience" },
   { value: 10, suffix: "+", label: "Countries Served" },
   { value: 500, suffix: "+", label: "Product Grades" },
-  { value: 100, suffix: "", label: "Number of CLients" },
+  { value: 300, suffix: "", label: "Number of CLients" },
 ];
 
 /* ─── Values ─── */

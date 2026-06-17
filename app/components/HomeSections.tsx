@@ -50,8 +50,8 @@ const Reveal = ({
 const products = [
   {
     id: "coils",
-    image: "/coils.webp",
-    name: "Coils",
+    image: "/coils.JPG",
+    name: "Stainless Steel Coils",
     tagline: "Prime, Ex-Prime & 2nd Choice",
     description:
       "Wide range of widths, thicknesses, and surface finishes for industrial applications worldwide.",
@@ -64,7 +64,7 @@ const products = [
   },
   {
     id: "baby-coils",
-    image: "/baby-cols.webp",
+    image: "/baby-cols.jpg",
     name: "Baby Coils",
     tagline: "From 500 KG",
     description:
@@ -74,7 +74,7 @@ const products = [
   },
   {
     id: "sheets",
-    image: "/sheets.webp",
+    image: "/sheets.jpg",
     name: "Sheets",
     tagline: "Cold & Hot Rolled",
     description:
@@ -88,7 +88,7 @@ const products = [
   },
   {
     id: "strips",
-    image: "/strips.webp",
+    image: "/strips.jpg",
     name: "Strips",
     tagline: "From 10 mm Width",
     description:
@@ -98,8 +98,8 @@ const products = [
   },
   {
     id: "circles",
-    image: "/circles.webp",
-    name: "Circles",
+    image: "/circles.jpeg",
+    name: "Stainless Steel Circles",
     tagline: "Laser-Cut from 150 mm",
     description:
       "Laser-cut from 150 mm diameter in grades 304 and 430 with clean, burr-free edges.",
@@ -112,7 +112,7 @@ const products = [
   },
   {
     id: "head-and-tail",
-    image: "/head-and-tail.webp",
+    image: "/head-and-tail.jpeg",
     name: "Head & Tail",
     tagline: "700–3000 mm · 0.4–6 mm",
     description:
@@ -841,7 +841,7 @@ const WhySection = () => {
         <div className="mt-14 pt-10 border-t border-[#E2E8F0] grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
           {[
             { value: "500+", label: "Product Grades" },
-            { value: "100", label: "Number of Clients" },
+            { value: "300", label: "Number of Clients" },
             { value: "Weekly", label: "Stock Updates" },
             { value: "48h", label: "Quote Turnaround" },
           ].map(({ value, label }, i) => (
