@@ -10,15 +10,15 @@ const stats = [
 ];
 
 const trustBrands = [
-  { alt: "Outokumpu", src: "/outokumpu.webp", widthClass: "w-[132px]" },
-  { alt: "Thyssenkrupp", src: "/thyssenkrupp.webp", widthClass: "w-[170px]" },
-  { alt: "Terninox", src: "/terninox.webp", widthClass: "w-[132px]" },
-  { alt: "HEGO", src: "/hego.webp", widthClass: "w-[98px]" },
-  { alt: "Posco", src: "/posco.webp", widthClass: "w-[112px]" },
-  { alt: "Acerinox", src: "/acerinox.webp", widthClass: "w-[150px]" },
-  { alt: "Marcegaglia", src: "/marcegaglia.webp", widthClass: "w-[176px]" },
-  { alt: "Hyundai", src: "/hyundai-logo.webp", widthClass: "w-[138px]" },
-  { alt: "Aperam", src: "/aperam.webp", widthClass: "w-[128px]" },
+  { alt: "Outokumpu", src: "/outokumpu.webp", frameWidth: 220, scale: 1.06 },
+  { alt: "Thyssenkrupp", src: "/thyssenkrupp.webp", frameWidth: 140, scale: 1.2 },
+  { alt: "Terninox", src: "/terninox.webp", frameWidth: 175, scale: 1.08 },
+  { alt: "HEGO", src: "/hego.webp", frameWidth: 124, scale: 1.12 },
+  { alt: "Posco", src: "/posco.webp", frameWidth: 134, scale: 1.18 },
+  { alt: "Acerinox", src: "/acerinox.webp", frameWidth: 148, scale: 1.46 },
+  { alt: "Marcegaglia", src: "/marcegaglia.webp", frameWidth: 214, scale: 1.1 },
+  { alt: "Hyundai", src: "/hyundai-logo.webp", frameWidth: 200, scale: 1.3 },
+  { alt: "Aperam", src: "/aperam.webp", frameWidth: 156, scale: 1.42 },
 ];
 
 const heroTextShadow = "0 2px 18px rgba(255,255,255,0.42)";
@@ -160,7 +160,7 @@ const HeroSection = () => {
         </p>
         <div
           aria-hidden="true"
-          className="flex animate-marquee whitespace-nowrap py-4 gap-0"
+          className="flex animate-marquee whitespace-nowrap py-5 gap-0"
         >
           {[...trustBrands, ...trustBrands, ...trustBrands].map((brand, i) => (
             <div
@@ -172,15 +172,20 @@ const HeroSection = () => {
                 aria-hidden="true"
               />
               <div
-                className={`relative h-7 ${brand.widthClass} shrink-0 overflow-hidden rounded-sm`}
-                style={{ filter: "drop-shadow(0 2px 10px rgba(0,0,0,0.28))" }}
+                className="relative h-10 shrink-0 overflow-hidden rounded-sm sm:h-11"
+                style={{ width: `${brand.frameWidth}px` }}
               >
                 <Image
                   src={brand.src}
                   alt=""
                   fill
-                  sizes="180px"
+                  sizes={`${brand.frameWidth}px`}
                   className="object-contain"
+                  style={{
+                    filter: "drop-shadow(0 2px 10px rgba(0,0,0,0.28))",
+                    transform: `scale(${brand.scale})`,
+                    transformOrigin: "center",
+                  }}
                 />
               </div>
             </div>
