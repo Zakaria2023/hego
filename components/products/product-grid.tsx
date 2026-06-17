@@ -6,6 +6,7 @@ type ProductGridProps = {
   ctaLabel?: string;
   compact?: boolean;
   className?: string;
+  eagerImageSlugs?: string[];
 };
 
 const ProductGrid = ({
@@ -13,6 +14,7 @@ const ProductGrid = ({
   ctaLabel,
   compact = false,
   className = "grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3",
+  eagerImageSlugs = [],
 }: ProductGridProps) => (
   <div className={className}>
     {products.map((product, index) => (
@@ -22,6 +24,7 @@ const ProductGrid = ({
         index={index}
         ctaLabel={ctaLabel}
         compact={compact}
+        imageLoading={eagerImageSlugs.includes(product.slug) ? "eager" : "lazy"}
       />
     ))}
   </div>

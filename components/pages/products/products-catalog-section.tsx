@@ -8,6 +8,7 @@ const ProductsCatalogSection = () => (
     title="All Products"
     description="Browse the stainless steel forms we supply for fabricators, wholesalers, processors, and industrial buyers worldwide."
     products={productCatalog}
+    eagerImageSlugs={["circles"]}
     cardCtaLabel="Request Quote"
     className="px-4 py-20 sm:px-6 lg:px-8"
   />

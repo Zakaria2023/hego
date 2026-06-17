@@ -93,7 +93,7 @@ export const products: Product[] = [
       "Short production runs",
       "Customized industrial projects",
     ],
-    accent: "#0284C7",
+    accent: "#0369A1",
     heroNote:
       "Available from approximately 500 KG, depending on the material specification and production availability.",
     secondaryCtaHref: "/products",

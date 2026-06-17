@@ -8,12 +8,14 @@ type ProductCardProps = {
   index?: number;
   ctaLabel?: string;
   compact?: boolean;
+  imageLoading?: "eager" | "lazy";
 };
 
 const ProductCard = ({
   product,
   ctaLabel = "View Details",
   compact = false,
+  imageLoading = "lazy",
 }: ProductCardProps) => {
   const imageHeight = compact ? "h-48" : "h-52";
 
@@ -28,7 +30,9 @@ const ProductCard = ({
             src={product.image}
             alt={product.name}
             fill
-            quality={60}
+            quality={40}
+            loading={imageLoading}
+            fetchPriority={imageLoading === "eager" ? "high" : "auto"}
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             className="object-cover transition-transform duration-500 group-hover:scale-105"
           />

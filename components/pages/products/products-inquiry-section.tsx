@@ -1,4 +1,3 @@
-import Reveal from "@/components/shared/reveal";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
@@ -7,8 +6,7 @@ const ProductsInquirySection = () => (
     aria-label="Request a quote"
     className="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8"
   >
-    <Reveal>
-      <div className="relative overflow-hidden rounded-3xl border border-slate-200 shadow-[0_20px_60px_rgba(15,23,42,0.08)]">
+    <div className="animate-slide-up relative overflow-hidden rounded-3xl border border-slate-200 shadow-[0_20px_60px_rgba(15,23,42,0.08)]">
         <div
           aria-hidden="true"
           className="absolute inset-0"
@@ -65,7 +63,6 @@ const ProductsInquirySection = () => (
           </div>
         </div>
       </div>
-    </Reveal>
   </section>
 );
 

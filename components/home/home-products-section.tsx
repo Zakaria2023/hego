@@ -15,6 +15,7 @@ const HomeProductsSection = () => (
     }
     description="Semi-manufactured stainless steel in every form your operation requires - prime, ex-prime and 2nd choice quality, globally delivered."
     products={productCatalog}
+    eagerImageSlugs={["circles"]}
     cardCtaLabel="View Details"
     cta={{
       href: "/products",

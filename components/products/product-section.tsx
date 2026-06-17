@@ -13,6 +13,7 @@ type ProductSectionProps = {
   cardCtaLabel?: string;
   className?: string;
   theme?: "light" | "dark";
+  eagerImageSlugs?: string[];
   cta?: {
     href: string;
     label: string;
@@ -29,6 +30,7 @@ const ProductSection = ({
   cardCtaLabel,
   className,
   theme = "light",
+  eagerImageSlugs,
   cta,
 }: ProductSectionProps) => {
   const sectionClassName =
@@ -87,7 +89,11 @@ const ProductSection = ({
           <p className={descriptionClassName}>{description}</p>
         </div>
 
-        <ProductGrid products={products} ctaLabel={cardCtaLabel} />
+        <ProductGrid
+          products={products}
+          ctaLabel={cardCtaLabel}
+          eagerImageSlugs={eagerImageSlugs}
+        />
 
         {cta ? (
           <div className="mt-12 text-center">

@@ -12,7 +12,7 @@ const ContactInfoRow = ({ children, icon, label }: ContactInfoRowProps) => (
       {icon}
     </div>
     <div>
-      <span className="mb-0.5 block text-[10px] font-bold uppercase tracking-widest text-slate-400">
+      <span className="mb-0.5 block text-[10px] font-bold uppercase tracking-widest text-slate-600">
         {label}
       </span>
       <div className="text-sm font-medium leading-relaxed text-[#0F172A]">

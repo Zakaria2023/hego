@@ -269,7 +269,7 @@ export default function RootLayout({
         <StructuredData data={websiteSchema} />
         <StructuredData data={localBusinessSchema} />
         <Navbar />
-        <main className="flex-1">
+        <main className="flex-1 min-h-screen">
           <PageTransition>{children}</PageTransition>
         </main>
         <Footer />
