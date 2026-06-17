@@ -29,7 +29,7 @@ const ProductCard = ({
             alt={product.name}
             fill
             quality={60}
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 30vw"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             className="object-cover transition-transform duration-500 group-hover:scale-105"
           />
 
@@ -49,7 +49,7 @@ const ProductCard = ({
                   className="flex items-center gap-2 text-xs font-semibold text-white"
                 >
                   <span
-                    className="h-1 w-1 flex-shrink-0 rounded-full bg-white/80"
+                    className="h-1 w-1 shrink-0 rounded-full bg-white/80"
                     aria-hidden="true"
                   />
                   {spec}
@@ -78,7 +78,7 @@ const ProductCard = ({
             </div>
 
             <div
-              className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border-2 transition-transform duration-300 group-hover:scale-110"
+              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-2 transition-transform duration-300 group-hover:scale-110"
               style={{
                 borderColor: `${product.accent}33`,
                 backgroundColor: `${product.accent}0D`,
