@@ -11,11 +11,15 @@ const stats = [
 ];
 
 const trustBadges = [
-  "ISO 9001:2015 Certified",
-  "EN 10088 Compliant",
-  "ASTM Standards",
-  "TUV Approved",
-  "REACH Compliant",
+  "Aperam",
+  "Outokumpu",
+  "Thyssenkrupp",
+  "Terninox",
+  "HEGO",
+  "Posco",
+  "Acerinox",
+  "Marcegaglia",
+  "Hyundai",
 ];
 
 const HeroSection = () => {

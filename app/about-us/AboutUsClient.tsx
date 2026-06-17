@@ -258,7 +258,7 @@ const AboutUsClient = () => {
           className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 pt-36"
         >
           {/* Breadcrumb */}
-          <nav aria-label="Breadcrumb" className="mb-6">
+          {/* <nav aria-label="Breadcrumb" className="mb-6">
             <ol className="flex items-center gap-2 text-xs text-slate-500">
               <li>
                 <Link
@@ -287,7 +287,7 @@ const AboutUsClient = () => {
                 About Us
               </li>
             </ol>
-          </nav>
+          </nav> */}
 
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -414,9 +414,9 @@ const AboutUsClient = () => {
                     />
                     <div className="absolute inset-0 bg-linear-to-t from-slate-900/40 via-transparent to-transparent" />
                     {/* Badge */}
-                    <div className="absolute bottom-4 left-4 px-3 py-2 rounded-lg bg-white/90 backdrop-blur-sm border border-[#E2E8F0] text-xs text-[#0F172A] font-semibold">
+                    {/* <div className="absolute bottom-4 left-4 px-3 py-2 rounded-lg bg-white/90 backdrop-blur-sm border border-[#E2E8F0] text-xs text-[#0F172A] font-semibold">
                       European Port Warehouse
-                    </div>
+                    </div> */}
                   </div>
                 </div>
                 {/* Floating stat */}
@@ -724,13 +724,13 @@ const AboutUsClient = () => {
               <div className="relative text-center px-8 sm:px-16 py-16">
                 <div
                   aria-hidden="true"
-                  className="w-12 h-12 rounded-full bg-[#005CA3]/10 border border-[#005CA3]/20 flex items-center justify-center mx-auto mb-6"
+                  className="w-20 h-20 rounded-full bg-[#005CA3]/10 border border-[#005CA3]/20 flex items-center justify-center mx-auto mb-6"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
                     fill="currentColor"
-                    className="w-6 h-6 text-[#005CA3]"
+                    className="w-12 h-12 text-[#005CA3]"
                     aria-hidden="true"
                   >
                     <path
