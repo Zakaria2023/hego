@@ -6,7 +6,6 @@ import Link from "next/link";
 import { useRef } from "react";
 import { getProduct, products } from "../data";
 
-/* ─── Reveal animation ─── */
 const Reveal = ({
   children,
   className = "",
@@ -18,6 +17,7 @@ const Reveal = ({
 }) => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "0px" });
+
   return (
     <motion.div
       ref={ref}
@@ -31,7 +31,6 @@ const Reveal = ({
   );
 };
 
-/* ─── Check icon ─── */
 const Check = () => (
   <svg
     viewBox="0 0 20 20"
@@ -47,29 +46,6 @@ const Check = () => (
   </svg>
 );
 
-/* ─── Industry icon block ─── */
-const AppBlock = ({ label }: { label: string }) => (
-  <div className="flex items-center gap-3 p-4 rounded-2xl bg-[#F8FAFC] border border-[#E2E8F0]">
-    <div className="w-8 h-8 rounded-full bg-[#FFF7ED] flex items-center justify-center flex-shrink-0">
-      <svg
-        viewBox="0 0 20 20"
-        fill="currentColor"
-        className="w-4 h-4 text-[#005CA3]"
-        aria-hidden="true"
-      >
-        <path
-          fillRule="evenodd"
-          d="M9.664 1.319a.75.75 0 01.672 0 41.059 41.059 0 018.198 5.424.75.75 0 01-.254 1.285 31.372 31.372 0 00-7.86 3.83.75.75 0 01-.84 0 31.508 31.508 0 00-2.08-1.287V9.48a31.521 31.521 0 00-5.78-2.172A.75.75 0 012.25 6.006a41.061 41.061 0 017.414-4.687z"
-          clipRule="evenodd"
-        />
-        <path d="M5 8.25a.75.75 0 01.75.75v4.027a.75.75 0 01-.063.307 12.006 12.006 0 002.558 3.096 41.512 41.512 0 001.755-1.384V9a.75.75 0 011.5 0v5.46a41.52 41.52 0 001.755 1.384 12.006 12.006 0 002.558-3.096.75.75 0 01-.063-.307V9a.75.75 0 011.5 0v4.027c.006.055.006.111 0 .166a13.506 13.506 0 01-3.33 4.562.75.75 0 01-.97 0A40.075 40.075 0 0110 14.848a40.078 40.078 0 01-4.45 2.907.75.75 0 01-.97 0 13.506 13.506 0 01-3.33-4.562 1.252 1.252 0 010-.166V9a.75.75 0 01.75-.75z" />
-      </svg>
-    </div>
-    <span className="text-sm font-medium text-[#334155]">{label}</span>
-  </div>
-);
-
-/* ─── Main Component ─── */
 const ProductDetailClient = ({ slug }: { slug: string }) => {
   const product = getProduct(slug);
   if (!product) return null;
@@ -78,7 +54,6 @@ const ProductDetailClient = ({ slug }: { slug: string }) => {
 
   return (
     <>
-      {/* JSON-LD */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -99,12 +74,10 @@ const ProductDetailClient = ({ slug }: { slug: string }) => {
         }}
       />
 
-      {/* ── HERO: split layout ── */}
       <section
-        aria-label={`${product.name} – product detail`}
+        aria-label={`${product.name} product detail`}
         className="relative min-h-[90vh] flex overflow-hidden bg-white"
       >
-        {/* Decorative blob */}
         <div
           aria-hidden="true"
           className="absolute top-[-10%] left-[-5%] w-[500px] h-[500px] rounded-full pointer-events-none"
@@ -114,10 +87,8 @@ const ProductDetailClient = ({ slug }: { slug: string }) => {
           }}
         />
 
-        {/* Left: Product info */}
         <div className="relative z-10 flex items-center w-full lg:w-[55%] px-6 sm:px-10 lg:pl-16 xl:pl-24 pt-28 pb-20">
           <div className="max-w-lg w-full">
-            {/* Breadcrumb */}
             <nav aria-label="Breadcrumb" className="mb-8">
               <ol className="flex items-center gap-2 text-xs text-[#94A3B8]">
                 <li>
@@ -128,7 +99,7 @@ const ProductDetailClient = ({ slug }: { slug: string }) => {
                     Home
                   </Link>
                 </li>
-                <li aria-hidden="true">›</li>
+                <li aria-hidden="true">/</li>
                 <li>
                   <Link
                     href="/products"
@@ -137,14 +108,13 @@ const ProductDetailClient = ({ slug }: { slug: string }) => {
                     Products
                   </Link>
                 </li>
-                <li aria-hidden="true">›</li>
+                <li aria-hidden="true">/</li>
                 <li className="text-[#0F172A] font-medium" aria-current="page">
                   {product.name}
                 </li>
               </ol>
             </nav>
 
-            {/* Category pill */}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
@@ -162,7 +132,6 @@ const ProductDetailClient = ({ slug }: { slug: string }) => {
               </span>
             </motion.div>
 
-            {/* Name & tagline */}
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
@@ -179,7 +148,6 @@ const ProductDetailClient = ({ slug }: { slug: string }) => {
               </p>
             </motion.div>
 
-            {/* Description */}
             <motion.p
               className="mt-5 text-[#475569] text-base leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
@@ -189,7 +157,6 @@ const ProductDetailClient = ({ slug }: { slug: string }) => {
               {product.longDescription}
             </motion.p>
 
-            {/* Grades chips */}
             <motion.div
               className="mt-7"
               initial={{ opacity: 0, y: 16 }}
@@ -200,9 +167,9 @@ const ProductDetailClient = ({ slug }: { slug: string }) => {
                 Available Grades
               </p>
               <div className="flex flex-wrap gap-2">
-                {product.grades.map((g) => (
+                {product.grades.map((grade) => (
                   <span
-                    key={g}
+                    key={grade}
                     className="px-3 py-1.5 rounded-full text-xs font-bold border"
                     style={{
                       borderColor: `${product.accent}40`,
@@ -210,13 +177,12 @@ const ProductDetailClient = ({ slug }: { slug: string }) => {
                       backgroundColor: `${product.accent}08`,
                     }}
                   >
-                    {g}
+                    {grade}
                   </span>
                 ))}
               </div>
             </motion.div>
 
-            {/* CTAs */}
             <motion.div
               className="mt-8 flex flex-wrap gap-4"
               initial={{ opacity: 0, y: 16 }}
@@ -244,40 +210,47 @@ const ProductDetailClient = ({ slug }: { slug: string }) => {
                 </svg>
               </Link>
               <Link
-                href="/products"
+                href={product.secondaryCtaHref ?? "/products"}
                 className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border-2 border-[#E2E8F0] hover:border-[#005CA3] text-[#334155] hover:text-[#005CA3] text-sm font-bold tracking-wide transition-all duration-200 cursor-pointer"
               >
-                ← All Products
+                {product.secondaryCtaLabel ?? "View All Products"}
               </Link>
             </motion.div>
+
+            {product.heroNote ? (
+              <motion.p
+                className="mt-4 text-sm text-[#64748B] leading-relaxed"
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.32 }}
+              >
+                {product.heroNote}
+              </motion.p>
+            ) : null}
           </div>
         </div>
 
-        {/* Right: Full-bleed product image — NO frame */}
         <div
           className="hidden lg:block absolute right-0 top-0 w-[47%] h-full pointer-events-none"
           aria-hidden="true"
         >
           <Image
             src={product.image}
-            alt={`${product.name} – SWEDINOX AB`}
+            alt={`${product.name} - SWEDINOX AB`}
             fill
             priority
             sizes="47vw"
             className="object-cover"
           />
-          {/* Soft blend from left */}
           <div className="absolute inset-y-0 left-0 w-44 bg-gradient-to-r from-white via-white/60 to-transparent" />
           <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-white/40 to-transparent" />
           <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-white/30 to-transparent" />
         </div>
       </section>
 
-      {/* ── SPECS + FINISHES + APPLICATIONS ── */}
       <main className="bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* Key Specs */}
             <Reveal>
               <div className="bg-[#F8FAFC] rounded-3xl p-8 h-full">
                 <div
@@ -314,7 +287,6 @@ const ProductDetailClient = ({ slug }: { slug: string }) => {
               </div>
             </Reveal>
 
-            {/* Finishes */}
             <Reveal delay={0.1}>
               <div className="bg-[#F8FAFC] rounded-3xl p-8 h-full">
                 <div
@@ -358,7 +330,6 @@ const ProductDetailClient = ({ slug }: { slug: string }) => {
               </div>
             </Reveal>
 
-            {/* Applications */}
             <Reveal delay={0.2}>
               <div className="bg-[#F8FAFC] rounded-3xl p-8 h-full">
                 <div
@@ -383,11 +354,11 @@ const ProductDetailClient = ({ slug }: { slug: string }) => {
                   Common Applications
                 </h2>
                 <ul className="space-y-3">
-                  {product.applications.map((app) => (
-                    <li key={app} className="flex items-start gap-3">
+                  {product.applications.map((application) => (
+                    <li key={application} className="flex items-start gap-3">
                       <Check />
                       <span className="text-sm text-[#334155] leading-relaxed">
-                        {app}
+                        {application}
                       </span>
                     </li>
                   ))}
@@ -397,7 +368,6 @@ const ProductDetailClient = ({ slug }: { slug: string }) => {
           </div>
         </div>
 
-        {/* ── CTA STRIP ── */}
         <Reveal>
           <div className="mx-4 sm:mx-6 lg:mx-8 mb-20 rounded-3xl bg-gradient-to-r from-[#005CA3] to-[#0077BB] p-10 lg:p-14 text-center overflow-hidden relative">
             <div
@@ -447,7 +417,6 @@ const ProductDetailClient = ({ slug }: { slug: string }) => {
           </div>
         </Reveal>
 
-        {/* ── RELATED PRODUCTS ── */}
         <section
           aria-labelledby="related-heading"
           className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24"
@@ -461,17 +430,17 @@ const ProductDetailClient = ({ slug }: { slug: string }) => {
             </h2>
           </Reveal>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            {related.map((rel, i) => (
-              <Reveal key={rel.slug} delay={i * 0.1}>
+            {related.map((relatedProduct, index) => (
+              <Reveal key={relatedProduct.slug} delay={index * 0.1}>
                 <Link
-                  href={`/products/${rel.slug}`}
+                  href={`/products/${relatedProduct.slug}`}
                   className="group block rounded-3xl overflow-hidden border border-[#E2E8F0] bg-white shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer"
-                  aria-label={`View ${rel.name}`}
+                  aria-label={`View ${relatedProduct.name}`}
                 >
                   <div className="relative h-48 overflow-hidden">
                     <Image
-                      src={rel.image}
-                      alt={rel.name}
+                      src={relatedProduct.image}
+                      alt={relatedProduct.name}
                       fill
                       sizes="(max-width: 768px) 100vw, 33vw"
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -481,19 +450,19 @@ const ProductDetailClient = ({ slug }: { slug: string }) => {
                   <div className="p-5">
                     <span
                       className="text-[10px] font-bold tracking-widest uppercase"
-                      style={{ color: rel.accent }}
+                      style={{ color: relatedProduct.accent }}
                     >
-                      {rel.tagline}
+                      {relatedProduct.tagline}
                     </span>
                     <h3 className="mt-0.5 text-lg font-extrabold text-[#0F172A]">
-                      {rel.name}
+                      {relatedProduct.name}
                     </h3>
                     <p className="mt-2 text-sm text-[#64748B] line-clamp-2">
-                      {rel.description}
+                      {relatedProduct.description}
                     </p>
                     <span
                       className="mt-4 inline-flex items-center gap-1 text-sm font-semibold"
-                      style={{ color: rel.accent }}
+                      style={{ color: relatedProduct.accent }}
                     >
                       View details
                       <svg
