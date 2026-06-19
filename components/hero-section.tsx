@@ -18,7 +18,7 @@ const HeroSection = () => {
           src="/hero-section.webp"
           alt=""
           fill
-          priority
+          preload
           sizes="100vw"
           className="object-cover animate-hero-zoom"
         />
@@ -154,7 +154,7 @@ const HeroSection = () => {
                 aria-hidden="true"
               />
               <div
-                className="relative h-10 shrink-0 overflow-hidden rounded-sm sm:h-11"
+                className="relative h-10 shrink-0 sm:h-11"
                 style={{ width: `${brand.frameWidth}px` }}
               >
                 <Image

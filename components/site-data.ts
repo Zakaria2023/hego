@@ -6,20 +6,60 @@ export const heroStats = [
 ];
 
 export const heroTrustBrands = [
-  { alt: "Outokumpu", src: "/outokumpu.webp", frameWidth: 220, scale: 1.06 },
+  {
+    alt: "Outokumpu",
+    src: "/outokumpu-removebg-preview.png",
+    frameWidth: 220,
+    scale: 1,
+  },
   {
     alt: "Thyssenkrupp",
-    src: "/thyssenkrupp.webp",
+    src: "/thyssenkrupp-removebg-preview.png",
     frameWidth: 140,
-    scale: 1.2,
+    scale: 1,
   },
-  { alt: "Terninox", src: "/terninox.webp", frameWidth: 175, scale: 1.08 },
-  { alt: "HEGO", src: "/hego.webp", frameWidth: 124, scale: 1.12 },
-  { alt: "Posco", src: "/posco.webp", frameWidth: 134, scale: 1.18 },
-  { alt: "Acerinox", src: "/acerinox.webp", frameWidth: 148, scale: 1.46 },
-  { alt: "Marcegaglia", src: "/marcegaglia.webp", frameWidth: 214, scale: 1.1 },
-  { alt: "Hyundai", src: "/hyundai-logo.webp", frameWidth: 200, scale: 1.3 },
-  { alt: "Aperam", src: "/aperam.webp", frameWidth: 156, scale: 1.42 },
+  {
+    alt: "Terninox",
+    src: "/terninox-removebg-preview.png",
+    frameWidth: 175,
+    scale: 1,
+  },
+  {
+    alt: "HEGO",
+    src: "/hego-removebg-preview.png",
+    frameWidth: 124,
+    scale: 1,
+  },
+  {
+    alt: "Posco",
+    src: "/posco-removebg-preview.png",
+    frameWidth: 148,
+    scale: 1,
+  },
+  {
+    alt: "Acerinox",
+    src: "/acerinox-removebg-preview.png",
+    frameWidth: 156,
+    scale: 1,
+  },
+  {
+    alt: "Marcegaglia",
+    src: "/Marcegaglia.png",
+    frameWidth: 236,
+    scale: 1,
+  },
+  {
+    alt: "Hyundai",
+    src: "/hyundai-logo-removebg-preview.png",
+    frameWidth: 200,
+    scale: 1,
+  },
+  {
+    alt: "Aperam",
+    src: "/aperam-removebg-preview.png",
+    frameWidth: 156,
+    scale: 1,
+  },
 ];
 
 export const footerQuickLinks = [
