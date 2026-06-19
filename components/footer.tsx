@@ -1,20 +1,8 @@
 import Link from "next/link";
-
-const quickLinks = [
-  { label: "Products", href: "/products" },
-  { label: "About Us", href: "/about-us" },
-  { label: "Events", href: "/events" },
-  { label: "FAQ", href: "/faq" },
-  { label: "Contact Us", href: "/contact-us-1" },
-  { label: "Get a Quote", href: "/contact-us-1" },
-];
-
-const utilityLinks = [
-  { label: "Products", href: "/products" },
-  { label: "About Us", href: "/about-us" },
-  { label: "FAQ", href: "/faq" },
-  { label: "Contact Us", href: "/contact-us-1" },
-];
+import {
+  footerQuickLinks,
+  footerUtilityLinks,
+} from "@/components/site-data";
 
 const Footer = () => {
   const year = new Date().getFullYear();
@@ -89,7 +77,7 @@ const Footer = () => {
             </h3>
             <nav aria-label="Footer navigation" className="mt-8">
               <ul className="space-y-3 text-lg">
-                {quickLinks.map(({ label, href }) => (
+                {footerQuickLinks.map(({ label, href }) => (
                   <li key={href + label}>
                     <Link
                       href={href}
@@ -138,7 +126,7 @@ const Footer = () => {
             <span>Copyright {year}</span>
             <span className="text-[#8AA0BA]">|</span>
             <span>SWEDINOX AB</span>
-            {utilityLinks.map(({ label, href }) => (
+            {footerUtilityLinks.map(({ label, href }) => (
               <span key={href + label} className="contents">
                 <span className="text-[#8AA0BA]">|</span>
                 <Link

@@ -32,7 +32,13 @@ type Props = {
   highlight?: string;
 };
 
-const FaqAccordionItem = ({ item, index, isOpen, onToggle, highlight }: Props) => {
+const FaqAccordionItem = ({
+  item,
+  index,
+  isOpen,
+  onToggle,
+  highlight,
+}: Props) => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-40px" });
 
@@ -66,7 +72,9 @@ const FaqAccordionItem = ({ item, index, isOpen, onToggle, highlight }: Props) =
 
         <span
           className={`flex-1 text-sm font-bold leading-snug transition-colors duration-200 ${
-            isOpen ? "text-[#005CA3]" : "text-[#0F172A] group-hover:text-[#005CA3]"
+            isOpen
+              ? "text-[#005CA3]"
+              : "text-[#0F172A] group-hover:text-[#005CA3]"
           }`}
         >
           {highlight ? highlightText(item.q, highlight) : item.q}
@@ -83,7 +91,9 @@ const FaqAccordionItem = ({ item, index, isOpen, onToggle, highlight }: Props) =
           viewBox="0 0 20 20"
           fill="currentColor"
           className={`shrink-0 w-5 h-5 mt-0.5 transition-colors duration-200 ${
-            isOpen ? "text-[#005CA3]" : "text-slate-400 group-hover:text-slate-600"
+            isOpen
+              ? "text-[#005CA3]"
+              : "text-slate-400 group-hover:text-slate-600"
           }`}
           animate={{ rotate: isOpen ? 180 : 0 }}
           transition={{ duration: 0.3, ease: revealEase }}
@@ -107,9 +117,9 @@ const FaqAccordionItem = ({ item, index, isOpen, onToggle, highlight }: Props) =
             transition={{ duration: 0.35, ease: revealEase }}
             className="overflow-hidden"
           >
-            <div className="pb-6 px-6 pl-[4.25rem]">
+            <div className="pb-6 px-6 pl-17">
               <div
-                className="h-px bg-gradient-to-r from-[#005CA3]/20 to-transparent mb-4"
+                className="h-px bg-linear-to-r from-[#005CA3]/20 to-transparent mb-4"
                 aria-hidden="true"
               />
               <p className="text-[#475569] text-sm leading-relaxed">

@@ -1,30 +1,7 @@
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-
-const stats = [
-  { value: "12+", label: "Years Experience" },
-  { value: "10+", label: "Countries Served" },
-  { value: "500+", label: "Product Grades" },
-  { value: "300+", label: "Number of Clients" },
-];
-
-const trustBrands = [
-  { alt: "Outokumpu", src: "/outokumpu.webp", frameWidth: 220, scale: 1.06 },
-  {
-    alt: "Thyssenkrupp",
-    src: "/thyssenkrupp.webp",
-    frameWidth: 140,
-    scale: 1.2,
-  },
-  { alt: "Terninox", src: "/terninox.webp", frameWidth: 175, scale: 1.08 },
-  { alt: "HEGO", src: "/hego.webp", frameWidth: 124, scale: 1.12 },
-  { alt: "Posco", src: "/posco.webp", frameWidth: 134, scale: 1.18 },
-  { alt: "Acerinox", src: "/acerinox.webp", frameWidth: 148, scale: 1.46 },
-  { alt: "Marcegaglia", src: "/marcegaglia.webp", frameWidth: 214, scale: 1.1 },
-  { alt: "Hyundai", src: "/hyundai-logo.webp", frameWidth: 200, scale: 1.3 },
-  { alt: "Aperam", src: "/aperam.webp", frameWidth: 156, scale: 1.42 },
-];
+import { heroStats, heroTrustBrands } from "@/components/site-data";
 
 const heroTextShadow = "0 2px 18px rgba(255,255,255,0.42)";
 const tickerTextShadow = "0 2px 10px rgba(0,0,0,0.45)";
@@ -125,7 +102,7 @@ const HeroSection = () => {
 
             {/* Stats */}
             <div className="mt-10 pt-8 border-t border-[#0F172A]/20 grid grid-cols-2 sm:grid-cols-4 gap-6 animate-slide-up delay-400">
-              {stats.map(({ value, label }) => (
+              {heroStats.map(({ value, label }) => (
                 <div key={label} className="flex flex-col gap-0.5">
                   <span
                     className="text-2xl sm:text-3xl font-extrabold text-[#0F172A]"
@@ -134,8 +111,7 @@ const HeroSection = () => {
                     {value}
                   </span>
                   <span
-                    className="text-xs text-[#64748B] font-medium tracking-wide"
-                    style={{ textShadow: heroTextShadow }}
+                    className="text-xs text-[#334155] font-semibold tracking-wide"
                   >
                     {label}
                   </span>
@@ -161,13 +137,14 @@ const HeroSection = () => {
         </div>
         <p className="sr-only">
           Leading brands we work with:{" "}
-          {trustBrands.map((brand) => brand.alt).join(", ")}.
+          {heroTrustBrands.map((brand) => brand.alt).join(", ")}.
         </p>
         <div
           aria-hidden="true"
           className="flex animate-marquee whitespace-nowrap py-5 gap-0"
         >
-          {[...trustBrands, ...trustBrands, ...trustBrands].map((brand, i) => (
+          {[...heroTrustBrands, ...heroTrustBrands, ...heroTrustBrands].map(
+            (brand, i) => (
             <div
               key={`${brand.alt}-${i}`}
               className="inline-flex items-center gap-4 px-8"
@@ -194,7 +171,8 @@ const HeroSection = () => {
                 />
               </div>
             </div>
-          ))}
+            ),
+          )}
         </div>
       </div>
     </section>

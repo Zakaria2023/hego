@@ -7,11 +7,11 @@ const FaqCta = () => (
   >
     <div
       aria-hidden="true"
-      className="absolute inset-0 bg-gradient-to-br from-[#EFF6FF] via-white to-[#F0F9FF]"
+      className="absolute inset-0 bg-linear-to-br from-[#EFF6FF] via-white to-[#F0F9FF]"
     />
     <div
       aria-hidden="true"
-      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] rounded-full pointer-events-none"
+      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-87.5 rounded-full pointer-events-none"
       style={{
         background:
           "radial-gradient(ellipse, rgba(219,234,254,0.8) 0%, transparent 70%)",

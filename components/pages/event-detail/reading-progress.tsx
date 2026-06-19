@@ -6,7 +6,7 @@ const ReadingProgress = () => {
   const { scrollYProgress } = useScroll();
   return (
     <motion.div
-      className="fixed top-0 left-0 right-0 h-[3px] z-[100] origin-left"
+      className="fixed top-0 left-0 right-0 h-0.75 z-100 origin-left"
       style={{
         scaleX: scrollYProgress,
         background: "linear-gradient(90deg, #005CA3, #00AADD, #005CA3)",

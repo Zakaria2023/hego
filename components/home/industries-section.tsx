@@ -1,44 +1,4 @@
-import {
-  Building2,
-  Car,
-  FlaskConical,
-  HeartPulse,
-  UtensilsCrossed,
-  Zap,
-} from "lucide-react";
-
-const industries = [
-  {
-    name: "Automotive",
-    description: "Body panels, exhaust systems and precision stampings",
-    icon: Car,
-  },
-  {
-    name: "Construction",
-    description: "Cladding, facades and architectural elements",
-    icon: Building2,
-  },
-  {
-    name: "Food & Beverage",
-    description: "Hygienic equipment, tanks and processing lines",
-    icon: UtensilsCrossed,
-  },
-  {
-    name: "Chemical Industry",
-    description: "Corrosion-resistant vessels, pipes and reactors",
-    icon: FlaskConical,
-  },
-  {
-    name: "Medical & Pharma",
-    description: "Surgical instruments, implants and sterile equipment",
-    icon: HeartPulse,
-  },
-  {
-    name: "Energy & Utilities",
-    description: "Heat exchangers, turbine components and pipelines",
-    icon: Zap,
-  },
-];
+import { industries } from "@/components/home/data";
 
 const IndustriesSection = () => (
   <section

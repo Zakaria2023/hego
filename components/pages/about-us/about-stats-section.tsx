@@ -1,16 +1,10 @@
 "use client";
 
+import { aboutStats } from "@/components/pages/about-us/data";
 import { revealEase } from "@/components/shared/motion";
 import { GlowCard } from "@/components/ui/spotlight-card";
 import { motion, useInView, useMotionValue, useSpring } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-
-const stats = [
-  { value: 11, suffix: "+", label: "Years of Experience" },
-  { value: 10, suffix: "+", label: "Countries Served" },
-  { value: 500, suffix: "+", label: "Product Grades" },
-  { value: 300, suffix: "+", label: "Number of Clients" },
-];
 
 const Counter = ({
   value,
@@ -77,7 +71,7 @@ const AboutStatsSection = () => (
           visible: { transition: { staggerChildren: 0.1 } },
         }}
       >
-        {stats.map(({ value, suffix, label }, index) => (
+        {aboutStats.map(({ value, suffix, label }, index) => (
           <GlowCard
             key={label}
             customSize

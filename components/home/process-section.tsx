@@ -1,29 +1,7 @@
-import { ArrowRight, FileText, Search, Truck } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
-const steps = [
-  {
-    number: "01",
-    title: "Browse & Inquire",
-    description:
-      "Explore our catalog and submit an inquiry with your grade, finish, and dimension requirements.",
-    icon: Search,
-  },
-  {
-    number: "02",
-    title: "Receive Your Quote",
-    description:
-      "Our team reviews your specifications and sends a competitive, fully detailed quote within 24 hours.",
-    icon: FileText,
-  },
-  {
-    number: "03",
-    title: "Global Delivery",
-    description:
-      "Confirmed orders are dispatched from our European port warehouses directly to your facility worldwide.",
-    icon: Truck,
-  },
-];
+import { processSteps } from "@/components/home/data";
 
 const ProcessSection = () => (
   <section
@@ -61,7 +39,7 @@ const ProcessSection = () => (
           }}
         />
 
-        {steps.map((step) => {
+        {processSteps.map((step) => {
           const Icon = step.icon;
 
           return (

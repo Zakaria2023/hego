@@ -1,31 +1,10 @@
 "use client";
 
+import { aboutPillars } from "@/components/pages/about-us/data";
 import Reveal from "@/components/shared/reveal";
 import { fadeUp, stagger } from "@/components/shared/motion";
 import { GlowCard } from "@/components/ui/spotlight-card";
-import { Boxes, ChartPie, Truck } from "lucide-react";
 import { motion } from "framer-motion";
-
-const pillars = [
-  {
-    icon: ChartPie,
-    label: "Strategy",
-    heading: "Precision Matching",
-    body: "Our strategic focus is on matching our prime or non-prime supply with the niche requirements of our customer base. We offer hot and cold rolled stainless steel in varying dimensions and finishes: coils, sheets, circles, tubes, pipes, and bars.",
-  },
-  {
-    icon: Boxes,
-    label: "Inventory",
-    heading: "Always In Stock",
-    body: "Our continued stock locations ensure fast delivery times and weekly confirmed in-stock listings of newly available semi-manufactured stainless steel materials. We also accommodate special alloy requirements and specific dimension needs beyond recurring stock listings.",
-  },
-  {
-    icon: Truck,
-    label: "Logistics",
-    heading: "Strategic Warehousing",
-    body: "Our warehouses, strategically located at the main ports of Europe, provide a significant logistical advantage. This places us close to service centers capable of cutting to length, polishing, slitting, and other value-added services.",
-  },
-];
 
 const AboutPillarsSection = () => (
   <section
@@ -62,7 +41,7 @@ const AboutPillarsSection = () => (
       whileInView="visible"
       viewport={{ once: true, margin: "-60px" }}
     >
-      {pillars.map(({ icon: Icon, label, heading, body }) => (
+      {aboutPillars.map(({ icon: Icon, label, heading, body }) => (
         <GlowCard
           key={label}
           customSize

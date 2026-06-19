@@ -1,15 +1,10 @@
 import { faqData } from "@/app/faq/data";
+import { buildFaqHeroStats } from "@/components/pages/faq/data";
 import Link from "next/link";
 
 const FaqHero = () => {
   const totalQuestions = faqData.reduce((acc, cat) => acc + cat.items.length, 0);
-
-  const stats = [
-    { value: String(totalQuestions), label: "Questions answered" },
-    { value: String(faqData.length), label: "Categories" },
-    { value: "12+", label: "Years of expertise" },
-    { value: "10+", label: "Countries served" },
-  ];
+  const stats = buildFaqHeroStats(totalQuestions, faqData.length);
 
   return (
     <section

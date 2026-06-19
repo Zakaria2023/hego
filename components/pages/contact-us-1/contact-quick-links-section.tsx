@@ -1,29 +1,5 @@
 import Reveal from "@/components/shared/reveal";
-import { Mail, MessageCircle, Phone } from "lucide-react";
-
-const quickLinks = [
-  {
-    label: "Email",
-    value: "sales@swedinox.se",
-    href: "mailto:sales@swedinox.se",
-    ariaLabel: "Send email to sales@swedinox.se",
-    icon: Mail,
-  },
-  {
-    label: "Phone",
-    value: "+46 732 488 880",
-    href: "tel:+46732488880",
-    ariaLabel: "Call SWEDINOX AB at +46 732 488 880",
-    icon: Phone,
-  },
-  {
-    label: "WhatsApp",
-    value: "Message us directly",
-    href: "https://wa.me/46732488880",
-    ariaLabel: "Message SWEDINOX AB on WhatsApp",
-    icon: MessageCircle,
-  },
-] as const;
+import { contactQuickLinks } from "@/components/pages/contact-us-1/data";
 
 const ContactQuickLinksSection = () => (
   <section
@@ -45,7 +21,7 @@ const ContactQuickLinksSection = () => (
 
     <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
-        {quickLinks.map((item, index) => {
+        {contactQuickLinks.map((item, index) => {
           const Icon = item.icon;
 
           return (

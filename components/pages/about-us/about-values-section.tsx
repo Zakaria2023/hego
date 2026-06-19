@@ -1,32 +1,10 @@
 "use client";
 
+import { aboutValues } from "@/components/pages/about-us/data";
 import { fadeUp, stagger } from "@/components/shared/motion";
 import Reveal from "@/components/shared/reveal";
 import { GlowCard } from "@/components/ui/spotlight-card";
 import { motion } from "framer-motion";
-
-const values = [
-  {
-    title: "Customer First",
-    description:
-      "Our customers are our main point of focus and every decision we make is driven by your long-term success.",
-  },
-  {
-    title: "Quality Assurance",
-    description:
-      "We supply only certified materials meeting ISO, EN 10088, ASTM, and REACH standards without exception.",
-  },
-  {
-    title: "Long-Term Partnerships",
-    description:
-      "As a family-owned company, we build lasting relationships with clients and suppliers grounded in trust.",
-  },
-  {
-    title: "Prompt Delivery",
-    description:
-      "Our European port warehouses give us fast, reliable logistics for global delivery with minimal lead times.",
-  },
-];
 
 const AboutValuesSection = () => (
   <section
@@ -66,7 +44,7 @@ const AboutValuesSection = () => (
         whileInView="visible"
         viewport={{ once: true, margin: "-60px" }}
       >
-        {values.map(({ title, description }) => (
+        {aboutValues.map(({ title, description }) => (
           <GlowCard
             key={title}
             customSize

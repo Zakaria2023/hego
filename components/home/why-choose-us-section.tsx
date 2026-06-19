@@ -1,77 +1,10 @@
-import { BadgeCheck, Check, Clock3, Globe2, Settings2 } from "lucide-react";
+import { Check } from "lucide-react";
 
-const featureCards = [
-  {
-    title: "ISO 9001:2015 Certified",
-    description:
-      "Internationally recognized quality management standards applied across every product and process.",
-    stat: "Certified",
-    color: "#005CA3",
-    icon: BadgeCheck,
-  },
-  {
-    title: "10+ Countries Delivered",
-    description:
-      "A global logistics network ensuring on-time delivery to clients across the globe.",
-    stat: "10+",
-    color: "#0077BB",
-    icon: Globe2,
-  },
-  {
-    title: "12+ Years of Experience",
-    description:
-      "Backed by years of market expertise and reliable supplier relationships.",
-    stat: "12+",
-    color: "#005CA3",
-    icon: Clock3,
-  },
-  {
-    title: "Number of Clients",
-    description: "We serve over 100 clients across the globe.",
-    stat: "+300",
-    color: "#0C4A6E",
-    icon: Settings2,
-  },
-];
-
-const checklistItems = [
-  {
-    title: "Weekly Stock Availability",
-    description: "Regular stock arrivals from European port warehouses.",
-  },
-  {
-    title: "Flexible Coil Packaging Options",
-    description:
-      "Packaging configurations adapted to your handling and transport requirements.",
-  },
-  {
-    title: "Custom Processing on Request",
-    description:
-      "Cut-to-length, slitting, and tailored dimensions to match your specifications.",
-  },
-  {
-    title: "Certified Quality & Full Traceability",
-    description:
-      "Mill test certificates and full material traceability with every order.",
-  },
-  {
-    title: "Competitive Supply Options",
-    description:
-      "Commercially competitive solutions across prime, ex-prime, and second-choice material.",
-  },
-  {
-    title: "Dedicated B2B Account Support",
-    description:
-      "A single point of contact for quotations, order follow-up, and commercial coordination.",
-  },
-];
-
-const highlightStats = [
-  { value: "500+", label: "Product Grades" },
-  { value: "300", label: "Number of Clients" },
-  { value: "Weekly", label: "Stock Updates" },
-  { value: "48h", label: "Quote Turnaround" },
-];
+import {
+  checklistItems,
+  featureCards,
+  highlightStats,
+} from "@/components/home/data";
 
 const WhyChooseUsSection = () => (
   <section

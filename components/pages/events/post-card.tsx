@@ -31,7 +31,7 @@ const PostCard = ({ post, index }: { post: Post; index: number }) => {
     >
       {/* Category accent bar */}
       <div
-        className="absolute top-0 left-0 right-0 h-[3px]"
+        className="absolute top-0 left-0 right-0 h-0.75"
         style={{ backgroundColor: meta.color }}
         aria-hidden="true"
       />
@@ -48,7 +48,7 @@ const PostCard = ({ post, index }: { post: Post; index: number }) => {
             sizes="(max-width: 640px) 100vw, 50vw"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        <div className="absolute inset-0 bg-linear-to-t from-[#0F172A]/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       </Link>
 
       {/* Content */}

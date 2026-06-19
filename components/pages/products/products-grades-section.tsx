@@ -1,13 +1,5 @@
 import { Check } from "lucide-react";
-
-const grades = [
-  "Grade 304",
-  "Grade 316L",
-  "Grade 430",
-  "BA Finish",
-  "2B Finish",
-  "S.B Finish",
-];
+import { productGrades } from "@/components/pages/products/data";
 
 const ProductsGradesSection = () => (
   <section
@@ -34,7 +26,7 @@ const ProductsGradesSection = () => (
       </div>
 
       <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
-        {grades.map((grade, i) => (
+        {productGrades.map((grade, i) => (
           <div
             key={grade}
             className="animate-slide-up group flex cursor-default flex-col items-center gap-2 rounded-2xl border border-[#E2E8F0] bg-white p-4 transition-all duration-300 hover:border-[#FCD34D] hover:shadow-[0_8px_30px_rgba(3,105,161,0.08)] hover:-translate-y-1"

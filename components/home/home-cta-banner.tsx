@@ -1,12 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
-
-const trustBadges = [
-  "ISO 9001:2015 CERTIFIED STAINLESS STEEL SUPPLIER",
-  "EN 10088 Compliant",
-  "ASTM Standards",
-  "REACH Compliant",
-];
+import { trustBadges } from "@/components/home/data";
 
 const HomeCtaBanner = () => (
   <section
