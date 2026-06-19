@@ -26,7 +26,6 @@ const Navbar = () => {
               alt="SWEDINOX AB - Keeping your business stainless"
               width={139}
               height={56}
-              loading="eager"
               className="h-14 w-34.75 object-contain transition-opacity duration-200 group-hover:opacity-90"
             />
           </Link>

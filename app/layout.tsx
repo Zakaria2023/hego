@@ -2,7 +2,13 @@ import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import PageTransition from "@/components/page-transition";
 import StructuredData from "@/components/shared/structured-data";
-import { businessHours, defaultKeywords, seoImages, site } from "@/lib/site";
+import {
+  alternateOpenGraphLocales,
+  businessHours,
+  defaultKeywords,
+  seoImages,
+  site,
+} from "@/lib/site";
 import type { Metadata, Viewport } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
@@ -31,9 +37,13 @@ export const metadata: Metadata = {
       "SWEDINOX AB - Premium Stainless Steel Products | Global B2B Supplier",
     template: "%s | SWEDINOX AB",
   },
-  description:
-    "SWEDINOX AB is a trusted global B2B supplier of stainless steel coils, sheets, strips, circles, baby coils, and head and tail sheets for industrial buyers and distributors.",
-  keywords: [...defaultKeywords, "SWEDINOX AB", "stainless steel Sweden"],
+  description: site.description,
+  keywords: [
+    ...defaultKeywords,
+    "SWEDINOX AB",
+    "stainless steel Sweden",
+    "second choice stainless steel Sweden",
+  ],
   authors: [{ name: site.name, url: site.url }],
   creator: site.name,
   publisher: site.name,
@@ -52,7 +62,7 @@ export const metadata: Metadata = {
     title:
       "SWEDINOX AB - Premium Stainless Steel Products | Global B2B Supplier",
     description:
-      "Premium stainless steel products for industrial buyers worldwide. SWEDINOX AB supports sourcing, stock availability, and responsive delivery coordination.",
+      "Prime, ex-prime, and second-choice stainless steel products for industrial buyers worldwide. SWEDINOX AB supports sourcing, stock availability, and responsive delivery coordination.",
     url: site.url,
     siteName: site.name,
     images: [
@@ -65,6 +75,7 @@ export const metadata: Metadata = {
       },
     ],
     locale: site.locale,
+    alternateLocale: alternateOpenGraphLocales,
     type: "website",
     countryName: site.address.countryName,
     emails: [...site.emails],
@@ -74,7 +85,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "SWEDINOX AB - Premium Stainless Steel Products",
     description:
-      "Premium stainless steel products, sourcing support, and responsive delivery coordination for global B2B buyers.",
+      "Prime, ex-prime, and second-choice stainless steel products with sourcing support and responsive delivery coordination for global B2B buyers.",
     images: [{ url: seoImages.default.url, alt: seoImages.default.alt }],
     site: site.twitterHandle,
     creator: site.twitterHandle,
@@ -123,7 +134,7 @@ const organizationSchema = {
     height: 60,
   },
   description:
-    "SWEDINOX AB is a family-owned global B2B supplier of premium semi-manufactured stainless steel products including coils, sheets, strips, circles, and head and tail sheets.",
+    "SWEDINOX AB is a family-owned global B2B supplier of prime, ex-prime, and second-choice semi-manufactured stainless steel products including coils, sheets, strips, circles, and head and tail sheets.",
   foundingDate: "1999",
   legalName: site.legalName,
   vatID: "SE-XXXXXXXXXX",
@@ -207,7 +218,8 @@ const websiteSchema = {
   "@id": `${site.url}/#website`,
   url: site.url,
   name: site.name,
-  description: "Premium stainless steel products supplier for global B2B trade",
+  description:
+    "Prime, ex-prime, and second-choice stainless steel products supplier for global B2B trade",
   publisher: { "@id": `${site.url}/#organization` },
   potentialAction: {
     "@type": "SearchAction",
@@ -225,6 +237,7 @@ const localBusinessSchema = {
   "@type": "LocalBusiness",
   "@id": `${site.url}/#localbusiness`,
   name: site.name,
+  description: site.description,
   image: `${site.url}${seoImages.default.url}`,
   url: site.url,
   telephone: "+46-732-488-880",

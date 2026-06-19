@@ -1,5 +1,6 @@
 import { categoryMeta, type Post } from "@/app/events/data";
 import EventThumbnail from "@/components/pages/events/event-thumbnails";
+import { site } from "@/lib/site";
 import Link from "next/link";
 
 const SidebarPost = ({ post }: { post: Post }) => (
@@ -32,7 +33,7 @@ type Props = {
 
 const EventSidebar = ({ post, recentPosts }: Props) => {
   const meta = categoryMeta[post.category];
-  const shareUrl = `https://swedinox.se/events/${post.slug}`;
+  const shareUrl = `${site.url}/events/${post.slug}`;
 
   return (
     <aside className="lg:w-80 shrink-0" aria-label="Sidebar">

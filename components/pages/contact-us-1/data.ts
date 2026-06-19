@@ -41,7 +41,7 @@ export const contactPageSchema = {
   name: `Contact ${site.name}`,
   url: `${site.url}/contact-us-1`,
   description:
-    "Contact SWEDINOX AB for stainless steel quotes, sourcing support, delivery questions, and technical inquiries.",
+    "Contact SWEDINOX AB for prime, ex-prime, and second-choice stainless steel quotes, sourcing support, delivery questions, and technical inquiries.",
   mainEntity: {
     "@type": "Organization",
     name: site.name,

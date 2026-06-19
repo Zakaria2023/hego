@@ -1,5 +1,6 @@
 import StructuredData from "@/components/shared/structured-data";
 import { buildBreadcrumbSchema } from "@/lib/seo";
+import { site } from "@/lib/site";
 import type { Product } from "@/app/products/data";
 import ProductHeroSection from "./product-hero-section";
 import ProductInquiryBanner from "./product-inquiry-banner";
@@ -19,14 +20,25 @@ const ProductDetailPage = ({
         "@context": "https://schema.org",
         "@type": "Product",
         name: product.name,
-        description: product.description,
-        image: `https://swedinox.se${product.image}`,
+        description: `${product.description} Prime, ex-prime, and second-choice stainless steel supply options are available from SWEDINOX AB.`,
+        image: `${site.url}${product.image}`,
+        url: `${site.url}/products/${product.slug}`,
+        sku: product.id,
+        category: "Stainless Steel",
+        keywords: [
+          product.name,
+          ...product.grades.map((grade) => `grade ${grade}`),
+          ...product.finishes.map((finish) => `${finish} finish`),
+          "second choice stainless steel",
+          "ex-prime stainless steel",
+        ].join(", "),
         brand: { "@type": "Brand", name: "SWEDINOX AB" },
         offers: {
           "@type": "Offer",
           availability: "https://schema.org/InStock",
           priceCurrency: "EUR",
           seller: { "@type": "Organization", name: "SWEDINOX AB" },
+          url: `${site.url}/products/${product.slug}`,
         },
       }}
     />

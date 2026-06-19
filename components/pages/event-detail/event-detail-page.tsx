@@ -1,9 +1,12 @@
 import { getPost, getRecentPosts } from "@/app/events/data";
-import ReadingProgress from "./reading-progress";
-import EventDetailHero from "./event-detail-hero";
+import StructuredData from "@/components/shared/structured-data";
+import { buildBreadcrumbSchema } from "@/lib/seo";
+import { seoImages, site } from "@/lib/site";
 import ArticleBody from "./block-renderer";
-import ShareRow from "./share-row";
+import EventDetailHero from "./event-detail-hero";
 import EventSidebar from "./event-sidebar";
+import ReadingProgress from "./reading-progress";
+import ShareRow from "./share-row";
 
 const EventDetailPage = ({ slug }: { slug: string }) => {
   const post = getPost(slug);
@@ -11,34 +14,55 @@ const EventDetailPage = ({ slug }: { slug: string }) => {
 
   if (!post) return null;
 
-  const shareUrl = `https://swedinox.se/events/${post.slug}`;
+  const shareUrl = `${site.url}/events/${post.slug}`;
   const shareTitle = encodeURIComponent(post.title);
+  const schemaImage =
+    post.category === "Industry Guide"
+      ? `${site.url}${seoImages.products.url}`
+      : `${site.url}${seoImages.events.url}`;
 
   return (
     <>
-      {/* JSON-LD */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BlogPosting",
-            headline: post.title,
-            datePublished: post.dateISO,
-            author: {
-              "@type": "Organization",
-              name: "SWEDINOX AB",
-              url: "https://swedinox.se",
+      <StructuredData
+        data={{
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          headline: post.title,
+          description: post.excerpt,
+          url: shareUrl,
+          mainEntityOfPage: shareUrl,
+          image: schemaImage,
+          datePublished: post.dateISO,
+          dateModified: post.dateISO,
+          articleSection: post.category,
+          keywords: [
+            "stainless steel",
+            "second choice stainless steel",
+            post.category,
+            "SWEDINOX AB",
+          ].join(", "),
+          author: {
+            "@type": "Organization",
+            name: "SWEDINOX AB",
+            url: site.url,
+          },
+          publisher: {
+            "@type": "Organization",
+            name: "SWEDINOX AB",
+            url: site.url,
+            logo: {
+              "@type": "ImageObject",
+              url: `${site.url}/logo.png`,
             },
-            publisher: {
-              "@type": "Organization",
-              name: "SWEDINOX AB",
-              url: "https://swedinox.se",
-            },
-            description: post.excerpt,
-            url: shareUrl,
-          }),
+          },
         }}
+      />
+      <StructuredData
+        data={buildBreadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "News and Events", path: "/events" },
+          { name: post.title, path: `/events/${post.slug}` },
+        ])}
       />
 
       <ReadingProgress />

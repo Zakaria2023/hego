@@ -22,7 +22,7 @@ const ProductHeroSection = ({ product }: ProductHeroSectionProps) => (
         src={product.image}
         alt={`${product.name} - SWEDINOX AB`}
         fill
-        priority
+        preload
         sizes="100vw"
         className="object-cover"
       />

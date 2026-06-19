@@ -31,6 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     keywords: [
       post.category,
       post.title,
+      "second choice stainless steel",
       "stainless steel industry article",
       "SWEDINOX AB insights",
     ],
@@ -38,7 +39,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     section: post.category,
     publishedTime: post.dateISO,
     modifiedTime: post.dateISO,
-    tags: ["stainless steel", post.category, "SWEDINOX AB"],
+    tags: [
+      "stainless steel",
+      "second choice stainless steel",
+      post.category,
+      "SWEDINOX AB",
+    ],
   });
 }
 

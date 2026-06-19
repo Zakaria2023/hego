@@ -1,6 +1,7 @@
 import { productCatalog } from "@/components/products/product-catalog";
 import StructuredData from "@/components/shared/structured-data";
 import { buildBreadcrumbSchema } from "@/lib/seo";
+import { site } from "@/lib/site";
 import ProductsCatalogSection from "./products-catalog-section";
 import ProductsGradesSection from "./products-grades-section";
 import ProductsHeroSection from "./products-hero-section";
@@ -13,9 +14,11 @@ const ProductsPage = () => (
         "@context": "https://schema.org",
         "@type": "CollectionPage",
         name: "Products - SWEDINOX AB",
-        url: "https://swedinox.se/products",
+        url: `${site.url}/products`,
         description:
-          "Full catalog of semi-manufactured stainless steel products by SWEDINOX AB.",
+          "Full catalog of prime, ex-prime, and second-choice semi-manufactured stainless steel products by SWEDINOX AB.",
+        keywords:
+          "stainless steel products, second choice stainless steel, ex-prime stainless steel, stainless steel coils, stainless steel sheets, stainless steel strips, stainless steel circles",
         hasPart: productCatalog.map((product) => ({
           "@type": "Product",
           name: product.name,

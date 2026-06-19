@@ -1,8 +1,9 @@
 import type { MetadataRoute } from "next";
+import { site } from "@/lib/site";
 import { posts } from "./events/data";
 import { products } from "./products/data";
 
-const BASE = "https://swedinox.se";
+const BASE = site.url;
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();

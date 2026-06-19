@@ -1,12 +1,12 @@
 export const site = {
   name: "SWEDINOX AB",
   legalName: "SWEDINOX AB",
-  url: "https://swedinox.se",
+  url: "https://www.swedinox.se",
   locale: "en_US",
   languages: ["en-US", "en-GB", "sv-SE"] as const,
   twitterHandle: "@swedinoxab",
   description:
-    "SWEDINOX AB is a global B2B supplier of premium stainless steel coils, sheets, strips, circles, baby coils, and head and tail sheets.",
+    "SWEDINOX AB is a global B2B supplier of prime, ex-prime, and second-choice stainless steel coils, sheets, strips, circles, baby coils, and head and tail sheets.",
   emails: ["sales@swedinox.se", "sales@swedinox.eu"],
   phoneNumbers: ["+46732488880", "+46406860186"],
   address: {
@@ -26,6 +26,10 @@ export const site = {
 export const defaultKeywords = [
   "stainless steel supplier",
   "stainless steel products",
+  "second choice stainless steel",
+  "second-choice stainless steel",
+  "second choice stainless steel supplier",
+  "ex-prime stainless steel",
   "stainless steel coils",
   "stainless steel sheets",
   "stainless steel strips",
@@ -40,6 +44,10 @@ export const defaultKeywords = [
   "ISO 9001 stainless steel supplier",
   "stainless steel stocklot supplier",
 ] as const;
+
+export const alternateOpenGraphLocales = site.languages
+  .map((language) => language.replace("-", "_"))
+  .filter((language) => language !== site.locale);
 
 export type SeoImage = {
   alt: string;

@@ -47,5 +47,5 @@ User-agent: CCBot
 Allow: /
 Disallow: /api/
 
-Host: https://swedinox.se
-Sitemap: https://swedinox.se/sitemap.xml
+Host: https://www.swedinox.se
+Sitemap: https://www.swedinox.se/sitemap.xml

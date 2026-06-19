@@ -1,5 +1,11 @@
 import type { Metadata } from "next";
-import { defaultKeywords, seoImages, site, type SeoImage } from "./site";
+import {
+  alternateOpenGraphLocales,
+  defaultKeywords,
+  seoImages,
+  site,
+  type SeoImage,
+} from "./site";
 
 type BuildMetadataInput = {
   authors?: Metadata["authors"];
@@ -80,6 +86,7 @@ export const buildPageMetadata = ({
       url: toAbsoluteUrl(canonical),
       siteName: site.name,
       locale: site.locale,
+      alternateLocale: alternateOpenGraphLocales,
       type,
       images: [
         {
