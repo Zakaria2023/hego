@@ -1,10 +1,8 @@
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import PageTransition from "@/components/page-transition";
-import StructuredData from "@/components/shared/structured-data";
 import {
   alternateOpenGraphLocales,
-  businessHours,
   defaultKeywords,
   seoImages,
   site,
@@ -121,151 +119,6 @@ export const metadata: Metadata = {
   referrer: "origin-when-cross-origin",
 };
 
-const organizationSchema = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "@id": `${site.url}/#organization`,
-  name: site.name,
-  url: site.url,
-  logo: {
-    "@type": "ImageObject",
-    url: `${site.url}/logo.png`,
-    width: 200,
-    height: 60,
-  },
-  description:
-    "SWEDINOX AB is a family-owned global B2B supplier of prime, ex-prime, and second-choice semi-manufactured stainless steel products including coils, sheets, strips, circles, and head and tail sheets.",
-  foundingDate: "1999",
-  legalName: site.legalName,
-  vatID: "SE-XXXXXXXXXX",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: site.address.street,
-    addressLocality: site.address.locality,
-    postalCode: site.address.postalCode,
-    addressCountry: site.address.countryCode,
-    addressRegion: site.address.region,
-  },
-  contactPoint: [
-    {
-      "@type": "ContactPoint",
-      telephone: "+46-732-488-880",
-      contactType: "sales",
-      availableLanguage: ["English", "Swedish"],
-      areaServed: "Worldwide",
-    },
-    {
-      "@type": "ContactPoint",
-      telephone: "+46-406-860-186",
-      contactType: "customer service",
-      availableLanguage: ["English", "Swedish"],
-      areaServed: "Worldwide",
-    },
-    {
-      "@type": "ContactPoint",
-      email: site.emails[0],
-      contactType: "sales",
-      availableLanguage: ["English", "Swedish"],
-      areaServed: "Worldwide",
-    },
-  ],
-  email: [...site.emails],
-  telephone: "+46-732-488-880",
-  openingHoursSpecification: businessHours
-    .filter((item) => item.opens && item.closes)
-    .map((item) => ({
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: item.day,
-      opens: item.opens,
-      closes: item.closes,
-    })),
-  sameAs: [site.url],
-  hasOfferCatalog: {
-    "@type": "OfferCatalog",
-    name: "Stainless Steel Products",
-    itemListElement: [
-      {
-        "@type": "Offer",
-        itemOffered: { "@type": "Product", name: "Stainless Steel Coils" },
-      },
-      {
-        "@type": "Offer",
-        itemOffered: { "@type": "Product", name: "Baby Coils" },
-      },
-      {
-        "@type": "Offer",
-        itemOffered: { "@type": "Product", name: "Stainless Steel Sheets" },
-      },
-      {
-        "@type": "Offer",
-        itemOffered: { "@type": "Product", name: "Stainless Steel Strips" },
-      },
-      {
-        "@type": "Offer",
-        itemOffered: { "@type": "Product", name: "Stainless Steel Circles" },
-      },
-      {
-        "@type": "Offer",
-        itemOffered: { "@type": "Product", name: "Head & Tail Sheets" },
-      },
-    ],
-  },
-};
-
-const websiteSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "@id": `${site.url}/#website`,
-  url: site.url,
-  name: site.name,
-  description:
-    "Prime, ex-prime, and second-choice stainless steel products supplier for global B2B trade",
-  publisher: { "@id": `${site.url}/#organization` },
-  potentialAction: {
-    "@type": "SearchAction",
-    target: {
-      "@type": "EntryPoint",
-      urlTemplate: `${site.url}/faq?q={search_term_string}`,
-    },
-    "query-input": "required name=search_term_string",
-  },
-  inLanguage: "en-US",
-};
-
-const localBusinessSchema = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "@id": `${site.url}/#localbusiness`,
-  name: site.name,
-  description: site.description,
-  image: `${site.url}${seoImages.default.url}`,
-  url: site.url,
-  telephone: "+46-732-488-880",
-  email: site.emails[0],
-  priceRange: "$$",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: site.address.street,
-    addressLocality: site.address.locality,
-    postalCode: site.address.postalCode,
-    addressCountry: site.address.countryCode,
-  },
-  geo: {
-    "@type": "GeoCoordinates",
-    latitude: site.geo.latitude,
-    longitude: site.geo.longitude,
-  },
-  openingHoursSpecification: businessHours
-    .filter((item) => item.opens && item.closes)
-    .map((item) => ({
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: item.day,
-      opens: item.opens,
-      closes: item.closes,
-    })),
-  sameAs: [site.url],
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -278,9 +131,6 @@ export default function RootLayout({
       className={`${plusJakarta.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-(family-name:--font-plus-jakarta)">
-        <StructuredData data={organizationSchema} />
-        <StructuredData data={websiteSchema} />
-        <StructuredData data={localBusinessSchema} />
         <Navbar />
         <main className="flex-1 min-h-screen">
           <PageTransition>{children}</PageTransition>

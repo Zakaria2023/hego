@@ -19,12 +19,21 @@ const ProductsPage = () => (
           "Full catalog of prime, ex-prime, and second-choice semi-manufactured stainless steel products by SWEDINOX AB.",
         keywords:
           "stainless steel products, second choice stainless steel, ex-prime stainless steel, stainless steel coils, stainless steel sheets, stainless steel strips, stainless steel circles",
-        hasPart: productCatalog.map((product) => ({
-          "@type": "Product",
-          name: product.name,
-          description: product.description,
-          brand: { "@type": "Brand", name: "SWEDINOX AB" },
-        })),
+        mainEntity: {
+          "@type": "ItemList",
+          name: "Stainless Steel Product Catalog",
+          numberOfItems: productCatalog.length,
+          itemListElement: productCatalog.map((product, index) => ({
+            "@type": "ListItem",
+            position: index + 1,
+            item: {
+              "@type": "Thing",
+              name: product.name,
+              description: product.description,
+              url: `${site.url}/products/${product.slug}`,
+            },
+          })),
+        },
       }}
     />
     <StructuredData

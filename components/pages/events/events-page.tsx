@@ -2,6 +2,7 @@ import { posts } from "@/app/events/data";
 import StructuredData from "@/components/shared/structured-data";
 import { buildBreadcrumbSchema } from "@/lib/seo";
 import { site } from "@/lib/site";
+import { organizationReference } from "@/lib/structured-data";
 import EventsCtaStrip from "./events-cta-strip";
 import EventsHero from "./events-hero";
 import FeaturedCard from "./featured-card";
@@ -33,7 +34,7 @@ const EventsPage = () => {
               "stainless steel industry article",
               post.category,
             ].join(", "),
-            author: { "@type": "Organization", name: "SWEDINOX AB" },
+            author: organizationReference,
           })),
         }}
       />

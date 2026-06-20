@@ -1,6 +1,13 @@
 import { Mail, MessageCircle, Phone } from "lucide-react";
 
-import { businessHours, site } from "@/lib/site";
+import { site } from "@/lib/site";
+import {
+  contactPoints,
+  openingHoursSpecification,
+  organizationId,
+  organizationLogo,
+  postalAddress,
+} from "@/lib/structured-data";
 
 export const contactQuickLinks = [
   {
@@ -26,15 +33,6 @@ export const contactQuickLinks = [
   },
 ] as const;
 
-const openingHoursSpecification = businessHours
-  .filter((item) => item.opens && item.closes)
-  .map((item) => ({
-    "@type": "OpeningHoursSpecification",
-    dayOfWeek: item.day,
-    opens: item.opens,
-    closes: item.closes,
-  }));
-
 export const contactPageSchema = {
   "@context": "https://schema.org",
   "@type": "ContactPage",
@@ -43,29 +41,15 @@ export const contactPageSchema = {
   description:
     "Contact SWEDINOX AB for prime, ex-prime, and second-choice stainless steel quotes, sourcing support, delivery questions, and technical inquiries.",
   mainEntity: {
+    "@id": organizationId,
     "@type": "Organization",
     name: site.name,
     url: site.url,
-    email: site.emails,
-    telephone: site.phoneNumbers,
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: site.address.street,
-      addressLocality: site.address.locality,
-      postalCode: site.address.postalCode,
-      addressRegion: site.address.region,
-      addressCountry: site.address.countryCode,
-    },
+    logo: organizationLogo,
+    email: site.emails[0],
+    telephone: site.phoneNumbers[0],
+    address: postalAddress,
     openingHoursSpecification,
-    contactPoint: [
-      {
-        "@type": "ContactPoint",
-        contactType: "sales",
-        email: site.emails[0],
-        telephone: site.phoneNumbers[0],
-        areaServed: "Worldwide",
-        availableLanguage: ["English", "Swedish"],
-      },
-    ],
+    contactPoint: contactPoints,
   },
 };

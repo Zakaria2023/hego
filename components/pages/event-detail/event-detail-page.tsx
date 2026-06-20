@@ -2,6 +2,10 @@ import { getPost, getRecentPosts } from "@/app/events/data";
 import StructuredData from "@/components/shared/structured-data";
 import { buildBreadcrumbSchema } from "@/lib/seo";
 import { seoImages, site } from "@/lib/site";
+import {
+  organizationLogo,
+  organizationReference,
+} from "@/lib/structured-data";
 import ArticleBody from "./block-renderer";
 import EventDetailHero from "./event-detail-hero";
 import EventSidebar from "./event-sidebar";
@@ -41,19 +45,10 @@ const EventDetailPage = ({ slug }: { slug: string }) => {
             post.category,
             "SWEDINOX AB",
           ].join(", "),
-          author: {
-            "@type": "Organization",
-            name: "SWEDINOX AB",
-            url: site.url,
-          },
+          author: organizationReference,
           publisher: {
-            "@type": "Organization",
-            name: "SWEDINOX AB",
-            url: site.url,
-            logo: {
-              "@type": "ImageObject",
-              url: `${site.url}/logo.png`,
-            },
+            ...organizationReference,
+            logo: organizationLogo,
           },
         }}
       />

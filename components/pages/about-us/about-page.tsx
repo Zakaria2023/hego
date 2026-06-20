@@ -1,6 +1,7 @@
 import StructuredData from "@/components/shared/structured-data";
 import { buildBreadcrumbSchema } from "@/lib/seo";
 import { site } from "@/lib/site";
+import { organizationId } from "@/lib/structured-data";
 import AboutCompanySection from "./about-company-section";
 import AboutCtaSection from "./about-cta-section";
 import AboutHeroSection from "./about-hero-section";
@@ -19,14 +20,7 @@ const AboutPage = () => (
         url: `${site.url}/about-us`,
         description:
           "SWEDINOX AB is a family-owned global supplier of prime, ex-prime, and second-choice semi-manufactured stainless steel products with over 25 years of experience.",
-        mainEntity: {
-          "@type": "Organization",
-          name: "SWEDINOX AB",
-          foundingDate: "1999",
-          description:
-            "Prime, ex-prime, and second-choice stainless steel supplier serving industrial buyers worldwide.",
-          address: { "@type": "PostalAddress", addressCountry: "SE" },
-        },
+        mainEntity: { "@id": organizationId },
       }}
     />
     <StructuredData

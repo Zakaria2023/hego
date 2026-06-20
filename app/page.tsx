@@ -1,6 +1,12 @@
+import StructuredData from "@/components/shared/structured-data";
 import HeroSection from "@/components/hero-section";
 import HomeSections from "@/components/home-sections";
 import { buildPageMetadata } from "@/lib/seo";
+import {
+  localBusinessSchema,
+  organizationSchema,
+  websiteSchema,
+} from "@/lib/structured-data";
 import { seoImages } from "@/lib/site";
 import type { Metadata } from "next";
 
@@ -24,6 +30,9 @@ export const metadata: Metadata = buildPageMetadata({
 const Home = () => {
   return (
     <main>
+      <StructuredData data={organizationSchema} />
+      <StructuredData data={websiteSchema} />
+      <StructuredData data={localBusinessSchema} />
       <HeroSection />
       <HomeSections />
     </main>
