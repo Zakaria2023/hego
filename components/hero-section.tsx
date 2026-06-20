@@ -1,7 +1,7 @@
+import { heroStats, heroTrustBrands } from "@/components/site-data";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { heroStats, heroTrustBrands } from "@/components/site-data";
 
 const heroTextShadow = "0 2px 18px rgba(255,255,255,0.42)";
 const tickerTextShadow = "0 2px 10px rgba(0,0,0,0.45)";
@@ -58,11 +58,15 @@ const HeroSection = () => {
               className="text-4xl sm:text-5xl lg:text-6xl xl:text-[4.25rem] font-extrabold leading-[1.04] tracking-tight animate-slide-in delay-100"
               style={{ textShadow: heroTextShadow }}
             >
-              <span className="block text-[#0F172A]">
-                Premium Stainless Steel.
+              {/* <span className="block text-[#0F172A]">
+                Prime, Ex-Prime &amp;
+              </span> */}
+              <span className="steel-text block mt-1">
+                Second-Choice Stainless Steel
               </span>
-              <span className="steel-text block mt-1">Reliable Supply</span>
-              <span className="block mt-1 text-[#0F172A]">Worldwide.</span>
+              <span className="block mt-1 text-[#0F172A]">
+                Reliable Supply Worldwide.
+              </span>
             </h1>
 
             {/* Description */}
@@ -110,9 +114,7 @@ const HeroSection = () => {
                   >
                     {value}
                   </span>
-                  <span
-                    className="text-xs text-[#334155] font-semibold tracking-wide"
-                  >
+                  <span className="text-xs text-[#334155] font-semibold tracking-wide">
                     {label}
                   </span>
                 </div>
@@ -145,32 +147,32 @@ const HeroSection = () => {
         >
           {[...heroTrustBrands, ...heroTrustBrands, ...heroTrustBrands].map(
             (brand, i) => (
-            <div
-              key={`${brand.alt}-${i}`}
-              className="inline-flex items-center gap-4 px-8"
-            >
-              <span
-                className="w-1 h-1 rounded-full bg-[#F5A623]"
-                aria-hidden="true"
-              />
               <div
-                className="relative h-10 shrink-0 sm:h-11"
-                style={{ width: `${brand.frameWidth}px` }}
+                key={`${brand.alt}-${i}`}
+                className="inline-flex items-center gap-4 px-8"
               >
-                <Image
-                  src={brand.src}
-                  alt=""
-                  fill
-                  sizes={`${brand.frameWidth}px`}
-                  className="object-contain"
-                  style={{
-                    filter: "drop-shadow(0 2px 10px rgba(0,0,0,0.28))",
-                    transform: `scale(${brand.scale})`,
-                    transformOrigin: "center",
-                  }}
+                <span
+                  className="w-1 h-1 rounded-full bg-[#F5A623]"
+                  aria-hidden="true"
                 />
+                <div
+                  className="relative h-10 shrink-0 sm:h-11"
+                  style={{ width: `${brand.frameWidth}px` }}
+                >
+                  <Image
+                    src={brand.src}
+                    alt=""
+                    fill
+                    sizes={`${brand.frameWidth}px`}
+                    className="object-contain"
+                    style={{
+                      filter: "drop-shadow(0 2px 10px rgba(0,0,0,0.28))",
+                      transform: `scale(${brand.scale})`,
+                      transformOrigin: "center",
+                    }}
+                  />
+                </div>
               </div>
-            </div>
             ),
           )}
         </div>
