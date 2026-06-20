@@ -4,7 +4,7 @@ import { seoImages } from "@/lib/site";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "FAQ - Stainless Steel Products, Grades, Ordering and Delivery",
+  title: "Stainless Steel FAQ",
   description:
     "Get answers to common SWEDINOX AB questions about prime, ex-prime, and second-choice stainless steel grades, product formats, lead times, shipping, fabrication, and sourcing decisions for industrial buyers.",
   path: "/faq",

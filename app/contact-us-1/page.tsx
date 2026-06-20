@@ -4,7 +4,7 @@ import { seoImages } from "@/lib/site";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Contact Us - Get a Stainless Steel Quote from Our Team",
+  title: "Contact SWEDINOX AB",
   description:
     "Contact SWEDINOX AB for prime, ex-prime, and second-choice stainless steel quotes, technical questions, delivery support, and sourcing inquiries by form, email, phone, or WhatsApp.",
   path: "/contact-us-1",

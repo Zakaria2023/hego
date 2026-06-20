@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   return buildPageMetadata({
-    title: `${product.name} - ${product.tagline}`,
+    title: product.seoTitle ?? product.name,
     description: `${product.description} Source prime, ex-prime, and second-choice stainless steel supply options from SWEDINOX AB.`,
     path: `/products/${product.slug}`,
     image: {

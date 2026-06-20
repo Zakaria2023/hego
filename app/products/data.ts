@@ -3,6 +3,7 @@ export interface Product {
   slug: string;
   image: string;
   name: string;
+  seoTitle?: string;
   tagline: string;
   description: string;
   longDescription: string;
@@ -22,6 +23,7 @@ export const products: Product[] = [
     slug: "coils",
     image: "/coils.JPG",
     name: "Stainless Steel Coils",
+    seoTitle: "Stainless Steel Coils Supplier",
     tagline: "Reliable Stainless Steel Solutions for Industrial Applications",
     description:
       "SWEDINOX supplies stainless steel coils in a wide range of grades, surface finishes, thicknesses, and widths for industrial, manufacturing, and commercial applications.",
@@ -67,6 +69,7 @@ export const products: Product[] = [
     slug: "baby-coils",
     image: "/baby-cols.jpg",
     name: "Baby Coils",
+    seoTitle: "Baby Coils from 500 KG",
     tagline: "Stainless Steel Coils Starting from Approximately 500 KG",
     description:
       "Baby coils are a flexible solution for fabricators, processors, and manufacturers that require smaller quantities of stainless steel.",
@@ -104,6 +107,7 @@ export const products: Product[] = [
     slug: "sheets",
     image: "/sheets.jpg",
     name: "Stainless Steel Sheets",
+    seoTitle: "Stainless Steel Sheets Supplier",
     tagline: "Cold-Rolled and Hot-Rolled Sheets",
     description:
       "SWEDINOX supplies stainless steel sheets in standard and customized dimensions for industrial manufacturing, fabrication, construction, food-processing equipment, and decorative applications.",
@@ -140,6 +144,7 @@ export const products: Product[] = [
     slug: "strips",
     image: "/strips.jpg",
     name: "Stainless Steel Strips",
+    seoTitle: "Stainless Steel Strips from 10 mm",
     tagline: "Precision-Slit from 10 mm Width",
     description:
       "SWEDINOX supplies precision-slit stainless steel strips for manufacturers and fabricators requiring narrow widths, consistent dimensions, and reliable edge quality.",
@@ -178,6 +183,7 @@ export const products: Product[] = [
     slug: "circles",
     image: "/circles.jpeg",
     name: "Stainless Steel Circles",
+    seoTitle: "Stainless Steel Circles from 150 mm",
     tagline: "Precision-Cut from Approximately 150 mm Diameter",
     description:
       "SWEDINOX supplies stainless steel circles for manufacturers and fabricators requiring accurate diameters, consistent dimensions, and clean-cut edges.",
@@ -216,6 +222,7 @@ export const products: Product[] = [
     slug: "head-and-tail",
     image: "/head-and-tail.jpeg",
     name: "Head & Tail Sheets",
+    seoTitle: "Head & Tail Stainless Steel Sheets",
     tagline: "Flexible Stainless Steel Sheet Sizes at Competitive Prices",
     description:
       "Head and tail sheets are the beginning and ending sections generated during coil processing and offer a cost-effective option for customers who can work with variable sheet lengths and non-standard dimensions.",

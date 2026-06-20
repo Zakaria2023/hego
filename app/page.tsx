@@ -11,7 +11,7 @@ import { seoImages } from "@/lib/site";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Premium Stainless Steel Products for Global B2B Supply",
+  title: "Global B2B Stainless Steel Supply",
   description:
     "SWEDINOX AB supplies prime, ex-prime, and second-choice stainless steel coils, sheets, strips, circles, baby coils, and head and tail sheets to industrial buyers worldwide. Request a quote from our Sweden team.",
   path: "/",
