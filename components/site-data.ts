@@ -60,6 +60,18 @@ export const heroTrustBrands = [
     frameWidth: 156,
     scale: 1,
   },
+  {
+    alt: "Tsingshan",
+    src: "/tsingshan.webp",
+    frameWidth: 210,
+    scale: 1,
+  },
+  {
+    alt: "Yongjin Corporation",
+    src: "/yongjin.webp",
+    frameWidth: 220,
+    scale: 1,
+  },
 ];
 
 export const footerQuickLinks = [
