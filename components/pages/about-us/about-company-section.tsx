@@ -72,7 +72,7 @@ const AboutCompanySection = () => (
           <div className="relative overflow-hidden rounded-2xl border border-slate-200 shadow-[0_30px_60px_rgba(15,23,42,0.15)]">
             <div className="relative h-105 w-full overflow-hidden">
               <Image
-                src="/about-us.jpg"
+                src="/about-us.webp"
                 alt="SWEDINOX AB facility"
                 fill
                 quality={60}

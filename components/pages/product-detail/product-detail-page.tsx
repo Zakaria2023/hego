@@ -7,6 +7,10 @@ import ProductHeroSection from "./product-hero-section";
 import ProductInquiryBanner from "./product-inquiry-banner";
 import ProductOverviewSection from "./product-overview-section";
 import RelatedProductsSection from "./related-products-section";
+import ProductFeaturesSection from "./product-features-section";
+import ProductSpecsGridSection from "./product-specs-grid-section";
+import ProductCuttingSection from "./product-cutting-section";
+import ProductBenefitsSection from "./product-benefits-section";
 
 type ProductDetailPageProps = {
   product: Product;
@@ -52,7 +56,11 @@ const ProductDetailPage = ({
     <ProductHeroSection product={product} />
 
     <main className="bg-white">
+      <ProductFeaturesSection product={product} />
+      <ProductSpecsGridSection product={product} />
+      <ProductCuttingSection product={product} />
       <ProductOverviewSection product={product} />
+      <ProductBenefitsSection product={product} />
       <ProductInquiryBanner product={product} />
       <RelatedProductsSection slug={product.slug} />
     </main>

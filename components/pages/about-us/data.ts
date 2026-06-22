@@ -22,7 +22,7 @@ export const aboutPillars = [
 ];
 
 export const aboutStats = [
-  { value: 11, suffix: "+", label: "Years of Experience" },
+  { value: 12, suffix: "+", label: "Years of Experience" },
   { value: 10, suffix: "+", label: "Countries Served" },
   { value: 200, suffix: "+", label: "Product Grades" },
   { value: 300, suffix: "+", label: "Number of Clients" },

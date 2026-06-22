@@ -23,7 +23,7 @@ const productCardImages: Record<string, string> = {
   "baby-coils": "/baby-coils-card.webp",
   sheets: "/sheets-card.webp",
   strips: "/strips-card.webp",
-  circles: "/baby-cols.jpg",
+  circles: "/baby-cols.webp",
   "head-and-tail": "/head-and-tail-card.webp",
 };
 

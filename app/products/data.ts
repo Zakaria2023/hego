@@ -1,3 +1,13 @@
+export interface ProductFeature {
+  title: string;
+  description: string;
+}
+
+export interface ProductSpecItem {
+  title: string;
+  description: string;
+}
+
 export interface Product {
   id: string;
   slug: string;
@@ -15,13 +25,26 @@ export interface Product {
   heroNote?: string;
   secondaryCtaHref?: string;
   secondaryCtaLabel?: string;
+  // Optional extended sections
+  overviewSubtitle?: string;
+  overviewTitle?: string;
+  overviewDescription?: string;
+  features?: ProductFeature[];
+  specsGridItems?: ProductSpecItem[];
+  specsNote?: string;
+  cuttingSubtitle?: string;
+  cuttingTitle?: string;
+  cuttingDescription?: string;
+  cuttingOptions?: ProductFeature[];
+  cuttingNote?: string;
+  benefits?: ProductFeature[];
 }
 
 export const products: Product[] = [
   {
     id: "coils",
     slug: "coils",
-    image: "/coils.JPG",
+    image: "/coils.webp",
     name: "Stainless Steel Coils",
     seoTitle: "Stainless Steel Coils Supplier",
     tagline: "Reliable Stainless Steel Solutions for Industrial Applications",
@@ -67,7 +90,7 @@ export const products: Product[] = [
   {
     id: "baby-coils",
     slug: "baby-coils",
-    image: "/baby-cols.jpg",
+    image: "/baby-cols.webp",
     name: "Baby Coils",
     seoTitle: "Baby Coils from 500 KG",
     tagline: "Stainless Steel Coils Starting from Approximately 500 KG",
@@ -105,7 +128,7 @@ export const products: Product[] = [
   {
     id: "sheets",
     slug: "sheets",
-    image: "/sheets.jpg",
+    image: "/sheets.webp",
     name: "Stainless Steel Sheets",
     seoTitle: "Stainless Steel Sheets Supplier",
     tagline: "Cold-Rolled and Hot-Rolled Sheets",
@@ -142,7 +165,7 @@ export const products: Product[] = [
   {
     id: "strips",
     slug: "strips",
-    image: "/strips.jpg",
+    image: "/strips.webp",
     name: "Stainless Steel Strips",
     seoTitle: "Stainless Steel Strips from 10 mm",
     tagline: "Precision-Slit from 10 mm Width",
@@ -181,14 +204,75 @@ export const products: Product[] = [
   {
     id: "circles",
     slug: "circles",
-    image: "/circles.jpeg",
+    image: "/circles.webp",
     name: "Stainless Steel Circles",
-    seoTitle: "Stainless Steel Circles from 150 mm",
+    seoTitle: "Stainless Steel Circles Supplier | Precision-Cut from 150 mm",
     tagline: "Precision-Cut from Approximately 150 mm Diameter",
     description:
       "SWEDINOX supplies stainless steel circles for manufacturers and fabricators requiring accurate diameters, consistent dimensions, and clean-cut edges.",
     longDescription:
       "Circles can be prepared from suitable stainless steel sheets according to the required grade, thickness, diameter, surface finish, and quantity. They are suitable for cookware, industrial components, covers, flanges, discs, and decorative applications.",
+    // Section 1 — Precision-Cut Circles
+    overviewSubtitle: "Precision-Cut Circles",
+    overviewTitle: "Prepared to Match Your Required Diameter",
+    overviewDescription:
+      "Stainless steel circles are cut from suitable sheets according to customer specifications. They are designed for applications that require consistent diameter, controlled thickness, and reliable edge quality before forming, pressing, welding, or assembly.",
+    features: [
+      {
+        title: "Customized Diameters",
+        description:
+          "Circles can be prepared according to the required diameter, subject to material dimensions and cutting capabilities.",
+      },
+      {
+        title: "Consistent Thickness",
+        description:
+          "Material thickness is selected according to the final application and forming requirements.",
+      },
+      {
+        title: "Clean-Cut Edges",
+        description:
+          "Cutting is coordinated to provide accurate and consistent edges suitable for additional processing.",
+      },
+      {
+        title: "Production-Ready Format",
+        description:
+          "Circles can be supplied ready for forming, pressing, welding, or further fabrication.",
+      },
+    ],
+    // Section 2 — Available Options
+    specsGridItems: [
+      {
+        title: "Diameter",
+        description:
+          "Available from approximately 150 mm, depending on material and production capability.",
+      },
+      {
+        title: "Thickness",
+        description:
+          "Available according to sheet stock, grade, diameter, and customer requirements.",
+      },
+      {
+        title: "Grades",
+        description: "304, 304L, 316L, 430, and other grades upon request.",
+      },
+      {
+        title: "Surface Finishes",
+        description:
+          "2B, BA/2R, brushed, polished, and other finishes according to availability.",
+      },
+      {
+        title: "Cutting Method",
+        description:
+          "Laser cutting or other suitable cutting methods according to specification and quantity.",
+      },
+      {
+        title: "Packaging",
+        description:
+          "Circles may be packaged flat, stacked, or on edge according to diameter, thickness, and transportation requirements.",
+      },
+    ],
+    specsNote:
+      "Exact diameter tolerance, thickness tolerance, edge quality, flatness, and cutting method depend on the selected material and technical production capabilities.",
     specs: [
       "Diameter available from approximately 150 mm depending on material and production capability.",
       "Thickness according to sheet stock, grade, diameter, and customer requirements.",
@@ -197,8 +281,33 @@ export const products: Product[] = [
       "Cutting method: laser cutting or other suitable methods according to specification and quantity.",
       "Packaging: flat, stacked, or on edge according to diameter, thickness, and transport requirements.",
     ],
+    // Section 3 — Cutting and Edge Options
+    cuttingSubtitle: "Cutting and Edge Options",
+    cuttingTitle: "Accurate Cutting for Further Processing",
+    cuttingDescription:
+      "The appropriate cutting method should be selected according to the required diameter, thickness, tolerance, quantity, and final application.",
+    cuttingOptions: [
+      {
+        title: "Laser Cutting",
+        description:
+          "Suitable for customized diameters, smaller production quantities, and applications requiring accurate cutting.",
+      },
+      {
+        title: "Industrial Cutting",
+        description:
+          "Other cutting methods may be used for larger quantities or specific material dimensions where technically appropriate.",
+      },
+      {
+        title: "Edge Preparation",
+        description:
+          "Additional edge finishing or deburring may be available when required for handling, forming, or final assembly.",
+      },
+    ],
+    cuttingNote:
+      "Required diameter tolerance, edge condition, flatness, and surface protection should be specified when requesting a quotation.",
     grades: ["304", "304L", "316L", "430"],
     finishes: ["2B", "BA/2R", "Brushed", "Polished"],
+    // Section 4 — Typical Applications
     applications: [
       "Cookware and kitchenware",
       "Pot and pan production",
@@ -216,11 +325,34 @@ export const products: Product[] = [
       "Diameters from approximately 150 mm may be available, depending on material thickness, grade, cutting method, and production capability.",
     secondaryCtaHref: "/products",
     secondaryCtaLabel: "View All Products",
+    // Section 5 — Why Choose Stainless Steel Circles?
+    benefits: [
+      {
+        title: "Reduced Preparation Time",
+        description:
+          "Pre-cut circles reduce the need for customers to cut full sheets before production.",
+      },
+      {
+        title: "Lower Material Waste",
+        description:
+          "Optimized cutting can reduce unused material compared with preparing circles individually from standard sheets.",
+      },
+      {
+        title: "Customized Dimensions",
+        description:
+          "Diameter and thickness can be prepared according to the final product requirements.",
+      },
+      {
+        title: "Suitable for Forming",
+        description:
+          "Circles can be supplied for pressing, deep drawing, spinning, welding, and other fabrication processes.",
+      },
+    ],
   },
   {
     id: "head-and-tail",
     slug: "head-and-tail",
-    image: "/head-and-tail.jpeg",
+    image: "/head-and-tail.webp",
     name: "Head & Tail Sheets",
     seoTitle: "Head & Tail Stainless Steel Sheets",
     tagline: "Flexible Stainless Steel Sheet Sizes at Competitive Prices",

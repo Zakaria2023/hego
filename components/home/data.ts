@@ -83,7 +83,7 @@ export const checklistItems = [
 export const highlightStats = [
   { value: "200+", label: "Product Grades" },
   { value: "300", label: "Number of Clients" },
-  { value: "Weekly", label: "Stock Updates" },
+  { value: "Daily", label: "Stock Updates" },
   { value: "48h", label: "Quote Turnaround" },
 ];
 
