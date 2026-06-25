@@ -58,7 +58,7 @@ export const heroTrustBrands = [
     alt: "Aperam",
     src: "/aperam-removebg-preview.png",
     frameWidth: 156,
-    scale: 2,
+    scale: 1.5,
   },
   {
     alt: "Tsingshan",
