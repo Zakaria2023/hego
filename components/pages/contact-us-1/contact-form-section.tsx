@@ -1,6 +1,7 @@
 "use client";
 
 import Reveal from "@/components/shared/reveal";
+import { site } from "@/lib/site";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowRight, LoaderCircle } from "lucide-react";
 import { useState, type FormEvent } from "react";
@@ -8,6 +9,7 @@ import ContactField from "./contact-field";
 import ContactSuccessState from "./contact-success-state";
 
 const ContactFormSection = () => {
+  const recipientEmail = site.emails[1];
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -39,6 +41,20 @@ const ContactFormSection = () => {
     setSubmitted(false);
   };
 
+  const buildMailtoHref = () => {
+    const subject = `Website inquiry from ${name.trim()} | SWEDINOX AB`;
+    const body = [
+      `Name: ${name.trim()}`,
+      `Email: ${email.trim()}`,
+      `Phone: ${phone.trim() || "Not provided"}`,
+      "",
+      "Message:",
+      message.trim(),
+    ].join("\n");
+
+    return `mailto:${recipientEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  };
+
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const nextErrors = validate();
@@ -50,9 +66,12 @@ const ContactFormSection = () => {
 
     setErrors({});
     setSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 1200));
+    const mailtoHref = buildMailtoHref();
     setSubmitting(false);
     setSubmitted(true);
+    window.setTimeout(() => {
+      window.location.href = mailtoHref;
+    }, 50);
   };
 
   return (
@@ -76,7 +95,11 @@ const ContactFormSection = () => {
 
           <AnimatePresence mode="wait">
             {submitted ? (
-              <ContactSuccessState key="success" onReset={resetForm} />
+              <ContactSuccessState
+                key="success"
+                onReset={resetForm}
+                recipientEmail={recipientEmail}
+              />
             ) : (
               <motion.form
                 key="form"

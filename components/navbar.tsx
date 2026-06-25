@@ -24,9 +24,9 @@ const Navbar = () => {
             <Image
               src="/logo.webp"
               alt="SWEDINOX AB - Keeping your business stainless"
-              width={139}
-              height={56}
-              className="h-14 w-34.75 object-contain transition-opacity duration-200 group-hover:opacity-90"
+              width={149}
+              height={60}
+              className="h-15 w-[9.3125rem] object-contain transition-opacity duration-200 group-hover:opacity-90"
             />
           </Link>
 
@@ -110,9 +110,9 @@ const Navbar = () => {
                   <Image
                     src="/logo.webp"
                     alt="SWEDINOX AB"
-                    width={99}
-                    height={40}
-                    className="h-10 w-24.75 object-contain brightness-0 invert"
+                    width={109}
+                    height={44}
+                    className="h-11 w-[6.8125rem] object-contain brightness-0 invert"
                   />
                 </Link>
                 <label

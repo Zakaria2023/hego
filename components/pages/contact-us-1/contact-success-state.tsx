@@ -5,9 +5,13 @@ import { Check } from "lucide-react";
 
 type ContactSuccessStateProps = {
   onReset: () => void;
+  recipientEmail: string;
 };
 
-const ContactSuccessState = ({ onReset }: ContactSuccessStateProps) => (
+const ContactSuccessState = ({
+  onReset,
+  recipientEmail,
+}: ContactSuccessStateProps) => (
   <motion.div
     key="success"
     initial={{ opacity: 0, scale: 0.92 }}
@@ -27,11 +31,11 @@ const ContactSuccessState = ({ onReset }: ContactSuccessStateProps) => (
     </div>
 
     <h3 className="mb-2 text-xl font-extrabold text-[#0F172A]">
-      Message Sent
+      Email Draft Ready
     </h3>
-    <p className="mb-8 max-w-xs text-sm leading-relaxed text-[#475569]">
-      Thank you for reaching out. Our team will get back to you within one
-      business day.
+    <p className="mb-8 max-w-sm text-sm leading-relaxed text-[#475569]">
+      Your email app should open a draft addressed to {recipientEmail}. If it
+      does not, send your inquiry directly there.
     </p>
 
     <button
