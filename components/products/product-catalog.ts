@@ -20,10 +20,10 @@ const productPreviewSpecs: Record<string, string[]> = {
 
 const productCardImages: Record<string, string> = {
   coils: "/coils-card.webp",
-  "baby-coils": "/baby-coils-card.webp",
+  "baby-coils": "/baby-cols.webp",
   sheets: "/sheets-card.webp",
   strips: "/strips-card.webp",
-  circles: "/baby-cols.webp",
+  circles: "/baby-coils-card.webp",
   "head-and-tail": "/head-and-tail-card.webp",
 };
 
