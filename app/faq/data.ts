@@ -95,7 +95,7 @@ export const faqData: FaqCategory[] = [
     items: [
       {
         q: "How do I request a quote from SWEDINOX AB?",
-        a: "You can request a quote through our Contact page, by email at sales@swedinox.se or sales@swedinox.eu, by phone at +46 732 488 880, or via WhatsApp. Please include your required grade, finish, dimensions (thickness × width × length or coil weight), quantity, and delivery address for the fastest response.",
+        a: "You can request a quote through our Contact page, by email at sales@swedinox.se, sales@swedinox.eu, or logistic@swedinox.se, by phone at +46 732 488 880, or via WhatsApp. Please include your required grade, finish, dimensions (thickness × width × length or coil weight), quantity, and delivery address for the fastest response.",
       },
       {
         q: "What is the minimum order quantity?",

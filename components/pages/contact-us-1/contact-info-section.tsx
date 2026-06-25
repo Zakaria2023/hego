@@ -63,18 +63,15 @@ const ContactInfoSection = () => (
         icon={<Mail className="h-5 w-5 text-[#005CA3]" />}
         label="Email"
       >
-        <a
-          href={`mailto:${site.emails[0]}`}
-          className="block transition-colors duration-150 hover:text-[#005CA3]"
-        >
-          {site.emails[0]}
-        </a>
-        <a
-          href={`mailto:${site.emails[1]}`}
-          className="block transition-colors duration-150 hover:text-[#005CA3]"
-        >
-          {site.emails[1]}
-        </a>
+        {site.emails.map((email) => (
+          <a
+            key={email}
+            href={`mailto:${email}`}
+            className="block transition-colors duration-150 hover:text-[#005CA3]"
+          >
+            {email}
+          </a>
+        ))}
       </ContactInfoRow>
 
       <ContactInfoRow

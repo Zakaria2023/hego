@@ -7,7 +7,7 @@ export const site = {
   twitterHandle: "@swedinoxab",
   description:
     "SWEDINOX AB is a global B2B supplier of prime, ex-prime, and second-choice stainless steel coils, sheets, strips, circles, baby coils, and head and tail sheets.",
-  emails: ["sales@swedinox.se", "sales@swedinox.eu"],
+  emails: ["sales@swedinox.se", "sales@swedinox.eu", "logistic@swedinox.se"],
   phoneNumbers: ["+46732488880", "+46406860186"],
   address: {
     street: "Pilevallen 77",

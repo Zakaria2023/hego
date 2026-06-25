@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { site } from "@/lib/site";
 import {
   footerQuickLinks,
   footerUtilityLinks,
@@ -108,15 +109,17 @@ const Footer = () => {
                   +46 732 488 880
                 </a>
               </p>
-              <p>
-                E-mail:{" "}
-                <a
-                  href="mailto:sales@swedinox.eu"
-                  className="text-[#F5A623] hover:text-[#FFB547] transition-colors duration-150"
-                >
-                  sales@swedinox.eu
-                </a>
-              </p>
+              {site.emails.slice(1).map((email) => (
+                <p key={email}>
+                  E-mail:{" "}
+                  <a
+                    href={`mailto:${email}`}
+                    className="text-[#F5A623] hover:text-[#FFB547] transition-colors duration-150"
+                  >
+                    {email}
+                  </a>
+                </p>
+              ))}
             </div>
           </div>
         </div>
