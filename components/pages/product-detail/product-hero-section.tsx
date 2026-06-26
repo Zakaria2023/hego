@@ -17,25 +17,29 @@ const ProductHeroSection = ({ product }: ProductHeroSectionProps) => (
     aria-label={`${product.name} product detail`}
     className="relative flex min-h-screen overflow-hidden bg-[#F8FAFC]"
   >
-    <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-      <Image
-        src={product.image}
-        alt={`${product.name} - SWEDINOX AB`}
-        fill
-        preload
-        sizes="100vw"
-        className="object-cover"
-      />
-    </div>
+    {product.image && (
+      <>
+        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+          <Image
+            src={product.image}
+            alt={`${product.name} - SWEDINOX AB`}
+            fill
+            preload
+            sizes="100vw"
+            className="object-cover"
+          />
+        </div>
 
-    <div
-      aria-hidden="true"
-      className="absolute inset-0 pointer-events-none"
-      style={{
-        background:
-          "linear-gradient(90deg, rgba(248,250,252,0.98) 0%, rgba(248,250,252,0.95) 22%, rgba(248,250,252,0.82) 34%, rgba(248,250,252,0.54) 45%, rgba(248,250,252,0.16) 58%, rgba(248,250,252,0) 72%)",
-      }}
-    />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              "linear-gradient(90deg, rgba(248,250,252,0.98) 0%, rgba(248,250,252,0.95) 22%, rgba(248,250,252,0.82) 34%, rgba(248,250,252,0.54) 45%, rgba(248,250,252,0.16) 58%, rgba(248,250,252,0) 72%)",
+          }}
+        />
+      </>
+    )}
 
     <div
       aria-hidden="true"

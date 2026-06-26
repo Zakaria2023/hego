@@ -23,14 +23,14 @@ const productCardImages: Record<string, string> = {
   "baby-coils": "/baby-cols.webp",
   sheets: "/sheets-card.webp",
   strips: "/strips-card.webp",
-  circles: "/baby-coils-card.webp",
+  circles: undefined,
   "head-and-tail": "/head-and-tail-card.webp",
 };
 
 export type ProductCardData = {
   id: string;
   slug: string;
-  image: string;
+  image?: string;
   name: string;
   tagline: string;
   badge: string;

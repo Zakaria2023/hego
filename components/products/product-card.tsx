@@ -26,16 +26,18 @@ const ProductCard = ({
         aria-label={`View ${product.name} - ${product.tagline}`}
       >
         <div className={`relative overflow-hidden bg-[#0F172A] ${imageHeight}`}>
-          <Image
-            src={product.image}
-            alt={product.name}
-            fill
-            quality={40}
-            loading={imageLoading}
-            fetchPriority={imageLoading === "eager" ? "high" : "auto"}
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
-          />
+          {product.image && (
+            <Image
+              src={product.image}
+              alt={product.name}
+              fill
+              quality={40}
+              loading={imageLoading}
+              fetchPriority={imageLoading === "eager" ? "high" : "auto"}
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+          )}
 
           <div
             className="absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"

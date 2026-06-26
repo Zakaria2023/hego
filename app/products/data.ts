@@ -11,7 +11,7 @@ export interface ProductSpecItem {
 export interface Product {
   id: string;
   slug: string;
-  image: string;
+  image?: string;
   name: string;
   seoTitle?: string;
   tagline: string;
@@ -204,7 +204,6 @@ export const products: Product[] = [
   {
     id: "circles",
     slug: "circles",
-    image: "/baby-coils-card.webp",
     name: "Stainless Steel Circles",
     seoTitle: "Stainless Steel Circles Supplier | Precision-Cut from 150 mm",
     tagline: "Precision-Cut from Approximately 150 mm Diameter",
