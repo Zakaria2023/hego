@@ -15,8 +15,8 @@ export const heroTrustBrands = [
   {
     alt: "Thyssenkrupp",
     src: "/thyssenkrupp-removebg-preview.png",
-    frameWidth: 140,
-    scale: 1.5,
+    frameWidth: 190,
+    scale: 1,
   },
   {
     alt: "Terninox",
@@ -39,8 +39,8 @@ export const heroTrustBrands = [
   {
     alt: "Acerinox",
     src: "/acerinox-removebg-preview.png",
-    frameWidth: 156,
-    scale: 1.5,
+    frameWidth: 210,
+    scale: 1,
   },
   {
     alt: "Marcegaglia",
@@ -52,13 +52,13 @@ export const heroTrustBrands = [
     alt: "Hyundai",
     src: "/hyundai-logo-removebg-preview.png",
     frameWidth: 200,
-    scale: 1.5,
+    scale: 1,
   },
   {
     alt: "Aperam",
     src: "/aperam-removebg-preview.png",
-    frameWidth: 156,
-    scale: 1.5,
+    frameWidth: 210,
+    scale: 1,
   },
   {
     alt: "Tsingshan",
