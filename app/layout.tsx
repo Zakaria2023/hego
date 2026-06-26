@@ -32,7 +32,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   title: {
     default:
-      "SWEDINOX AB - Premium Stainless Steel Products | Keep Your Business Stainless",
+      "SWEDINOX AB - Premium Stainless Steel Products | Keeping Your Business Stainless",
     template: "%s | SWEDINOX AB",
   },
   description: site.description,
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title:
-      "SWEDINOX AB - Premium Stainless Steel Products | Keep Your Business Stainless",
+      "SWEDINOX AB - Premium Stainless Steel Products | Keeping Your Business Stainless",
     description:
       "Prime, ex-prime, and second-choice stainless steel products for industrial buyers worldwide. SWEDINOX AB supports sourcing, stock availability, and responsive delivery coordination.",
     url: site.url,
