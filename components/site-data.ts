@@ -52,7 +52,7 @@ export const heroTrustBrands = [
     alt: "Hyundai",
     src: "/hyundai-logo-removebg-preview.png",
     frameWidth: 200,
-    scale: 1.7,
+    scale: 1.5,
   },
   {
     alt: "Aperam",
