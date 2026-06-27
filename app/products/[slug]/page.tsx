@@ -1,5 +1,6 @@
 import ProductDetailPage from "@/components/pages/product-detail/product-detail-page";
 import { buildPageMetadata } from "@/lib/seo";
+import { seoImages } from "@/lib/site";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getProduct, products } from "../data";
@@ -18,12 +19,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return { title: "Product Not Found" };
   }
 
+  const imageUrl = product.image ?? seoImages.products.url;
+
   return buildPageMetadata({
     title: product.seoTitle ?? product.name,
     description: `${product.description} Source prime, ex-prime, and second-choice stainless steel supply options from SWEDINOX AB.`,
     path: `/products/${product.slug}`,
     image: {
-      url: product.image,
+      url: imageUrl,
       alt: `${product.name} stainless steel product supplied by SWEDINOX AB`,
     },
     category: "Product Detail",

@@ -7,13 +7,12 @@ import {
   organizationSchema,
   websiteSchema,
 } from "@/lib/structured-data";
-import { seoImages } from "@/lib/site";
+import { seoImages, site } from "@/lib/site";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Keeping Your Business Stainless",
-  description:
-    "SWEDINOX AB supplies prime, ex-prime, and second-choice stainless steel coils, sheets, strips, circles, baby coils, and head and tail sheets to industrial buyers worldwide. Request a quote from our Sweden team.",
+  title: "Stainless Steel Supplier Worldwide",
+  description: site.description,
   path: "/",
   image: seoImages.home,
   category: "Industrial Materials Supplier",

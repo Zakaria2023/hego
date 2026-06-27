@@ -31,8 +31,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default:
-      "SWEDINOX AB - Premium Stainless Steel Products | Keeping Your Business Stainless",
+    default: "SWEDINOX AB | Stainless Steel Supplier",
     template: "%s | SWEDINOX AB",
   },
   description: site.description,
@@ -57,10 +56,8 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title:
-      "SWEDINOX AB - Premium Stainless Steel Products | Keeping Your Business Stainless",
-    description:
-      "Prime, ex-prime, and second-choice stainless steel products for industrial buyers worldwide. SWEDINOX AB supports sourcing, stock availability, and responsive delivery coordination.",
+    title: "SWEDINOX AB | Stainless Steel Supplier",
+    description: site.description,
     url: site.url,
     siteName: site.name,
     images: [
@@ -81,9 +78,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "SWEDINOX AB - Premium Stainless Steel Products",
-    description:
-      "Prime, ex-prime, and second-choice stainless steel products with sourcing support and responsive delivery coordination for global B2B buyers.",
+    title: "SWEDINOX AB | Stainless Steel Supplier",
+    description: site.description,
     images: [{ url: seoImages.default.url, alt: seoImages.default.alt }],
     site: site.twitterHandle,
     creator: site.twitterHandle,

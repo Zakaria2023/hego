@@ -58,27 +58,28 @@ const HeroSection = () => {
               className="text-4xl sm:text-5xl lg:text-6xl xl:text-[4.25rem] font-extrabold leading-[1.04] tracking-tight animate-slide-in delay-100"
               style={{ textShadow: heroTextShadow }}
             >
-              {/* <span className="block text-[#0F172A]">
-                Prime, Ex-Prime &amp;
-              </span> */}
               <span className="steel-text block mt-1">
-                Second-Choice Stainless Steel
-              </span>
-              <span className="block mt-1 text-[#0F172A]">
-                Reliable Supply Worldwide.
+                Prime, Ex-Prime &amp; Second-Choice Stainless Steel
               </span>
             </h1>
+
+            <p
+              className="mt-3 text-xl sm:text-2xl lg:text-3xl font-semibold text-[#0F172A] animate-slide-up delay-150"
+              style={{ textShadow: heroTextShadow }}
+            >
+              Reliable Supply Worldwide.
+            </p>
 
             {/* Description */}
             <p
               className="mt-6 text-[#475569] text-base sm:text-lg leading-relaxed animate-slide-up delay-200"
               style={{ textShadow: heroTextShadow }}
             >
-              Swedinox AB supplies high-quality stainless steel coils, sheets,
-              strips, and circles to industrial customers worldwide. With
+              Swedinox AB supplies prime, ex-prime, and second-choice
+              stainless steel coils, sheets, strips, circles, baby coils, and
+              head and tail sheets to industrial buyers worldwide. With
               reliable sourcing, flexible processing, and efficient logistics,
-              we deliver the right material, in the right specification, at the
-              right time.
+              we deliver the right specification at the right time.
             </p>
 
             {/* CTAs */}

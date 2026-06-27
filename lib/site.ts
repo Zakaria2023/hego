@@ -6,7 +6,7 @@ export const site = {
   languages: ["en-US", "en-GB", "sv-SE"] as const,
   twitterHandle: "@swedinoxab",
   description:
-    "SWEDINOX AB is a global B2B supplier of prime, ex-prime, and second-choice stainless steel coils, sheets, strips, circles, baby coils, and head and tail sheets.",
+    "SWEDINOX AB supplies prime, ex-prime, and second-choice stainless steel coils, sheets, strips, circles, baby coils, and head and tail sheets worldwide.",
   emails: ["sales@swedinox.se", "sales@swedinox.eu", "logistic@swedinox.se"],
   phoneNumbers: ["+46732488880", "+46406860186"],
   address: {
@@ -59,53 +59,53 @@ export type SeoImage = {
 
 export const seoImages = {
   about: {
-    url: "/about-us.jpg",
+    url: "/about-us.webp",
     width: 1200,
     height: 630,
     alt: "SWEDINOX AB warehouse and stainless steel supply operations",
-    type: "image/jpeg",
+    type: "image/webp",
   },
   contact: {
-    url: "/about-us.jpg",
+    url: "/about-us.webp",
     width: 1200,
     height: 630,
     alt: "Contact SWEDINOX AB for stainless steel inquiries and quotes",
-    type: "image/jpeg",
+    type: "image/webp",
   },
   default: {
-    url: "/about-us.jpg",
+    url: "/about-us.webp",
     width: 1200,
     height: 630,
     alt: "SWEDINOX AB premium stainless steel products supplier",
-    type: "image/jpeg",
+    type: "image/webp",
   },
   events: {
-    url: "/about-us.jpg",
+    url: "/about-us.webp",
     width: 1200,
     height: 630,
     alt: "SWEDINOX AB news, events, and stainless steel industry updates",
-    type: "image/jpeg",
+    type: "image/webp",
   },
   faq: {
-    url: "/about-us.jpg",
+    url: "/about-us.webp",
     width: 1200,
     height: 630,
     alt: "SWEDINOX AB frequently asked questions about stainless steel products",
-    type: "image/jpeg",
+    type: "image/webp",
   },
   home: {
-    url: "/about-us.jpg",
+    url: "/about-us.webp",
     width: 1200,
     height: 630,
     alt: "SWEDINOX AB stainless steel products for global B2B buyers",
-    type: "image/jpeg",
+    type: "image/webp",
   },
   products: {
-    url: "/sheets.jpg",
+    url: "/sheets.webp",
     width: 1200,
     height: 630,
     alt: "SWEDINOX AB stainless steel products catalog",
-    type: "image/jpeg",
+    type: "image/webp",
   },
 } satisfies Record<string, SeoImage>;
 
