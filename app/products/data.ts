@@ -204,7 +204,6 @@ export const products: Product[] = [
   {
     id: "circles",
     slug: "circles",
-    image: "/circles.webp",
     name: "Stainless Steel Circles",
     seoTitle: "Stainless Steel Circles Supplier | Precision-Cut from 150 mm",
     tagline: "Precision-Cut from Approximately 150 mm Diameter",
@@ -352,7 +351,6 @@ export const products: Product[] = [
   {
     id: "head-and-tail",
     slug: "head-and-tail",
-    image: "/head-and-tail.webp",
     name: "Head & Tail Sheets",
     seoTitle: "Head & Tail Stainless Steel Sheets",
     tagline: "Flexible Stainless Steel Sheet Sizes at Competitive Prices",

@@ -18,6 +18,7 @@ const ProductCard = ({
   imageLoading = "lazy",
 }: ProductCardProps) => {
   const imageHeight = compact ? "h-48" : "h-52";
+  const imageSrc = product.image;
 
   return (
     <Link href={`/products/${product.slug}`} prefetch={false} className="block h-full">
@@ -25,10 +26,10 @@ const ProductCard = ({
         className="group h-full overflow-hidden rounded-2xl border border-[#D9E3EE] bg-white shadow-[0_4px_20px_rgba(15,23,42,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-[#FCD34D] hover:shadow-[0_12px_36px_rgba(15,23,42,0.12)]"
         aria-label={`View ${product.name} - ${product.tagline}`}
       >
-        <div className={`relative overflow-hidden bg-[#0F172A] ${imageHeight}`}>
-          {product.image && (
+        <div className={`relative overflow-hidden bg-[#000000] ${imageHeight}`}>
+          {imageSrc ? (
             <Image
-              src={product.image}
+              src={imageSrc}
               alt={product.name}
               fill
               quality={40}
@@ -37,32 +38,36 @@ const ProductCard = ({
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
               className="object-cover transition-transform duration-500 group-hover:scale-105"
             />
-          )}
+          ) : null}
 
-          <div
-            className="absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-            style={{
-              background: `linear-gradient(to top, ${product.accent}ee 0%, ${product.accent}99 40%, transparent 100%)`,
-            }}
-            aria-hidden="true"
-          />
+          {imageSrc ? (
+            <>
+              <div
+                className="absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                style={{
+                  background: `linear-gradient(to top, ${product.accent}ee 0%, ${product.accent}99 40%, transparent 100%)`,
+                }}
+                aria-hidden="true"
+              />
 
-          <div className="absolute inset-0 flex flex-col justify-end p-5 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-            <ul className="flex flex-col gap-1.5">
-              {product.previewSpecs.map((spec) => (
-                <li
-                  key={spec}
-                  className="flex items-center gap-2 text-xs font-semibold text-white"
-                >
-                  <span
-                    className="h-1 w-1 shrink-0 rounded-full bg-white/80"
-                    aria-hidden="true"
-                  />
-                  {spec}
-                </li>
-              ))}
-            </ul>
-          </div>
+              <div className="absolute inset-0 flex flex-col justify-end p-5 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <ul className="flex flex-col gap-1.5">
+                  {product.previewSpecs.map((spec) => (
+                    <li
+                      key={spec}
+                      className="flex items-center gap-2 text-xs font-semibold text-white"
+                    >
+                      <span
+                        className="h-1 w-1 shrink-0 rounded-full bg-white/80"
+                        aria-hidden="true"
+                      />
+                      {spec}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </>
+          ) : null}
 
           <div className="absolute top-3 left-3 rounded-full border border-white/10 bg-[#0F172A]/70 px-2.5 py-1 text-[10px] font-semibold tracking-wide text-slate-300 backdrop-blur-sm">
             {product.badge}
