@@ -17,6 +17,7 @@ const ContactFormSection = () => {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   const validate = () => {
     const nextErrors: Record<string, string> = {};
@@ -38,21 +39,8 @@ const ContactFormSection = () => {
     setPhone("");
     setMessage("");
     setErrors({});
+    setSubmitError("");
     setSubmitted(false);
-  };
-
-  const buildMailtoHref = () => {
-    const subject = `Website inquiry from ${name.trim()} | SWEDINOX AB`;
-    const body = [
-      `Name: ${name.trim()}`,
-      `Email: ${email.trim()}`,
-      `Phone: ${phone.trim() || "Not provided"}`,
-      "",
-      "Message:",
-      message.trim(),
-    ].join("\n");
-
-    return `mailto:${recipientEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
@@ -65,13 +53,31 @@ const ContactFormSection = () => {
     }
 
     setErrors({});
+    setSubmitError("");
     setSubmitting(true);
-    const mailtoHref = buildMailtoHref();
-    setSubmitting(false);
-    setSubmitted(true);
-    window.setTimeout(() => {
-      window.location.href = mailtoHref;
-    }, 50);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: name.trim(),
+          email: email.trim(),
+          phone: phone.trim(),
+          message: message.trim(),
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Request failed");
+      }
+
+      setSubmitted(true);
+    } catch {
+      setSubmitError("Something went wrong. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -160,6 +166,12 @@ const ContactFormSection = () => {
                     }}
                   />
                 </div>
+
+                {submitError && (
+                  <p className="mt-4 text-sm font-medium text-red-600">
+                    {submitError}
+                  </p>
+                )}
 
                 <div className="mt-8">
                   <motion.button

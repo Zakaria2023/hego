@@ -31,11 +31,11 @@ const ContactSuccessState = ({
     </div>
 
     <h3 className="mb-2 text-xl font-extrabold text-[#0F172A]">
-      Email Draft Ready
+      Message Sent
     </h3>
     <p className="mb-8 max-w-sm text-sm leading-relaxed text-[#475569]">
-      Your email app should open a draft addressed to {recipientEmail}. If it
-      does not, send your inquiry directly there.
+      Your message has been sent to {recipientEmail}. Our team will get back
+      to you shortly.
     </p>
 
     <button
