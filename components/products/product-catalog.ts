@@ -24,7 +24,7 @@ const productCardImages: Partial<Record<string, string | null>> = {
   sheets: "/sheets-card.webp",
   strips: "/strips-card.webp",
   circles: null,
-  "head-and-tail": null,
+  "head-and-tail": "/head-and-tail.png",
 };
 
 export type ProductCardData = {

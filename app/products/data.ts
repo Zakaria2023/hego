@@ -351,6 +351,7 @@ export const products: Product[] = [
   {
     id: "head-and-tail",
     slug: "head-and-tail",
+    image: "/head-and-tail.png",
     name: "Head & Tail Sheets",
     seoTitle: "Head & Tail Stainless Steel Sheets",
     tagline: "Flexible Stainless Steel Sheet Sizes at Competitive Prices",
