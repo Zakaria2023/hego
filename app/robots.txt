@@ -49,3 +49,4 @@ Disallow: /api/
 
 Host: https://www.swedinox.se
 Sitemap: https://www.swedinox.se/sitemap.xml
+
