@@ -6,7 +6,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = buildPageMetadata({
   title: "About SWEDINOX AB Since 1999",
   description:
-    "Learn about SWEDINOX AB, a family-owned B2B stainless steel supplier of prime, ex-prime, and second-choice material, combining global sourcing, inventory support, and responsive logistics from Sweden.",
+    "Meet SWEDINOX AB, a family-owned stainless steel supplier serving global buyers with responsible sourcing and responsive logistics since 1999.",
   path: "/about-us",
   image: seoImages.about,
   category: "Company Profile",

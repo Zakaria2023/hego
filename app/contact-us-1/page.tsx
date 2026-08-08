@@ -6,7 +6,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = buildPageMetadata({
   title: "Contact SWEDINOX AB",
   description:
-    "Contact SWEDINOX AB for prime, ex-prime, and second-choice stainless steel quotes, technical questions, delivery support, and sourcing inquiries by form, email, phone, or WhatsApp.",
+    "Contact SWEDINOX AB for stainless steel quotes, product questions, sourcing support, and delivery inquiries by form, email, phone, or WhatsApp.",
   path: "/contact-us-1",
   image: seoImages.contact,
   category: "Contact Page",

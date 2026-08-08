@@ -205,7 +205,7 @@ export const products: Product[] = [
     id: "circles",
     slug: "circles",
     name: "Stainless Steel Circles",
-    seoTitle: "Stainless Steel Circles Supplier | Precision-Cut from 150 mm",
+    seoTitle: "Precision-Cut Stainless Steel Circles from 150 mm",
     tagline: "Precision-Cut from Approximately 150 mm Diameter",
     description:
       "SWEDINOX supplies stainless steel circles for manufacturers and fabricators requiring accurate diameters, consistent dimensions, and clean-cut edges.",

@@ -7,12 +7,13 @@ import {
   organizationSchema,
   websiteSchema,
 } from "@/lib/structured-data";
-import { seoImages, site } from "@/lib/site";
+import { seoImages } from "@/lib/site";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Stainless Steel Supplier Worldwide",
-  description: site.description,
+  title: "Stainless Steel Supplier Worldwide | SWEDINOX AB",
+  description:
+    "Source prime, ex-prime, and second-choice stainless steel coils, sheets, strips, and more worldwide from Sweden-based SWEDINOX AB.",
   path: "/",
   image: seoImages.home,
   category: "Industrial Materials Supplier",

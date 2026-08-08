@@ -6,7 +6,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = buildPageMetadata({
   title: "Stainless Steel FAQ",
   description:
-    "Get answers to common SWEDINOX AB questions about prime, ex-prime, and second-choice stainless steel grades, product formats, lead times, shipping, fabrication, and sourcing decisions for industrial buyers.",
+    "Find answers about stainless steel grades, product formats, lead times, shipping, fabrication, and ordering prime or second-choice material.",
   path: "/faq",
   image: seoImages.faq,
   category: "FAQ",

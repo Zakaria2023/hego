@@ -7,6 +7,21 @@ import { getProduct, products } from "../data";
 
 type Props = { params: Promise<{ slug: string }> };
 
+const productSeoDescriptions: Record<string, string> = {
+  coils:
+    "Source stainless steel coils in prime, ex-prime, and second-choice quality, with multiple grades, finishes, widths, and thicknesses available.",
+  "baby-coils":
+    "Order stainless steel baby coils from 500 kg for flexible handling, smaller production runs, and efficient stock management in multiple grades.",
+  sheets:
+    "Source stainless steel sheets in standard or custom dimensions, with prime, ex-prime, and second-choice options across multiple grades and finishes.",
+  strips:
+    "Explore stainless steel strips from 10 mm wide, supplied in multiple grades, finishes, thicknesses, and edge options for industrial production.",
+  circles:
+    "Source precision-cut stainless steel circles from 150 mm diameter in multiple grades, thicknesses, finishes, and dimensions for fabrication.",
+  "head-and-tail":
+    "Source cost-effective stainless steel head and tail sheets in variable dimensions, grades, and finishes for fabrication and trial production.",
+};
+
 export function generateStaticParams() {
   return products.map((product) => ({ slug: product.slug }));
 }
@@ -23,7 +38,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return buildPageMetadata({
     title: product.seoTitle ?? product.name,
-    description: `${product.description} Source prime, ex-prime, and second-choice stainless steel supply options from SWEDINOX AB.`,
+    description: productSeoDescriptions[product.slug],
     path: `/products/${product.slug}`,
     image: {
       url: imageUrl,

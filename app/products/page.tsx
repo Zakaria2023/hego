@@ -6,7 +6,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = buildPageMetadata({
   title: "Stainless Steel Products Catalog",
   description:
-    "Browse the SWEDINOX AB catalog of prime, ex-prime, and second-choice stainless steel coils, baby coils, sheets, strips, circles, and head and tail sheets in grades including 304, 316L, and 430.",
+    "Explore stainless steel coils, sheets, strips, circles, baby coils, and head and tail sheets in multiple grades and finishes from SWEDINOX AB.",
   path: "/products",
   image: seoImages.products,
   category: "Products Catalog",

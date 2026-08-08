@@ -49,11 +49,6 @@ export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   alternates: {
     canonical: "/",
-    languages: {
-      "en-US": "/",
-      "en-GB": "/",
-      "sv-SE": "/",
-    },
   },
   openGraph: {
     title: "SWEDINOX AB | Stainless Steel Supplier",

@@ -6,7 +6,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = buildPageMetadata({
   title: "Stainless Steel News & Trade Shows",
   description:
-    "Explore SWEDINOX AB news, stainless steel industry guides, trade show participation, and market insights for buyers, engineers, and procurement teams sourcing prime, ex-prime, and second-choice stainless steel.",
+    "Read stainless steel industry guides, SWEDINOX AB company news, and details of upcoming and past international trade show appearances.",
   path: "/events",
   image: seoImages.events,
   category: "News and Events",

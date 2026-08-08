@@ -34,9 +34,6 @@ const toAbsoluteUrl = (value: string) => {
 const withBrand = (title: string) =>
   title.includes(site.name) ? title : `${title} | ${site.name}`;
 
-const buildLanguageAlternates = (path: string) =>
-  Object.fromEntries(site.languages.map((language) => [language, path]));
-
 export const absoluteUrl = toAbsoluteUrl;
 
 export const buildPageMetadata = ({
@@ -68,7 +65,7 @@ export const buildPageMetadata = ({
     .filter(Boolean) as string[];
 
   return {
-    title,
+    title: title.includes(site.name) ? { absolute: title } : title,
     description,
     keywords: dedupedKeywords,
     authors: authorList,
@@ -78,7 +75,6 @@ export const buildPageMetadata = ({
     classification: "B2B Manufacturing & Stainless Steel Supply",
     alternates: {
       canonical,
-      languages: buildLanguageAlternates(canonical),
     },
     openGraph: {
       title: withBrand(title),
