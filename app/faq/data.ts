@@ -111,7 +111,7 @@ export const faqData: FaqCategory[] = [
       },
       {
         q: "Can I visit your facility or inspect material before ordering?",
-        a: "Yes, we welcome visits to our facility at Pilevallen 77, Arlöv, Sweden. Third-party inspection can also be arranged on request. Please contact our team to schedule a visit or inspection during our business hours, Monday to Friday, 09:00–17:00.",
+        a: "Yes, we welcome visits to our facility at Lundavägen 24B, Arlöv, Sweden. Third-party inspection can also be arranged on request. Please contact our team to schedule a visit or inspection during our business hours, Monday to Friday, 09:00–17:00.",
       },
     ],
   },
@@ -135,7 +135,7 @@ export const faqData: FaqCategory[] = [
       },
       {
         q: "Where is SWEDINOX AB located?",
-        a: "Our head office and warehouse are located at Pilevallen 77, Arlöv, 232 35 Sweden — situated near Malmö in southern Sweden, giving us excellent access to major shipping routes across Europe and globally.",
+        a: "Our head office and warehouse are located at Lundavägen 24B, 232 34 Arlöv, Sweden — situated near Malmö in southern Sweden, giving us excellent access to major shipping routes across Europe and globally.",
       },
       {
         q: "Does SWEDINOX AB attend international trade shows?",

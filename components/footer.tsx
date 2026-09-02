@@ -35,9 +35,9 @@ const Footer = () => {
 
             <address className="mt-8 not-italic space-y-4 text-base leading-relaxed text-white">
               <p>
-                Pilevallen 77
+                Lundavägen 24B
                 <br />
-                232 35 Arlov, Sweden
+                232 34 Arlöv, Sweden
               </p>
               <div>
                 <div className="flex flex-col gap-2">

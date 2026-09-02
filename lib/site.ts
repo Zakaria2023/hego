@@ -10,9 +10,9 @@ export const site = {
   emails: ["sales@swedinox.se", "sales@swedinox.eu", "logistic@swedinox.se"],
   phoneNumbers: ["+46732488880", "+46406860186"],
   address: {
-    street: "Pilevallen 77",
-    locality: "Arlov",
-    postalCode: "232 35",
+    street: "Lundavägen 24B",
+    locality: "Arlöv",
+    postalCode: "232 34",
     region: "Skane",
     countryCode: "SE",
     countryName: "Sweden",

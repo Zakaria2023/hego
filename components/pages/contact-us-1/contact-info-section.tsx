@@ -7,7 +7,7 @@ import ContactHoursDropdown from "./contact-hours-dropdown";
 import ContactInfoRow from "./contact-info-row";
 
 const mapHref =
-  "https://maps.google.com/?q=Pilevallen+77,+Arlov,+232+35,+Sweden";
+  "https://maps.google.com/?q=Lundav%C3%A4gen+24B,+232+34+Arl%C3%B6v,+Sweden";
 
 const ContactInfoSection = () => (
   <Reveal delay={0.08}>

@@ -3,7 +3,7 @@ import { site } from "@/lib/site";
 import { MapPinned, Navigation } from "lucide-react";
 import ContactMapClient from "./contact-map-client";
 
-const mapQuery = "Pilevallen+77,+Arlov,+232+35,+Sweden";
+const mapQuery = "Lundav%C3%A4gen+24B,+232+34+Arl%C3%B6v,+Sweden";
 const mapHref = `https://maps.google.com/?q=${mapQuery}`;
 
 const ContactMapSection = () => (
