@@ -127,8 +127,9 @@ body {
     transform: translateX(0);
   }
 
+  /* track renders the brand list 3x; shift by exactly one copy for a seamless loop */
   100% {
-    transform: translateX(-50%);
+    transform: translateX(calc(-100% / 3));
   }
 }
 
@@ -160,7 +161,7 @@ body {
 }
 
 .animate-marquee {
-  animation: marquee 30s linear infinite;
+  animation: marquee 55s linear infinite;
 }
 
 .animate-hero-zoom {

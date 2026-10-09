@@ -144,7 +144,7 @@ const HeroSection = () => {
         </p>
         <div
           aria-hidden="true"
-          className="flex animate-marquee whitespace-nowrap py-5 gap-0"
+          className="flex w-max animate-marquee whitespace-nowrap py-5 gap-0"
         >
           {[...heroTrustBrands, ...heroTrustBrands, ...heroTrustBrands].map(
             (brand, i) => (

@@ -23,7 +23,7 @@ const productCardImages: Partial<Record<string, string | null>> = {
   "baby-coils": "/baby-cols.webp",
   sheets: "/sheets-card.webp",
   strips: "/strips-card.webp",
-  circles: null,
+  circles: "/circles-card.webp",
   "head-and-tail": "/head-and-tail.png",
 };
 
