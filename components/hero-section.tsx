@@ -13,15 +13,20 @@ const HeroSection = () => {
       className="relative min-h-screen flex flex-col overflow-hidden"
     >
       {/* Full-bleed background image */}
-      <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-        <Image
-          src="/hero-section.webp"
-          alt=""
-          fill
-          preload
-          sizes="100vw"
-          className="object-cover animate-hero-zoom"
-        />
+      <div
+        className="absolute inset-0 pointer-events-none overflow-hidden"
+        aria-hidden="true"
+      >
+        <div className="absolute inset-0 animate-hero-zoom">
+          <Image
+            src="/hero-section.webp"
+            alt=""
+            fill
+            preload
+            sizes="100vw"
+            className="object-cover"
+          />
+        </div>
       </div>
 
       {/* Subtle light wash behind text for legibility */}

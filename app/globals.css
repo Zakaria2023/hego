@@ -133,17 +133,6 @@ body {
   }
 }
 
-@keyframes hero-zoom {
-  0%,
-  100% {
-    transform: scale(1);
-  }
-
-  50% {
-    transform: scale(1.08);
-  }
-}
-
 .animate-pulse-ring {
   animation: pulse-ring 3s ease-in-out infinite;
 }
@@ -164,9 +153,31 @@ body {
   animation: marquee 55s linear infinite;
 }
 
+/* Hero background: slow, seamless zoom. Runs on a wrapper (not the <img>)
+   and uses translate3d so the layer stays composited and is never
+   re-rasterized mid-animation, which caused visible snapping. */
+@keyframes hero-zoom {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate3d(0, 0, 0) scale(1.08);
+  }
+}
+
 .animate-hero-zoom {
   animation: hero-zoom 20s ease-in-out infinite;
+  transform-origin: center center;
   will-change: transform;
+  backface-visibility: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-hero-zoom {
+    animation: none;
+  }
 }
 
 .delay-100 {
