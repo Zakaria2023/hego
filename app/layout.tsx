@@ -1,3 +1,5 @@
+// Trigger Deploy
+
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import PageTransition from "@/components/page-transition";
