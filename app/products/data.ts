@@ -204,6 +204,7 @@ export const products: Product[] = [
   {
     id: "circles",
     slug: "circles",
+    image: "/circles.webp",
     name: "Stainless Steel Circles",
     seoTitle: "Precision-Cut Stainless Steel Circles from 150 mm",
     tagline: "Precision-Cut from Approximately 150 mm Diameter",
